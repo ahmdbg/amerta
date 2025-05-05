@@ -30,3 +30,5 @@ send_whatsapp.php
 *.cache
 /logs/
 /cache/
+
+/config/
