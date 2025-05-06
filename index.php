@@ -16,6 +16,11 @@
 
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         /* Tambahkan style baru */
         .gradient-text {
             background: linear-gradient(45deg, #00b4d8, #90e0ef);
@@ -142,6 +147,10 @@
                 border-bottom: 1px solid #025f92;
             }
         }
+
+        .home{
+            background-image: url('https://unsplash.com/photos/stage-light-front-of-audience-NYrVisodQ2M');
+        }
     </style>
 </head>
 
@@ -237,7 +246,7 @@
             <div class="max-w-2xl mx-auto" data-aos="zoom-in">
                 <h2 class="title-font text-4xl mb-6 neon-text">Get Your Tickets Now</h2>
                 <p class="mb-8">Secure your spot for the most anticipated event of the year. Various packages available to suit your needs.</p>
-                <a href="./booking.php" class="bg-[#025f92] hover:bg-[#1b425c] text-white px-8 py-3 rounded-full transition-all duration-300 neon-border neon-pulse">
+                <a href="https://amertans.com/booking.php" class="bg-[#025f92] hover:bg-[#1b425c] text-white px-8 py-3 rounded-full transition-all duration-300 neon-border neon-pulse">
                     Buy Tickets
                 </a>
             </div>
