@@ -19,7 +19,7 @@ if (!$ticket) {
 
 // Generate QR Code
 require_once 'vendor/autoload.php';
-$qrCode = new Endroid\QrCode\QrCode('https://' . $_SERVER['HTTP_HOST'] . '/amerta/konfirmasi.php?id=' . $id);
+$qrCode = new Endroid\QrCode\QrCode('https://' . $_SERVER['HTTP_HOST'] . '/konfirmasi.php?id=' . $id);
 $qrCode->setSize(250);
 $qrCode->setMargin(10);
 $writer = new Endroid\QrCode\Writer\PngWriter();
