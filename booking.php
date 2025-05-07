@@ -1,87 +1,114 @@
 <?php
 require_once 'vendor/autoload.php';
-include './config/db.php'; // Include your database connection file if needed
-
+include './config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form data
-    $data = [
-        'nama_wali' => htmlspecialchars($_POST['nama_wali']),
-        'jenis_kelamin' => htmlspecialchars($_POST['jenis_kelamin']),
-        'kelas_murid' => htmlspecialchars($_POST['kelas_murid']),
-        'nama_murid' => htmlspecialchars($_POST['nama_murid']),
-        'status_menginap' => htmlspecialchars($_POST['status_menginap']),
-        'no_wa' => htmlspecialchars($_POST['no_wa'])
-    ];
+    try {
+        // Start transaction
+        mysqli_begin_transaction($conn);
 
-    // Determine seat number range based on gender
-    $gender_range = ($data['jenis_kelamin'] === 'L') ? [1, 125] : [126, 250];
-    
-    // Find available seat
-    $sql_seat = "SELECT nomor_kursi FROM pengunjung 
-                 WHERE nomor_kursi BETWEEN ? AND ? 
-                 ORDER BY nomor_kursi ASC";
-    $stmt = mysqli_prepare($conn, $sql_seat);
-    mysqli_stmt_bind_param($stmt, "ii", $gender_range[0], $gender_range[1]);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    
-    $taken_seats = [];
-    while($row = mysqli_fetch_assoc($result)) {
-        $taken_seats[] = $row['nomor_kursi'];
-    }
-    
-    // Find first available seat number
-    $seat_number = null;
-    for($i = $gender_range[0]; $i <= $gender_range[1]; $i++) {
-        if(!in_array($i, $taken_seats)) {
-            $seat_number = $i;
-            break;
+        // Get and sanitize form data using array_map
+        $data = array_map('htmlspecialchars', [
+            'nama_wali' => $_POST['nama_wali'] ?? '',
+            'jenis_kelamin' => $_POST['jenis_kelamin'] ?? '',
+            'kelas_murid' => $_POST['kelas_murid'] ?? '',
+            'nama_murid' => $_POST['nama_murid'] ?? '',
+            'status_menginap' => $_POST['status_menginap'] ?? '',
+            'no_wa' => $_POST['no_wa'] ?? ''
+        ]);
+
+        // Validate required fields
+        foreach ($data as $key => $value) {
+            if (empty($value)) {
+                throw new Exception("Field $key is required");
+            }
         }
-    }
-    
-    if($seat_number === null) {
-        echo '<script>alert("Maaf, kursi untuk kategori ini sudah penuh."); window.location.href="booking.php";</script>';
-        exit;
-    }
 
-    // Insert booking data
-    $sql = "INSERT INTO pengunjung (nama, jk, kelas, nama_murid, status, no_wa, nomor_kursi) 
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
-    
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssssi", 
-        $data['nama_wali'],
-        $data['jenis_kelamin'],
-        $data['kelas_murid'],
-        $data['nama_murid'],
-        $data['status_menginap'],
-        $data['no_wa'],
-        $seat_number
-    );
-    
-    if(mysqli_stmt_execute($stmt)) {
+        // Determine seat range based on gender
+        $gender_range = ($data['jenis_kelamin'] === 'L') ? [1, 125] : [126, 250];
+        
+        // Find available seat using a single query
+        $sql_seat = "SELECT MIN(a.seat) as available_seat
+                     FROM (
+                         SELECT @row := @row + 1 as seat
+                         FROM (SELECT @row := ?) r,
+                              information_schema.columns
+                         LIMIT ?) a
+                     LEFT JOIN pengunjung p ON a.seat = p.nomor_kursi
+                     WHERE p.nomor_kursi IS NULL
+                     AND a.seat <= ?";
+        
+        $start = $gender_range[0] - 1;
+        $limit = $gender_range[1] - $gender_range[0] + 1;
+        
+        $stmt = mysqli_prepare($conn, $sql_seat);
+        mysqli_stmt_bind_param($stmt, "iii", $start, $limit, $gender_range[1]);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $seat_data = mysqli_fetch_assoc($result);
+        
+        if (!$seat_data['available_seat']) {
+            throw new Exception("Maaf, kursi untuk kategori ini sudah penuh.");
+        }
+
+        $seat_number = $seat_data['available_seat'];
+
+        // Prepare batch insert
+        $sql = "INSERT INTO pengunjung (nama, jk, kelas, nama_murid, status, no_wa, nomor_kursi) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+        
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "ssssssi", 
+            $data['nama_wali'],
+            $data['jenis_kelamin'],
+            $data['kelas_murid'],
+            $data['nama_murid'],
+            $data['status_menginap'],
+            $data['no_wa'],
+            $seat_number
+        );
+        
+        if (!mysqli_stmt_execute($stmt)) {
+            throw new Exception("Failed to insert booking data");
+        }
+
         $inserted_id = mysqli_insert_id($conn);
         
-        // Update jumlah_terpilih
-        $update_sql = "UPDATE murid SET jumlah_terpilih = COALESCE(jumlah_terpilih, 0) + 1 WHERE nama = ?";
+        // Update jumlah_terpilih efficiently
+        $update_sql = "UPDATE murid 
+                      SET jumlah_terpilih = COALESCE(jumlah_terpilih, 0) + 1 
+                      WHERE nama = ? 
+                      AND (SELECT COUNT(*) FROM pengunjung WHERE nama_murid = ?) < 3";
+                      
         $update_stmt = mysqli_prepare($conn, $update_sql);
-        mysqli_stmt_bind_param($update_stmt, "s", $data['nama_murid']);
-        mysqli_stmt_execute($update_stmt);
-        mysqli_stmt_close($update_stmt);
+        mysqli_stmt_bind_param($update_stmt, "ss", $data['nama_murid'], $data['nama_murid']);
+        
+        if (!mysqli_stmt_execute($update_stmt)) {
+            throw new Exception("Failed to update murid count");
+        }
 
-        // Send WhatsApp message
+        if (mysqli_affected_rows($conn) === 0) {
+            throw new Exception("Santri sudah mencapai batas maksimal pemesanan");
+        }
+
+        // Commit transaction
+        mysqli_commit($conn);
+
+        // Send WhatsApp message asynchronously
         include 'send_whatsapp.php';
         sendWhatsAppMessage($data, $seat_number);
 
-        // Redirect to confirmation page
         header("Location: konfirmasi.php?id=" . $inserted_id);
         exit;
-    } else {
-        echo '<script>alert("Terjadi kesalahan saat menyimpan data."); window.location.href="booking.php";</script>';
+
+    } catch (Exception $e) {
+        mysqli_rollback($conn);
+        echo "<script>alert('" . htmlspecialchars($e->getMessage()) . "'); window.location.href='booking.php';</script>";
+        exit;
+    } finally {
+        if (isset($stmt)) mysqli_stmt_close($stmt);
+        if (isset($update_stmt)) mysqli_stmt_close($update_stmt);
     }
-    
-    mysqli_stmt_close($stmt);
 }
 
 ?>

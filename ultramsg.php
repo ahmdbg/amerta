@@ -1,15 +1,24 @@
-<?php
-require_once 'vendor/autoload.php';
-
-use UltraMsg\WhatsAppApi;
-
-$instance_id = "instance118084";   // Ganti dengan instance kamu
-$token = "243pcm6evqvrr5nn";               // Ganti dengan token kamu
-
-$wa = new WhatsAppApi($token, $instance_id);
-
-$to = "6285640054840"; // Nomor tujuan, awali dengan kode negara (misal: 62 untuk Indonesia)
-$body = "Halo! Ini pesan dari PHP menggunakan UltraMsg.";
-
-$response = $wa->sendChatMessage($to, $body);
-print_r($response);
+import{r as d,j as a}from"./index-DlY7-eec.js";import l from"./Navbar-DjrEvg-p.js";import m from"./Footer-CKBJ3iJO.js";import{W as o}from"./wavy-background-DlxzESlJ.js";import{m as g}from"./proxy-B5O12dSo.js";import"./cn-BhFI4zjS.js";import"./simplex-noise-CDaaleer.js";const u=()=>{const[i,t]=d.useState({}),r=[{id:1,title:"Hadrah dan Nasyid",image:"shows/image-14.webp",description:"Pertunjukan religi yang memadukan tabuhan hadrah dengan nyanyian islami, menghadirkan nuansa spiritual dalam setiap irama dan lantunan indahnya."},{id:2,title:"Medley Tari Tradisional",image:"shows/image-1.webp",description:"Rangkaian tarian daerah yang dipentaskan secara berurutan, menampilkan keberagaman budaya nusantara dalam satu pertunjukan yang memukau."},{id:3,title:"Pantomim",image:"shows/image-2.webp",description:"Seni pertunjukan tanpa dialog yang mengandalkan bahasa tubuh dan ekspresi wajah untuk menyampaikan cerita dengan cara unik."},{id:4,title:"Drama dan Teater",image:"shows/image-3.webp",description:"Pertunjukan seni peran yang menghadirkan cerita kehidupan melalui dialog dan akting, mengajak penonton menyelami berbagai emosi."},{id:5,title:"Tari Perang",image:"shows/image-4.webp",description:"Tarian yang menggambarkan semangat perjuangan dan keberanian para prajurit dalam medan perang melalui gerakan dinamis."},{id:6,title:"Variasi PBB",image:"shows/image-5.webp",description:"Demonstrasi baris-berbaris yang dikemas dengan formasi unik dan gerakan terkoordinasi, menunjukkan kedisiplinan dan kekompakan tim."},{id:7,title:"Syarhil",image:"shows/image-6.webp",description:"Penampilan dakwah yang memadukan tilawah dengan penjelasan ayat Al-Quran, disampaikan dengan gaya yang menarik dan inspiratif."},{id:8,title:"Tari Randai",image:"shows/image-7.webp",description:"Tarian tradisional Minangkabau yang menggabungkan unsur silat dan cerita rakyat dalam pertunjukan yang energik dan menghibur."},{id:9,title:"Tari Pabat Pibui",image:"shows/image-8.webp",description:"Tarian etnik yang menceritakan keindahan budaya lokal melalui gerakan dan kostum warna-warni yang memukau penonton."},{id:10,title:"Beauty of Java",image:"shows/image-9.webp",description:"Tarian yang menampilkan keanggunan budaya Jawa melalui gerakan lemah gemulai dan filosofi mendalam tentang kehidupan."},{id:11,title:"Tari Pakarena Organza",image:"shows/image-10.webp",description:"Perpaduan tarian klasik Sulawesi dengan sentuhan modern, menghadirkan keindahan gerak yang anggun dan memesona."},{id:12,title:"Spirit of Papua",image:"shows/image-11.webp",description:"Pertunjukan yang mengangkat kekayaan budaya Papua melalui tarian dinamis dan musik tradisional yang penuh semangat."},{id:13,title:"Drama Musikal",image:"shows/image-12.webp",description:"Pertunjukan yang memadukan cerita, musik, dan tarian dalam satu kesatuan, menciptakan pengalaman teater yang mengesankan."},{id:14,title:"Puncak Gelora",image:"shows/image-13.webp",description:"Penampilan spektakuler yang menyatukan berbagai elemen seni pertunjukan dalam sebuah klimaks yang memukau dan berkesan."}],s=e=>{t(n=>({...n,[e]:!n[e]}))};return a.jsxs("div",{className:"container mx-auto px-4 py-12 bg-black",children:[a.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:r.map(e=>a.jsx(g.div,{whileHover:{scale:1.05},transition:{type:"spring",stiffness:300},className:"p-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-4xl",children:a.jsx("div",{className:"relative h-96 cursor-pointer perspective-1000 bg-black rounded-4xl",onClick:()=>s(e.id),children:a.jsxs("div",{className:`
+                relative w-full h-full duration-300 preserve-3d
+                ${i[e.id]?"rotate-y-180":""}
+              `,children:[a.jsxs("div",{className:"absolute inset-0 bg-black rounded-4xl shadow-xl overflow-hidden backface-hidden",children:[a.jsx("img",{src:e.image,alt:e.title,className:"w-full h-64 object-cover"}),a.jsx("div",{className:"p-6",children:a.jsx("h3",{className:"text-2xl font-bold text-gray-800 mb-2",children:e.title})})]}),a.jsx("div",{className:"absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-500 text-white rounded-4xl shadow-xl p-6 rotate-y-180 backface-hidden",children:a.jsx("div",{className:"flex flex-col h-full justify-between",children:a.jsxs("div",{children:[a.jsx("h3",{className:"text-2xl font-bold mb-4",children:e.title}),a.jsx("p",{className:"text-gray-200 mb-4",children:e.description})]})})})]})})},e.id))}),a.jsx("style",{jsx:!0,global:!0,children:`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        
+        .preserve-3d {
+          transform-style: preserve-3d;
+        }
+        
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        
+        .duration-300 {
+          transition-duration: 0.3s;
+        }
+      `})]})},w=()=>a.jsxs("div",{children:[a.jsx(l,{}),a.jsxs(o,{className:"max-w-4xl mx-auto pb-40",children:[a.jsx("p",{className:"text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center",children:"Our Performance"}),a.jsx("p",{className:"text-base md:text-lg mt-4 text-white font-normal inter-var text-center",children:"Leverage the power of canvas to create a beautiful hero section"})]}),a.jsx(u,{}),a.jsx(m,{})]});export{w as default};

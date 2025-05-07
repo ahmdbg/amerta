@@ -18,25 +18,25 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <style>
         body {
-            background-color: #212529 !important;
+            background-color: #001f3f !important;
             color: #fff !important;
         }
 
         .card {
-            background-color: #2c3034 !important;
-            border-color: #373b3e !important;
+            background-color: #002c59 !important;
+            border-color: #003d7a !important;
         }
 
         .table {
             color: #fff !important;
-            background-color: #2c3034 !important;
+            background-color: #002c59 !important;
             border-radius: 8px;
             overflow: hidden;
         }
 
         .table thead th {
-            background-color: #343a40 !important;
-            border-bottom: 2px solid #454d55 !important;
+            background-color: #001f3f !important;
+            border-bottom: 2px solid #003d7a !important;
             font-weight: 600;
             padding: 12px !important;
         }
@@ -47,11 +47,11 @@ $result = mysqli_query($conn, $query);
         }
 
         .table-striped>tbody>tr:nth-of-type(odd) {
-            background-color: rgba(255, 255, 255, 0.05) !important;
+            background-color: #00264d !important;
         }
 
         .table-striped tbody tr:hover {
-            background-color: rgba(255, 255, 255, 0.075) !important;
+            background-color: #003366 !important;
             transition: all 0.2s ease;
         }
 
@@ -65,37 +65,38 @@ $result = mysqli_query($conn, $query);
 
         .dataTables_wrapper .dataTables_length select,
         .dataTables_wrapper .dataTables_filter input {
-            background-color: #343a40 !important;
-            border: 1px solid #454d55 !important;
+            background-color: #001f3f !important;
+            border: 1px solid #003d7a !important;
             color: #fff !important;
             padding: 4px 8px;
             border-radius: 4px;
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button {
-            background-color: #343a40 !important;
-            border: 1px solid #454d55 !important;
+            background-color: #001f3f !important;
+            border: 1px solid #003d7a !important;
             border-radius: 4px;
             margin: 0 4px;
+            color: #fff !important;
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-            background-color: #454d55 !important;
+            background-color: #003366 !important;
             color: #fff !important;
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-            background-color: #0d6efd !important;
-            border-color: #0d6efd !important;
+            background-color: #004080 !important;
+            border-color: #004080 !important;
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-            color: #666 !important;
+            color: #8ba3bc !important;
         }
 
         .table-bordered td,
         .table-bordered th {
-            border-color: #373b3e !important;
+            border-color: #003d7a !important;
         }
     </style>
 </head>
@@ -115,12 +116,12 @@ $result = mysqli_query($conn, $query);
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Email</th>
-                            <th>Telepon</th>
-                            <th>Alamat</th>
+                            <th>Jk</th>
+                            <th>Kelas</th>
+                            <th>Nama santri</th>
                             <th>Tanggal</th>
-                            <th>Keperluan</th>
-                            <th>Keperluan</th>
+                            <th>no_WA</th>
+                            <th>Nomor Kursi</th>
                         </tr>
                     </thead>
                     <tbody>
