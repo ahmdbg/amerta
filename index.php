@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <!-- bootstrap grid css -->
     <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
     <!-- font awesome css -->
@@ -21,14 +23,37 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
-    <title>Ashley</title>
+    <title>Amerta | Home</title>
+
+    <!-- Add Tailwind CSS colors to text elements -->
+    <style>
+        .mil-muted {
+            @apply text-[#ccd6f6];
+        }
+
+        .mil-light-soft {
+            @apply text-[#8892b0];
+        }
+
+        .mil-thin {
+            @apply text-[#64ffda];
+        }
+
+        .mil-accent {
+            @apply text-[#64ffda];
+        }
+
+        .mil-button {
+            @apply bg-[#112240] text-[#64ffda] hover:bg-[#233554];
+        }
+    </style>
 
 </head>
 
 <body>
 
     <!-- wrapper -->
-    <div class="mil-wrapper" id="top">
+    <div class="mil-wrapper text-white" id="top">
 
         <!-- cursor -->
         <div class="mil-ball">
@@ -82,7 +107,7 @@
             <div id="swupMain" class="mil-main-transition">
 
                 <!-- banner -->
-                <section class="mil-banner mil-dark-bg">
+                <section class="mil-banner bg-[#0a192f]">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="7" data-value-2="1.6"></div>
@@ -104,8 +129,8 @@
                                     </div>
                                 </div>
 
-                                <a href="./booking.php" class="mil-button mil-arrow-place mil-btn-space">
-                                    <span>Beli Tiket</span>
+                                <a href="#tickets" target="_blank" class="mil-button mil-arrow-place mil-btn-space">
+                                    <span>Get Ticket</span>
                                 </a>
 
                                 <div class="mil-circle-text">
@@ -132,16 +157,16 @@
                 <!-- banner end -->
 
                 <!-- about -->
-                <section id="about">
+                <section id="about" class="bg-[#112240]">
                     <div class="container mil-p-120-30">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-lg-6 col-xl-5">
 
                                 <div class="mil-mb-90">
-                                    <h2 class="mil-up mil-mb-60">Tentang <br>Amerta </h2>
-                                    <p class="mil-up mil-mb-30">Amerta Night Show adalah sebuah pertunjukan spektakuler yang menampilkan keragaman budaya Nusantara melalui paduan seni musik, tari, dan teater modern. Event ini menghadirkan kolaborasi antara seniman tradisional dan kontemporer Indonesia.</p>
+                                    <h2 class="mil-up mil-mb-60 text-[#ccd6f6]">Tentang <br>Amerta </h2>
+                                    <p class="mil-up mil-mb-30 text-[#8892b0]">Amerta Night Show adalah sebuah pertunjukan spektakuler yang menampilkan keragaman budaya Nusantara melalui paduan seni musik, tari, dan teater modern. Event ini menghadirkan kolaborasi antara seniman tradisional dan kontemporer Indonesia.</p>
 
-                                    <p class="mil-up mil-mb-60">Dengan tema "Bangkitkan Gelora Nusantara", kami mengajak seluruh masyarakat untuk merasakan keagungan budaya Indonesia dalam kemasan pertunjukan yang megah dan memukau.</p>
+                                    <p class="mil-up mil-mb-60 text-[#8892b0]">Dengan tema "Bangkitkan Gelora Nusantara", kami mengajak seluruh masyarakat untuk merasakan keagungan budaya Indonesia dalam kemasan pertunjukan yang megah dan memukau.</p>
 
                                 </div>
 
@@ -162,7 +187,7 @@
                 <!-- about end -->
 
                 <!-- services -->
-                <section class="mil-dark-bg">
+                <section class="bg-[#0a192f]">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
@@ -225,7 +250,7 @@
                 <!-- services end -->
 
                 <!-- team -->
-                <section>
+                <section class="bg-[#112240]">
                     <div class="container mil-p-120-30">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-lg-5 col-xl-4">
@@ -331,7 +356,7 @@
                 <!-- team end -->
 
                 <!-- reviews -->
-                <section class="mil-soft-bg">
+                <section class="bg-[#0a192f]">
                     <div class="container mil-p-120-120">
 
                         <div class="row">
@@ -342,7 +367,7 @@
                             </div>
                         </div>
 
-                        <h2 class="mil-center mil-up mil-mb-60">Customer <span class="mil-thin">Voices:</span> <br>Hear What <span class="mil-thin">They Say!</span></h2>
+                        <h2 class="mil-center mil-up mil-mb-60 text-white" style="color: #f47c3c;">Customer <span class="mil-thin">Voices:</span> <br>Hear What <span class="mil-thin">They Say!</span></h2>
 
                         <div class="mil-revi-pagination mil-up mil-mb-60"></div>
 
@@ -420,7 +445,7 @@
                 <!-- reviews end -->
 
                 <!-- ticket section -->
-                <section class="mil-dark-bg">
+                <section class="bg-[#112240]">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
@@ -437,7 +462,7 @@
                                 </div>
                             </div>
 
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center" id="tickets">
                                 <div class="col-lg-6">
                                     <div class="mil-hover-card mil-up">
                                         <div class="mil-service-card-sm mil-mb-30 mil-center">

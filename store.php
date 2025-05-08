@@ -20,7 +20,7 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
-    <title>Ashley</title>
+    <title>Amerta | Store</title>
 
 </head>
 

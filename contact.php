@@ -4,6 +4,7 @@
 
 <!-- Mirrored from miller.bslthemes.com/ashley-demo/contact.php
   by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 May 2025 10:05:53 GMT -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -21,7 +22,7 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
-    <title>Ashley</title>
+    <title>Amerta | Contact</title>
 
 </head>
 
@@ -34,7 +35,7 @@
         <div class="mil-ball">
             <span class="mil-icon-1">
                 <svg viewBox="0 0 128 128">
-                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
+                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2-1.2-1.2-3.1,0-4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
                 </svg>
             </span>
             <div class="mil-more-text">More</div>
@@ -50,7 +51,7 @@
         <!-- scrollbar progress end -->
 
         <!-- menu -->
-         <?php include 'components/menu.php'; ?>
+        <?php include 'components/menu.php'; ?>
         <!-- menu -->
 
         <!-- curtain -->
@@ -109,6 +110,7 @@
                 <!-- map end -->
 
                 <!-- contact form -->
+                <!-- Replace the existing contact form section with this -->
                 <section id="contact">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
@@ -116,30 +118,25 @@
                             <div class="col-lg-6 mil-up">
                                 <input type="text" id="name" name="name" placeholder="What's your name" required>
                             </div>
-                            <div class="col-lg-6 mil-up">
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            </div>
                             <div class="col-lg-12 mil-up">
                                 <textarea id="message" name="message" placeholder="Tell us about our project" required></textarea>
                             </div>
                             <div class="col-lg-8">
-                                <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
+                                <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We will respond to you via WhatsApp.</p>
                             </div>
                             <div class="col-lg-4">
                                 <div class="mil-adaptive-right mil-up mil-mb-30">
-                                    <button type="submit" class="mil-button mil-arrow-place">
-                                        <span>Send message</span>
+                                    <button type="button" onclick="sendToWhatsApp()" class="mil-button mil-arrow-place">
+                                        <span>Send to WhatsApp</span>
                                     </button>
                                 </div>
                             </div>
                         </form>
-                        <div id="formResponse" style="margin-top: 20px;"></div>
                     </div>
-                </section>
-                <!-- contact form end -->
+                </section> <!-- contact form end -->
 
                 <!-- footer -->
-                 <?php include 'components/footer.php'; ?>
+                <?php include 'components/footer.php'; ?>
                 <!-- footer end -->
 
                 <!-- hidden elements -->
@@ -274,30 +271,27 @@
     <script src="js/main.js"></script>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Відміняємо стандартну відправку форми
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
 
-            const formData = new FormData(this);
-
-            fetch('send_email.json', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    const responseDiv = document.getElementById('formResponse');
-                    if (data.success) {
-                        responseDiv.innerHTML = '<p style="color: green;">Message sent successfully!</p>';
-                        document.getElementById('contactForm').reset(); // Очистити форму
-                    } else {
-                        responseDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('formResponse').innerHTML = `<p style="color: red;">An unexpected error occurred: ${error.message}</p>`;
-                });
-        });
-
+            // Format the message for WhatsApp
+            const formattedMessage = `Name: ${name}%0A%0AMessage: ${message}`;
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/6285640054840?text=${formattedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Reset the form
+            document.getElementById('contactForm').reset();
+        }
     </script>
 
 </body>
@@ -305,4 +299,5 @@
 
 <!-- Mirrored from miller.bslthemes.com/ashley-demo/contact.php
   by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 May 2025 10:05:53 GMT -->
+
 </html>

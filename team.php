@@ -20,7 +20,7 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
-    <title>Ashley</title>
+    <title>Amerta | Team</title>
 
 </head>
 
@@ -48,7 +48,7 @@
         <!-- scrollbar progress end -->
 
         <!-- menu -->
-         <?php include ".components/menu.php"; ?>
+         <?php include "./components/menu.php"; ?>
         <!-- menu -->
 
         <!-- curtain -->
