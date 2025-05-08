@@ -44,23 +44,6 @@
         </div>
         <!-- cursor end -->
 
-        <!-- preloader -->
-        <div class="mil-preloader">
-            <div class="mil-preloader-animation">
-                <div class="mil-pos-abs mil-animation-1">
-                    <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
-                    <p class="mil-h3 mil-muted">Creative</p>
-                    <p class="mil-h3 mil-muted mil-thin">Excellence</p>
-                </div>
-                <div class="mil-pos-abs mil-animation-2">
-                    <div class="mil-reveal-frame">
-                        <p class="mil-reveal-box"></p>
-                        <p class="mil-h3 mil-muted mil-thin">ashley.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- preloader end -->
 
         <!-- scrollbar progress -->
         <div class="mil-progress-track">
@@ -69,7 +52,7 @@
         <!-- scrollbar progress end -->
 
         <!-- menu -->
-        <?php include "./components/menu.php"?>
+        <?php include "./components/menu.php" ?>
         <!-- menu -->
 
         <!-- curtain -->
@@ -111,12 +94,10 @@
                             <ul class="mil-breadcrumbs mil-mb-60">
                                 <li><a href="index.php
                                 ">Homepage</a></li>
-                                <li><a href="portfolio-1.php
-                                ">Portfolio</a></li>
-                                <li><a href="project-1.php
-                                ">Project</a></li>
+                                <li><a href="./gallery-1.php
+                                ">Gallery</a></li>
                             </ul>
-                            <h1 class="mil-mb-60">Interior Design <span class="mil-thin">Studio</span></h1>
+                            <h1 class="mil-mb-60">Our <span class="mil-thin">Gallery</span></h1>
                             <a href="#project" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
                                 <span>Read more</span>
                             </a>
@@ -133,11 +114,6 @@
                             <a data-fancybox="gallery" data-no-swup href="img/works/1/1.jpg" class="mil-zoom-btn">
                                 <img src="img/icons/zoom.svg" alt="zoom">
                             </a>
-                        </div>
-                        <div class="mil-info mil-up">
-                            <div>Client: &nbsp;<span class="mil-dark">Envato Market</span></div>
-                            <div>Date: &nbsp;<span class="mil-dark">April 2023</span></div>
-                            <div>Author: &nbsp;<span class="mil-dark">Paul Trueman</span></div>
                         </div>
                         <div class="mil-p-120-0">
 
@@ -187,23 +163,6 @@
 
                                 </div>
                             </div>
-                            <div class="row justify-content-between mil-p-90-120">
-                                <div class="col-lg-5">
-                                    <h3 class="mil-up mil-mb-60">Simplicity, elegance, innovation!</h3>
-                                </div>
-                                <div class="col-lg-6">
-                                    <p class="mil-up mil-mb-30">A home surveillance camera that pays great attention to
-                                        security and user privacy, featuring two modes to provide security while
-                                        protecting personal privacy.The camera has an open and closed mode, we define
-                                        the product to have clear two sides, expressing two working states and emotions.
-                                    </p>
-
-                                    <p class="mil-up">Presents a simple and quiet state when not in use, delivering a
-                                        gentle and security.At the same time, the camera can adapt to a variety of
-                                        environments, providing elegant ways of wall hanging and standing installation.
-                                    </p>
-                                </div>
-                            </div>
                             <div class="row mil-p-0-90">
                                 <div class="col-lg-6">
 
@@ -230,19 +189,85 @@
                             </div>
 
                         </div>
+                    </div>
+                </section>
+                <!-- project end -->
+                <section id="project">
+                    <div class="container mil-p-120-120">
+                        <div class="swiper-container mil-2-slider mil-up">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
 
-                        <div class="mil-works-nav mil-up">
-                            <a href="#." class="mil-link mil-dark mil-arrow-place mil-icon-left mil-disabled">
-                                <span>Prev project</span>
-                            </a>
-                            <a href="gallery-2.php
-                            " class="mil-link mil-dark mil-arrow-place">
-                                <span>Next project</span>
+                                    <div class="mil-image-frame mil-vertical mil-drag">
+                                        <img src="img/works/4/1.jpg" alt="image">
+                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/1.jpg" class="mil-zoom-btn">
+                                            <img src="img/icons/zoom.svg" alt="zoom">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide">
+
+                                    <div class="mil-image-frame mil-vertical mil-drag">
+                                        <img src="img/works/4/2.jpg" alt="image">
+                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/2.jpg" class="mil-zoom-btn">
+                                            <img src="img/icons/zoom.svg" alt="zoom">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide">
+
+                                    <div class="mil-image-frame mil-vertical mil-drag">
+                                        <img src="img/works/4/3.jpg" alt="image">
+                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/3.jpg" class="mil-zoom-btn">
+                                            <img src="img/icons/zoom.svg" alt="zoom">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide">
+
+                                    <div class="mil-image-frame mil-vertical mil-drag">
+                                        <img src="img/works/4/4.jpg" alt="image">
+                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/4.jpg" class="mil-zoom-btn">
+                                            <img src="img/icons/zoom.svg" alt="zoom">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide">
+
+                                    <div class="mil-image-frame mil-vertical mil-drag">
+                                        <img src="img/works/4/5.jpg" alt="image">
+                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/5.jpg" class="mil-zoom-btn">
+                                            <img src="img/icons/zoom.svg" alt="zoom">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide">
+
+                                    <div class="mil-image-frame mil-vertical mil-drag">
+                                        <img src="img/works/4/6.jpg" alt="image">
+                                        <a data-fancybox="gallery" data-no-swup href="img/works/4/6.jpg" class="mil-zoom-btn">
+                                            <img src="img/icons/zoom.svg" alt="zoom">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-120">
+                            <img src="img/works/4/7.jpg" alt="image">
+                            <a data-fancybox="gallery" data-no-swup href="img/works/4/7.jpg" class="mil-zoom-btn">
+                                <img src="img/icons/zoom.svg" alt="zoom">
                             </a>
                         </div>
                     </div>
                 </section>
-                <!-- project end -->
+
 
                 <!-- call to action -->
                 <section class="mil-soft-bg">
@@ -267,7 +292,7 @@
                 <!-- call to action end -->
 
                 <!-- footer -->
-                 <?php include "./components/footer.php" ?>
+                <?php include "./components/footer.php" ?>
                 <!-- footer end -->
 
                 <!-- hidden elements -->

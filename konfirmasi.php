@@ -40,21 +40,25 @@ $qrDataUri = $result->getDataUri();
             margin: 0;
             padding: 20px;
             display: flex;
-            flex-direction: column; /* Changed to column */
+            flex-direction: column;
+            /* Changed to column */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            gap: 20px; /* Add gap between ticket and button */
+            gap: 20px;
+            /* Add gap between ticket and button */
         }
 
         #ticket {
             background: #00171f;
-            width: 300px; /* Reduced from 400px */
+            width: 300px;
+            /* Reduced from 400px */
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             position: relative;
-            padding: 20px 30px; /* Reduced padding */
+            padding: 20px 30px;
+            /* Reduced padding */
             color: #333;
         }
 
@@ -75,7 +79,8 @@ $qrDataUri = $result->getDataUri();
 
         .header h1 {
             margin: 0;
-            font-size: 28px; /* Reduced from 36px */
+            font-size: 28px;
+            /* Reduced from 36px */
             color: #ff8c00;
             letter-spacing: 4px;
             font-weight: 900;
@@ -91,12 +96,15 @@ $qrDataUri = $result->getDataUri();
         }
 
         .content {
-            display: block; /* Changed from flex */
+            display: block;
+            /* Changed from flex */
             margin-bottom: 30px;
         }
 
-        .left, .right {
-            width: 100%; /* Changed from 48% */
+        .left,
+        .right {
+            width: 100%;
+            /* Changed from 48% */
             margin-bottom: 20px;
         }
 
@@ -114,7 +122,8 @@ $qrDataUri = $result->getDataUri();
         }
 
         .value {
-            font-size: 16px; /* Reduced from 18px */
+            font-size: 16px;
+            /* Reduced from 18px */
             font-weight: 700;
             color: #eaeaea;
         }
@@ -125,8 +134,10 @@ $qrDataUri = $result->getDataUri();
         }
 
         .qr-code {
-            width: 140px; /* Reduced from 160px */
-            height: 140px; /* Reduced from 160px */
+            width: 140px;
+            /* Reduced from 160px */
+            height: 140px;
+            /* Reduced from 160px */
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             background: white;
@@ -144,7 +155,8 @@ $qrDataUri = $result->getDataUri();
         }
 
         #btnDownload {
-            margin: 0; /* Reset margin since we're using flex gap */
+            margin: 0;
+            /* Reset margin since we're using flex gap */
             background: #ff8c00;
             color: white;
             border: none;
@@ -162,10 +174,41 @@ $qrDataUri = $result->getDataUri();
         #btnDownload:hover {
             background: #e07b00;
         }
+
+        .status-button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+
+        .status-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .unused {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .used {
+            background-color: #f44336;
+            color: white;
+            pointer-events: none;
+        }
     </style>
 </head>
 
 <body>
+    <button id="statusButton" class="status-button <?= $ticket['status_pakai'] == 'sudah_dipakai' ? 'used' : 'unused' ?>" <?= $ticket['status_pakai'] == 'sudah_dipakai' ? 'disabled' : '' ?>>
+        <?= $ticket['status_pakai'] == 'sudah_dipakai' ? 'Sudah Dipakai' : 'Belum Dipakai' ?>
+    </button>
     <div id="ticket">
         <div class="header">
             <h1>AMERTA</h1>
@@ -212,12 +255,61 @@ $qrDataUri = $result->getDataUri();
 
     <button id="btnDownload">Unduh Tiket PDF</button>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusButton = document.getElementById('statusButton');
+            
+            // If already used, disable the button and exit
+            if (statusButton.classList.contains('used')) {
+                statusButton.style.cursor = 'not-allowed';
+                return;
+            }
+            
+            let clicks = 0;
+            let lastClick = 0;
+
+            statusButton.addEventListener('click', function() {
+                const now = Date.now();
+                
+                if (now - lastClick > 2000) {
+                    clicks = 1;
+                } else {
+                    clicks++;
+                }
+                
+                lastClick = now;
+
+                if (clicks === 5) {
+                    fetch('update_status.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'id=<?= $ticket['id'] ?>'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            statusButton.textContent = 'Sudah Dipakai';
+                            statusButton.classList.remove('unused');
+                            statusButton.classList.add('used');
+                            statusButton.disabled = true;
+                            statusButton.style.cursor = 'not-allowed';
+                        }
+                    });
+                    
+                    clicks = 0;
+                }
+            });
+        });
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         window.jsPDF = window.jspdf.jsPDF;
 
-        document.getElementById("btnDownload").addEventListener("click", function () {
+        document.getElementById("btnDownload").addEventListener("click", function() {
             const ticketElement = document.getElementById("ticket");
 
             html2canvas(ticketElement, {

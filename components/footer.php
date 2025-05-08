@@ -24,16 +24,16 @@
                                         <a href="index.php">Home</a>
                                     </li>
                                     <li class="mil-up">
-                                        <a href="portfolio-1.php">Portfolio</a>
+                                        <a href="team.php">Team</a>
                                     </li>
                                     <li class="mil-up">
-                                        <a href="services.php">Services</a>
+                                        <a href="gallery-1.php">Gallery</a>
                                     </li>
                                     <li class="mil-up">
                                         <a href="contact.php">Contact</a>
                                     </li>
                                     <li class="mil-up">
-                                        <a href="blog.php">Blog</a>
+                                        <a href="store.php">Store</a>
                                     </li>
                                 </ul>
                             </nav>
