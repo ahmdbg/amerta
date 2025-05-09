@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
     <title>Amerta | Home</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
 </head>
 
@@ -61,22 +63,7 @@
         <!-- curtain end -->
 
         <!-- frame -->
-        <div class="mil-frame">
-            <div class="mil-frame-top">
-                <a href="index.phpteam.php" class="mil-logo">Amerta.</a>
-                <div class="mil-menu-btn">
-                    <span></span>
-                </div>
-            </div>
-            <div class="mil-frame-bottom">
-                <div class="mil-current-page"></div>
-                <div class="mil-back-to-top">
-                    <a href="#top" class="mil-link mil-dark mil-arrow-place">
-                        <span>Back to top</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <?php include "components/frame.php"; ?>
         <!-- frame end -->
 
         <!-- content -->
@@ -134,7 +121,7 @@
                                 <div class="mil-about-photo mil-mb-90">
                                     <div class="mil-lines-place"></div>
                                     <div class="mil-up mil-img-frame" style="padding-bottom: 160%;">
-                                        <img src="img/photo/1.jpg" alt="Event Photo" class="mil-scale" data-value-1="1" data-value-2="1.2">
+                                        <img src="img/photo/1.webp" alt="Event Photo" class="mil-scale" data-value-1="1" data-value-2="1.2">
                                     </div>
                                 </div>
                             </div>
@@ -160,38 +147,39 @@
                                 <div class="mil-complex-text justify-content-center mil-up mil-mb-15">
                                     <span class="mil-text-image"><img src="img/photo/2.jpg" alt="event"></span>
                                     <h2 class="mil-h1 mil-muted mil-center">Pertunjukan <span class="mil-thin">Spektakuler</span></h2>
+
                                 </div>
                             </div>
 
                             <div class="row mil-services-grid m-0">
-                                <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
+                                <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Tarian <br>Tradisional</h5>
                                         <p class="mil-light-soft mil-mb-30">Pertunjukan tarian tradisional dari berbagai daerah di Indonesia yang dipadukan dengan koreografi modern.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
+                                </a>
+                                <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Musik <br>Kolaborasi</h5>
                                         <p class="mil-light-soft mil-mb-30">Perpaduan musik tradisional dan kontemporer yang menghadirkan harmoni unik dalam setiap pertunjukan.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
+                                </a>
+                                <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Fashion <br>Show</h5>
                                         <p class="mil-light-soft mil-mb-30">Peragaan busana yang menampilkan keindahan kain tradisional Indonesia dalam sentuhan desain modern.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
+                                </a>
+                                <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Kuliner <br>Nusantara</h5>
                                         <p class="mil-light-soft mil-mb-30">Sajian hidangan khas Indonesia yang dipresentasikan dengan gaya fine dining internasional.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -223,11 +211,11 @@
                                         <div class="col-sm-6">
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/1.jpg" alt="Team member">
+                                                <img src="img/faces/1.png" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Anna Oldman</a></h5>
-                                                        <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Qoidul Jaisy Alfath</a></h5>
+                                                        <p class="mil-link mil-light-soft mil-mb-10">Ketua</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
@@ -239,11 +227,11 @@
                                             </div>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/3.jpg" alt="Team member">
+                                                <img src="img/faces/2.png" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Oscar Freeman</a></h5>
-                                                        <p class="mil-link mil-light-soft mil-mb-10">Frontend Dev</p>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">M. Akbar Hanif</a></h5>
+                                                        <p class="mil-link mil-light-soft mil-mb-10">Wakil Ketua</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
@@ -260,11 +248,11 @@
                                             <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;"><span class="mil-accent">*</span> The founders of our agency</p>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/2.jpg" alt="Team member">
+                                                <img src="img/faces/3.png" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Emma Newman</a></h5>
-                                                        <p class="mil-link mil-light-soft mil-mb-10">Founder</p>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Hasna Nailah S.</a></h5>
+                                                        <p class="mil-link mil-light-soft mil-mb-10">Sekretaris</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
@@ -279,8 +267,8 @@
                                                 <img src="img/faces/4.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Lisa Trueman</a></h5>
-                                                        <p class="mil-link mil-light-soft mil-mb-10">UI/UX Designer</p>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Jhil Alesia Kirstyaustin</a></h5>
+                                                        <p class="mil-link mil-light-soft mil-mb-10">Bendahara</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
@@ -390,32 +378,75 @@
                     </div>
                 </section>
                 <!-- reviews end -->
+                <!-- blog -->
+                <section>
+                    <div class="container mil-p-120-60">
+                        <div class="row align-items-center mil-mb-30">
+                            <div class="col-lg-6 mil-mb-30">
+                                <h3 class="mil-up">Our Gallery:</h3>
+                            </div>
+                            <div class="col-lg-6 mil-mb-30">
+                                <div class="mil-adaptive-right mil-up">
+                                    <a href="gallery-1.php" class="mil-link mil-dark mil-arrow-place">
+                                        <span>View all</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+
+                                <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                    <div class="mil-cover-frame mil-up">
+                                        <img src="img/works/1.webp" alt="cover">
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="col-lg-4">
+
+                                <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                    <div class="mil-cover-frame mil-up">
+                                        <img src="img/works/2.webp" alt="cover">
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="col-lg-4">
+
+                                <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                    <div class="mil-cover-frame mil-up">
+                                        <img src="img/works/3.webp" alt="cover">
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- blog end -->
 
                 <!-- tickets -->
                 <section id="tickets" class="mil-dark-bg">
                     <div class="mi-invert-fix">
                         <div class="container mil-p-120-90">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12 text-center">
-                                    <h2 class="mil-up mil-mb-60">Tiket <span class="mil-thin">Show</span></h2>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <h2 class="mil-muted mil-mb-60 ">Tiket <span class="mil-thin">Amerta</span></h2>
                                 </div>
                             </div>
 
-                            <div class="row justify-content-center"></div>
-                            <div class="col-lg-4">
-                                <div class="mil-service-card-sm mil-mb-30 mil-up">
-                                    <h5 class="mil-muted mil-mb-30">PREMIUM</h5>
-                                    <h3 class="mil-mb-30">Rp 750.000</h3>
-                                    <p class="mil-light-soft mil-mb-30">
-                                        • Tempat duduk premium<br>
-                                        • Meet & Greet dengan artis<br>
-                                        • Merchandise exclusive<br>
-                                        • Program booklet<br>
-                                        • Welcome drink
-                                    </p>
-                                    <a href="booking.php" class="mil-button mil-arrow-place">
-                                        <span>Beli Sekarang</span>
-                                    </a>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <div class="col-lg-4" style="text-align: center; width: max-content;">
+                                    <div class="mil-service-card-sm mil-mb-30 mil-up">
+                                        <p class="mil-light-soft mil-mb-30">
+                                        <h5 class="mil-muted mil-mb-30">GET TICKET NOW</h5>
+                                        <h3 class="mil-mb-30 mil-muted" style="text-transform: uppercase;">Join us for unforgottable moment</h3>
+                                        </p>
+                                        <a href="booking.php" class="mil-button mil-arrow-place">
+                                            <span>Beli Sekarang</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -423,44 +454,6 @@
             </div>
             </section>
 
-            <!-- blog -->
-            <section>
-                <div class="container mil-p-120-60">
-                    <div class="row align-items-center mil-mb-30">
-                        <div class="col-lg-6 mil-mb-30">
-                            <h3 class="mil-up">Our Gallery:</h3>
-                        </div>
-                        <div class="col-lg-6 mil-mb-30">
-                            <div class="mil-adaptive-right mil-up">
-                                <a href="gallery-1.php" class="mil-link mil-dark mil-arrow-place">
-                                    <span>View all</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-
-                            <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
-                                <div class="mil-cover-frame mil-up">
-                                    <img src="img/blog/1.jpg" alt="cover">
-                                </div>
-                            </a>
-
-                        </div>
-                        <div class="col-lg-6">
-
-                            <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
-                                <div class="mil-cover-frame mil-up">
-                                    <img src="img/blog/2.jpg" alt="cover">
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- blog end -->
             <!-- partners -->
             <div class="mil-soft-bg" style="padding-top: 100px;">
                 <div class="container mil-p-0-120">
@@ -488,7 +481,7 @@
 
 
             <!-- footer -->
-             <?php include 'components/footer.php'; ?>
+            <?php include 'components/footer.php'; ?>
             <!-- footer end -->
 
             <!-- hidden elements -->

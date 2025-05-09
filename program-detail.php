@@ -23,6 +23,8 @@
     <div class="mil-wrapper" id="top">
 
         <?php include 'components/menu.php'; ?>
+        <?php include "components/frame.php"; ?>
+
         <!-- content -->
         <div class="mil-content">
             <div id="swupMain" class="mil-main-transition">
