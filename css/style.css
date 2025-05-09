@@ -921,6 +921,7 @@ backgrounds
   z-index: 2;
   -webkit-backdrop-filter: invert(100%);
   backdrop-filter: invert(100%);
+
 }
 
 .mil-dark-bg .mi-invert-fix {
@@ -1385,7 +1386,7 @@ frame
   .mil-frame .mil-frame-top .mil-menu-btn span,
   .mil-frame .mil-frame-top .mil-menu-btn span:after,
   .mil-frame .mil-frame-top .mil-menu-btn span:before {
-    background: #f47c3c;
+    background: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -1480,7 +1481,7 @@ menu button
   display: block;
   width: 28px;
   height: 2.5px;
-  background: #f47c3c;
+  background: rgb(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: inherit;

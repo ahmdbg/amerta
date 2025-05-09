@@ -2,15 +2,13 @@
 <html lang="zxx">
 
 
-<!-- Mirrored from miller.bslthemes.com/ashley-demo/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 May 2025 10:05:31 GMT -->
+<!-- Mirrored from miller.bslthemes.com/ashley-demo/index.phpteam.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 May 2025 10:05:31 GMT -->
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- bootstrap grid css -->
     <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
@@ -25,35 +23,12 @@
     <!-- page name -->
     <title>Amerta | Home</title>
 
-    <!-- Add Tailwind CSS colors to text elements -->
-    <style>
-        .mil-muted {
-            @apply text-[#ccd6f6];
-        }
-
-        .mil-light-soft {
-            @apply text-[#8892b0];
-        }
-
-        .mil-thin {
-            @apply text-[#64ffda];
-        }
-
-        .mil-accent {
-            @apply text-[#64ffda];
-        }
-
-        .mil-button {
-            @apply bg-[#112240] text-[#64ffda] hover:bg-[#233554];
-        }
-    </style>
-
 </head>
 
 <body>
 
     <!-- wrapper -->
-    <div class="mil-wrapper text-white" id="top">
+    <div class="mil-wrapper" id="top">
 
         <!-- cursor -->
         <div class="mil-ball">
@@ -67,7 +42,9 @@
         </div>
         <!-- cursor end -->
 
+        <!-- preloader -->
         <?php include 'components/preloader.php'; ?>
+        <!-- preloader end -->
 
         <!-- scrollbar progress -->
         <div class="mil-progress-track">
@@ -76,7 +53,7 @@
         <!-- scrollbar progress end -->
 
         <!-- menu -->
-         <?php include 'components/menu.php'; ?>
+        <?php include 'components/menu.php'; ?>
         <!-- menu -->
 
         <!-- curtain -->
@@ -86,7 +63,7 @@
         <!-- frame -->
         <div class="mil-frame">
             <div class="mil-frame-top">
-                <a href="index.php" class="mil-logo">Amerta.</a>
+                <a href="index.phpteam.php" class="mil-logo">Amerta.</a>
                 <div class="mil-menu-btn">
                     <span></span>
                 </div>
@@ -107,7 +84,7 @@
             <div id="swupMain" class="mil-main-transition">
 
                 <!-- banner -->
-                <section class="mil-banner bg-[#0a192f]">
+                <section class="mil-banner mil-dark-bg">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="7" data-value-2="1.6"></div>
@@ -119,75 +96,53 @@
 
                         <div class="container">
                             <div class="mil-banner-content mil-up">
-
-                                <h1 class="mil-muted mil-mb-60" style="padding-top: 100px;">Amerta <span class="mil-thin">Night </span><br> Show </h1>
+                                <h1 class="mil-muted mil-mb-60">Amerta <span class="mil-thin">Night</span><br> Show <span class="mil-thin">2025</span></h1>
                                 <div class="row">
                                     <div class="col-md-7 col-lg-5">
-
-                                        <p class="mil-light-soft mil-mb-60">Bangkitkan Gelora Nusantara: Malam spektakuler yang memadukan keindahan seni dan budaya Indonesia dalam pertunjukan memukau yang akan membangkitkan semangat Nusantara.</p>
-
+                                        <p class="mil-light-soft mil-mb-60">Bangkitkan Gelora Nusantara: Sebuah pertunjukan spektakuler yang memadukan keindahan seni dan budaya Nusantara dalam balutan modern yang memukau.</p>
                                     </div>
                                 </div>
 
-                                <a href="#tickets" target="_blank" class="mil-button mil-arrow-place mil-btn-space">
-                                    <span>Get Ticket</span>
+                                <a href="#tickets" class="mil-button mil-arrow-place mil-btn-space">
+                                    <span>Dapatkan Tiket</span>
                                 </a>
-
-                                <div class="mil-circle-text">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve" class="mil-ct-svg mil-rotate" data-value="360">
-                                        <defs>
-                                            <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
-                                        </defs>
-                                        <circle cx="150" cy="100" r="75" fill="none" />
-                                        <g>
-                                            <use xlink:href="#circlePath" fill="none" />
-                                            <text style="letter-spacing: 6.5px">
-                                                <!-- circle text -->
-                                                <textPath xlink:href="#circlePath">bangkitkan  gelora  nusantara</textPath>
-                                            </text>
-                                        </g>
-                                    </svg>
-                                    <a href="#about" class="mil-button mil-arrow-place mil-icon-button mil-arrow-down"></a>
-                                </div>
 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- banner end -->
-
                 <!-- about -->
-                <section id="about" class="bg-[#112240]">
+                <section id="about">
                     <div class="container mil-p-120-30">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-lg-6 col-xl-5">
-
                                 <div class="mil-mb-90">
-                                    <h2 class="mil-up mil-mb-60 text-[#ccd6f6]">Tentang <br>Amerta </h2>
-                                    <p class="mil-up mil-mb-30 text-[#8892b0]">Amerta Night Show adalah sebuah pertunjukan spektakuler yang menampilkan keragaman budaya Nusantara melalui paduan seni musik, tari, dan teater modern. Event ini menghadirkan kolaborasi antara seniman tradisional dan kontemporer Indonesia.</p>
+                                    <h2 class="mil-up mil-mb-60">Tentang <span class="mil-thin">Amerta Night Show</span></h2>
+                                    <p class="mil-up mil-mb-30">Amerta Night Show 2025 menghadirkan pertunjukan yang menggabungkan kemegahan budaya Nusantara dengan sentuhan modernitas. Dari tarian tradisional hingga musik kontemporer, kami mengajak Anda menjelajahi kekayaan budaya Indonesia.</p>
 
-                                    <p class="mil-up mil-mb-60 text-[#8892b0]">Dengan tema "Bangkitkan Gelora Nusantara", kami mengajak seluruh masyarakat untuk merasakan keagungan budaya Indonesia dalam kemasan pertunjukan yang megah dan memukau.</p>
+                                    <p class="mil-up mil-mb-60">Dengan tema "Bangkitkan Gelora Nusantara", acara ini akan menampilkan kolaborasi spektakuler antara seniman tradisional dan modern, menciptakan harmoni yang memukau antara warisan budaya dan inovasi kreatif masa kini.</p>
 
+                                    <div class="mil-about-quote">
+                                        <div class="mil-avatar mil-up">
+                                            <img src="img/faces/2.jpg" alt="Art Director">
+                                        </div>
+                                        <h6 class="mil-quote mil-up">"Mari bersama <span class="mil-thin">membangkitkan</span> semangat <span class="mil-thin">Nusantara</span>"</h6>
+                                    </div>
                                 </div>
-
                             </div>
                             <div class="col-lg-5">
-
                                 <div class="mil-about-photo mil-mb-90">
                                     <div class="mil-lines-place"></div>
                                     <div class="mil-up mil-img-frame" style="padding-bottom: 160%;">
-                                        <img src="img/photo/1.jpg" alt="img" class="mil-scale" data-value-1="1" data-value-2="1.2">
+                                        <img src="img/photo/1.jpg" alt="Event Photo" class="mil-scale" data-value-1="1" data-value-2="1.2">
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- about end -->
-
                 <!-- services -->
-                <section class="bg-[#0a192f]">
+                <section class="mil-dark-bg">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
@@ -198,50 +153,44 @@
                             <div class="mil-mb-120">
                                 <div class="row">
                                     <div class="col-lg-10">
-
-                                        <span class="mil-suptitle mil-light-soft mil-suptitle-right mil-up">Professionals focused on helping your brand<br> grow and move forward.</span>
-
+                                        <span class="mil-suptitle mil-light-soft mil-suptitle-right mil-up">Menghadirkan pengalaman pertunjukan yang tak terlupakan<br> dalam balutan budaya Nusantara.</span>
                                     </div>
                                 </div>
 
                                 <div class="mil-complex-text justify-content-center mil-up mil-mb-15">
-                                    <span class="mil-text-image"><img src="img/photo/2.jpg" alt="show"></span>
-                                    <h2 class="mil-h1 mil-muted mil-center">Program <span class="mil-thin">Acara</span></h2>
+                                    <span class="mil-text-image"><img src="img/photo/2.jpg" alt="event"></span>
+                                    <h2 class="mil-h1 mil-muted mil-center">Pertunjukan <span class="mil-thin">Spektakuler</span></h2>
                                 </div>
                             </div>
 
                             <div class="row mil-services-grid m-0">
                                 <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
-
-                                    <a href="program-detail.php" class="mil-service-card-sm mil-up">
-                                        <h5 class="mil-muted mil-mb-30">Grand<br>Finale</h5>
-                                        <p class="mil-light-soft mil-mb-30">Puncak acara dengan spektakel cahaya dan kolaborasi seluruh pengisi acara.</p>
+                                    <div class="mil-service-card-sm mil-up">
+                                        <h5 class="mil-muted mil-mb-30">Tarian <br>Tradisional</h5>
+                                        <p class="mil-light-soft mil-mb-30">Pertunjukan tarian tradisional dari berbagai daerah di Indonesia yang dipadukan dengan koreografi modern.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
-
-                                    <a href="program-detail.php" class="mil-service-card-sm mil-up">
-                                        <h5 class="mil-muted mil-mb-30">Parade Nusantara<br>Opening Show</h5>
-                                        <p class="mil-light-soft mil-mb-30">Pembukaan megah dengan parade budaya dari Sabang sampai Merauke.</p>
+                                    <div class="mil-service-card-sm mil-up">
+                                        <h5 class="mil-muted mil-mb-30">Musik <br>Kolaborasi</h5>
+                                        <p class="mil-light-soft mil-mb-30">Perpaduan musik tradisional dan kontemporer yang menghadirkan harmoni unik dalam setiap pertunjukan.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
-
-                                    <a href="program-detail.php" class="mil-service-card-sm mil-up">
-                                        <h5 class="mil-muted mil-mb-30">Simfoni<br>Persatuan</h5>
-                                        <p class="mil-light-soft mil-mb-30">Kolaborasi orkestra tradisional dan modern dalam harmoni keberagaman.</p>
+                                    <div class="mil-service-card-sm mil-up">
+                                        <h5 class="mil-muted mil-mb-30">Fashion <br>Show</h5>
+                                        <p class="mil-light-soft mil-mb-30">Peragaan busana yang menampilkan keindahan kain tradisional Indonesia dalam sentuhan desain modern.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 mil-services-grid-item p-0">
-
-                                    <a href="program-detail.php" class="mil-service-card-sm mil-up">
-                                        <h5 class="mil-muted mil-mb-30">Tarian<br>Nusantara</h5>
-                                        <p class="mil-light-soft mil-mb-30">Pertunjukan tari kontemporer yang dipadukan dengan gerakan tradisional.</p>
+                                    <div class="mil-service-card-sm mil-up">
+                                        <h5 class="mil-muted mil-mb-30">Kuliner <br>Nusantara</h5>
+                                        <p class="mil-light-soft mil-mb-30">Sajian hidangan khas Indonesia yang dipresentasikan dengan gaya fine dining internasional.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +199,7 @@
                 <!-- services end -->
 
                 <!-- team -->
-                <section class="bg-[#112240]">
+                <section>
                     <div class="container mil-p-120-30">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-lg-5 col-xl-4">
@@ -262,8 +211,6 @@
                                     <p class="mil-up mil-mb-60">Together, our creative team is committed to delivering impactful work that exceeds expectations.</p>
 
                                     <div class="mil-up"><a href="team.php" class="mil-button mil-arrow-place mil-mb-60"><span>Read more</span></a></div>
-
-                                    <h4 class="mil-up"><span class="mil-thin">We</span> delivering <br><span class="mil-thin">exceptional</span> results.</h4>
                                 </div>
 
                             </div>
@@ -279,7 +226,7 @@
                                                 <img src="img/faces/1.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Anna Oldman</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Anna Oldman</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -295,7 +242,7 @@
                                                 <img src="img/faces/3.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Oscar Freeman</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Oscar Freeman</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Frontend Dev</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -316,7 +263,7 @@
                                                 <img src="img/faces/2.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Emma Newman</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Emma Newman</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Founder</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -332,7 +279,7 @@
                                                 <img src="img/faces/4.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Lisa Trueman</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Lisa Trueman</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">UI/UX Designer</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -356,7 +303,7 @@
                 <!-- team end -->
 
                 <!-- reviews -->
-                <section class="bg-[#0a192f]">
+                <section class="mil-soft-bg">
                     <div class="container mil-p-120-120">
 
                         <div class="row">
@@ -367,7 +314,7 @@
                             </div>
                         </div>
 
-                        <h2 class="mil-center mil-up mil-mb-60 text-white" style="color: #f47c3c;">Customer <span class="mil-thin">Voices:</span> <br>Hear What <span class="mil-thin">They Say!</span></h2>
+                        <h2 class="mil-center mil-up mil-mb-60">Customer <span class="mil-thin">Voices:</span> <br>Hear What <span class="mil-thin">They Say!</span></h2>
 
                         <div class="mil-revi-pagination mil-up mil-mb-60"></div>
 
@@ -444,191 +391,215 @@
                 </section>
                 <!-- reviews end -->
 
-                <!-- ticket section -->
-                <section class="bg-[#112240]">
+                <!-- tickets -->
+                <section id="tickets" class="mil-dark-bg">
                     <div class="mi-invert-fix">
-                        <div class="mil-animation-frame">
-                            <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
-                            <div class="mil-animation mil-position-2 mil-scale" data-value-1="2" data-value-2="1" style="left: 150px"></div>
-                        </div>
                         <div class="container mil-p-120-90">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <div class="mil-center mil-mb-90">
-                                        <span class="mil-suptitle mil-light-soft mil-suptitle-right mil-up">Dapatkan Tiket Sekarang</span>
-                                        <h2 class="mil-up mil-mb-30">Amerta <span class="mil-thin">Night Show</span></h2>
-                                        <p class="mil-light-soft mil-up">7 Mei 2025 • 19.00 WIB<br>GWK Cultural Park, Bali</p>
-                                    </div>
+                                <div class="col-lg-12 text-center">
+                                    <h2 class="mil-up mil-mb-60">Tiket <span class="mil-thin">Show</span></h2>
                                 </div>
                             </div>
 
-                            <div class="row justify-content-center" id="tickets">
-                                <div class="col-lg-6">
-                                    <div class="mil-hover-card mil-up">
-                                        <div class="mil-service-card-sm mil-mb-30 mil-center">
-                                            <h4 class="mil-muted mil-mb-30">Book Your Tickets</h4>
-                                            <div class="mil-price mil-mb-30">
-                                                <h3 class="mil-muted">Secure your spot for the most spectacular show of the year</h3>
-                                            </div>
-                                            <a href="./booking.php" class="mil-button mil-arrow-place" target="_blank">
-                                                <span>Beli Sekarang</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 mil-text-center">
-                                    <p class="mil-light-soft mil-up mil-mt-60">
-                                        *Pembelian tiket dapat dilakukan melalui website resmi kami atau di tiket box yang tersedia
+                            <div class="row justify-content-center"></div>
+                            <div class="col-lg-4">
+                                <div class="mil-service-card-sm mil-mb-30 mil-up">
+                                    <h5 class="mil-muted mil-mb-30">PREMIUM</h5>
+                                    <h3 class="mil-mb-30">Rp 750.000</h3>
+                                    <p class="mil-light-soft mil-mb-30">
+                                        • Tempat duduk premium<br>
+                                        • Meet & Greet dengan artis<br>
+                                        • Merchandise exclusive<br>
+                                        • Program booklet<br>
+                                        • Welcome drink
                                     </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-                <!-- ticket section end -->
-
-                <!-- partners -->
-                <div class="mil-soft-bg" style="padding-top: 100px;">
-                    <div class="container mil-p-0-120">
-
-                        <div class="swiper-container mil-infinite-show mil-up">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg" alt="logo"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg" alt="logo"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg" alt="logo"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg" alt="logo"></a>
+                                    <a href="booking.php" class="mil-button mil-arrow-place">
+                                        <span>Beli Sekarang</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
-                <!-- partners end -->
-
-                <!-- footer -->
-                 <?php include 'components/footer.php'; ?>
-                <!-- footer end -->
-
-                <!-- hidden elements -->
-                <div class="mil-hidden-elements">
-                    <div class="mil-dodecahedron">
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
-                        <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
-                    </svg>
-
-                    <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-lines">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 -4.37115e-08L150 1404L149 1404L149 0L150 -4.37115e-08Z" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M300 1175H0V1174H300V1175Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z" class="mil-move" />
-                    </svg>
-                </div>
-                <!-- hidden elements end -->
-
             </div>
+            </section>
+
+            <!-- blog -->
+            <section>
+                <div class="container mil-p-120-60">
+                    <div class="row align-items-center mil-mb-30">
+                        <div class="col-lg-6 mil-mb-30">
+                            <h3 class="mil-up">Our Gallery:</h3>
+                        </div>
+                        <div class="col-lg-6 mil-mb-30">
+                            <div class="mil-adaptive-right mil-up">
+                                <a href="gallery-1.php" class="mil-link mil-dark mil-arrow-place">
+                                    <span>View all</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                <div class="mil-cover-frame mil-up">
+                                    <img src="img/blog/1.jpg" alt="cover">
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="col-lg-6">
+
+                            <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                <div class="mil-cover-frame mil-up">
+                                    <img src="img/blog/2.jpg" alt="cover">
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- blog end -->
+            <!-- partners -->
+            <div class="mil-soft-bg" style="padding-top: 100px;">
+                <div class="container mil-p-0-120">
+
+                    <div class="swiper-container mil-infinite-show mil-up">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg" alt="logo"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg" alt="logo"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg" alt="logo"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg" alt="logo"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- partners end -->
+
+
+            <!-- footer -->
+             <?php include 'components/footer.php'; ?>
+            <!-- footer end -->
+
+            <!-- hidden elements -->
+            <div class="mil-hidden-elements">
+                <div class="mil-dodecahedron">
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="mil-pentagon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
+                    <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
+                </svg>
+
+                <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-lines">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z" class="mil-move" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z" class="mil-move" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M150 -4.37115e-08L150 1404L149 1404L149 0L150 -4.37115e-08Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z" class="mil-move" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M300 1175H0V1174H300V1175Z" class="mil-move" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z" class="mil-move" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z" class="mil-move" />
+                </svg>
+            </div>
+            <!-- hidden elements end -->
+
         </div>
-        <!-- content -->
+    </div>
+    <!-- content -->
     </div>
     <!-- wrapper end -->
 
