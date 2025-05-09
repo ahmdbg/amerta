@@ -1,7 +1,7 @@
 <div class="mil-menu-frame">
             <!-- frame clone -->
             <div class="mil-frame-top">
-                <a href="index.php" class="mil-logo">Amerta.</a>
+                <a href="index.php" class="mil-logo" style="color: #f47c3c;">Amerta.</a>
                 <div class="mil-menu-btn">
                     <span></span>
                 </div>

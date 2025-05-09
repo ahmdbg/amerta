@@ -120,7 +120,7 @@
                         <div class="container">
                             <div class="mil-banner-content mil-up">
 
-                                <h1 class="mil-muted mil-mb-60">Amerta <span class="mil-thin">Night </span><br> Show </h1>
+                                <h1 class="mil-muted mil-mb-60" style="padding-top: 100px;">Amerta <span class="mil-thin">Night </span><br> Show </h1>
                                 <div class="row">
                                     <div class="col-md-7 col-lg-5">
 

@@ -136,6 +136,89 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- page name -->
     <title>Amerta | Booking</title>
 
+    <style>
+        /* Updated countdown styles */
+        .mil-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mil-countdown .countdown-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+            border-radius: 15px;
+            min-width: 150px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mil-countdown .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .mil-countdown .countdown-item span {
+            font-size: 56px;
+            font-weight: 700;
+            color: #333;
+            display: block;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .mil-countdown .countdown-item p {
+            margin: 0;
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .mil-countdown {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .mil-countdown .countdown-item {
+                min-width: 120px;
+                padding: 20px 15px;
+            }
+
+            .mil-countdown .countdown-item span {
+                font-size: 42px;
+            }
+
+            .mil-countdown .countdown-item p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mil-countdown .countdown-item {
+                min-width: 90px;
+                padding: 15px 10px;
+            }
+
+            .mil-countdown .countdown-item span {
+                font-size: 32px;
+            }
+
+            .mil-countdown .countdown-item p {
+                font-size: 14px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -210,8 +293,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <!-- banner end -->
 
+                <!-- countdown section -->
+                <section id="countdown-section" class="mil-p-120-90">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center mil-up">
+                                <h3 class="mil-mb-30">Pendaftaran Akan Dibuka Dalam</h3>
+                                <div class="mil-countdown-wrap mil-mb-60">
+                                    <div id="countdown" class="mil-countdown">
+                                        <div class="countdown-item">
+                                            <span id="days">00</span>
+                                            <p>Days</p>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span id="hours">00</span>
+                                            <p>Hours</p>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span id="minutes">00</span>
+                                            <p>Minutes</p>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span id="seconds">00</span>
+                                            <p>Seconds</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- booking form -->
-                <section id="booking">
+                <section id="booking" style="display: none;">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Form Pembelian Tiket</h3>
                         <form id="bookingForm" class="row align-items-center booking-form" method="POST">
@@ -219,7 +333,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="nama_wali">Nama Wali</label>
                                 <input type="text" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
                             </div>
-                            
+
                             <div class="col-lg-6 mil-up form-group">
                                 <label for="jenis_kelamin">Jenis Kelamin</label>
                                 <select name="jenis_kelamin" id="jenis_kelamin" required>
@@ -440,6 +554,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     santriSelect.innerHTML = '<option value="">Error loading santri</option>';
                 });
         }
+        // Add this countdown function
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set the target date (adjust this to your desired launch date)
+            const targetDate = new Date('2025-05-09T21:00:00').getTime();
+
+
+            const countdown = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the countdown display
+                document.getElementById('days').innerHTML = String(days).padStart(2, '0');
+                document.getElementById('hours').innerHTML = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
+
+                // When countdown is finished
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById('countdown-section').style.display = 'none';
+                    document.getElementById('booking').style.display = 'block';
+                }
+            }, 1000);
+        });
     </script>
 
 </body>
