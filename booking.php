@@ -240,7 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script>
         const kelasUtamaList = ['7', '8', '9', '10', '11', '12'];
         const subkelasMap = {
-            '7': ['7A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            '7': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
             '8': ['A', 'B', 'C', 'D', 'E', 'F'],
             '9': ['A', 'B', 'C', 'D', 'E'],
             '10': [' A', ' B', ' C', ' D'],
