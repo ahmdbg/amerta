@@ -278,39 +278,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <!-- banner end -->
 
-                <!-- countdown section -->
-                <section id="countdown-section" class="mil-p-120-90">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 text-center mil-up">
-                                <h3 class="mil-mb-30">Pendaftaran Akan Dibuka Dalam</h3>
-                                <div class="mil-countdown-wrap mil-mb-60">
-                                    <div id="countdown" class="mil-countdown">
-                                        <div class="countdown-item">
-                                            <span id="days">00</span>
-                                            <p>Days</p>
-                                        </div>
-                                        <div class="countdown-item">
-                                            <span id="hours">00</span>
-                                            <p>Hours</p>
-                                        </div>
-                                        <div class="countdown-item">
-                                            <span id="minutes">00</span>
-                                            <p>Minutes</p>
-                                        </div>
-                                        <div class="countdown-item">
-                                            <span id="seconds">00</span>
-                                            <p>Seconds</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 <!-- booking form -->
-                <section id="booking" style="display: none;">
+                <section id="booking">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Form Pembelian Tiket</h3>
                         <form id="bookingForm" class="row align-items-center booking-form" method="POST">
@@ -539,35 +509,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     santriSelect.innerHTML = '<option value="">Error loading santri</option>';
                 });
         }
-        // Add this countdown function
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set the target date (adjust this to your desired launch date)
-            const targetDate = new Date('2025-05-09T21:00:00').getTime();
-
-
-            const countdown = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Update the countdown display
-                document.getElementById('days').innerHTML = String(days).padStart(2, '0');
-                document.getElementById('hours').innerHTML = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
-
-                // When countdown is finished
-                if (distance < 0) {
-                    clearInterval(countdown);
-                    document.getElementById('countdown-section').style.display = 'none';
-                    document.getElementById('booking').style.display = 'block';
-                }
-            }, 1000);
-        });
     </script>
 
 </body>

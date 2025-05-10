@@ -211,7 +211,7 @@
                                                 <img src="img/faces/1.png" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Qoidul Jaisy Alfath</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="team.php">Qoidul Jaisy Alfath</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Ketua</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -227,7 +227,7 @@
                                                 <img src="img/faces/2.png" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">M. Akbar Hanif</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="team.php">M. Akbar Hanif</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Wakil Ketua</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -248,7 +248,7 @@
                                                 <img src="img/faces/3.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">M. Zidan M</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="team.php">M. Zidan M</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Pubdok</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
@@ -264,7 +264,7 @@
                                                 <img src="img/faces/4.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Jhil Alesia Kirstyaustin</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="team.php">Jhil Alesia Kirstyaustin</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Bendahara</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
