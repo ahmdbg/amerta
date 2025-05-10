@@ -2,6 +2,15 @@
 require_once 'vendor/autoload.php';
 include './config/db.php';
 
+// Check total visitors count
+$visitor_limit = 8;
+$visitor_count = 0;
+$count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM pengunjung");
+if ($count_result) {
+    $row = mysqli_fetch_assoc($count_result);
+    $visitor_count = (int)$row['total'];
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Start transaction
@@ -22,6 +31,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (empty($value)) {
                 throw new Exception("Field $key is required");
             }
+        }
+
+        // Real-time visitor count check before proceeding
+        $count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM pengunjung");
+        if ($count_result) {
+            $row = mysqli_fetch_assoc($count_result);
+            $current_visitor_count = (int)$row['total'];
+            if ($current_visitor_count >= $visitor_limit) {
+                throw new Exception("Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup.");
+            }
+        } else {
+            throw new Exception("Gagal memeriksa kuota pengunjung.");
         }
 
         // Determine seat range based on gender
@@ -226,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="tel" class="form-control" id="no_wa" name="no_wa" placeholder="Contoh: 628123456789" required pattern="628[0-9]{9,13}">
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100 text-uppercase fw-semibold">
+                    <button type="submit" class="btn btn-primary w-100 text-uppercase fw-semibold" id="bookingButton">
                         Booking Sekarang
                     </button>
                 </form>
@@ -369,9 +390,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </script>
 
+    <script>
+        // Pass PHP visitor count and limit to JS
+        const visitorCount = <?php echo $visitor_count; ?>;
+        const visitorLimit = <?php echo $visitor_limit; ?>;
+
+        document.getElementById('bookingButton').addEventListener('click', function(event) {
+            if (visitorCount >= visitorLimit) {
+                event.preventDefault();
+                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal 100. Pendaftaran ditutup.');
+            }
+        });
+
+        // Convert no_wa input from 0... to 62... on form submit
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            const noWaInput = document.getElementById('no_wa');
+            let noWaValue = noWaInput.value.trim();
+
+            if (noWaValue.startsWith('0')) {
+                noWaValue = '62' + noWaValue.substring(1);
+                noWaInput.value = noWaValue;
+            }
+        });
+    </script>
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

@@ -393,7 +393,7 @@
                         <div class="row">
                             <div class="col-lg-4">
 
-                                <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                <a href="publication.php" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
                                         <img src="img/works/1.webp" alt="cover">
                                     </div>
@@ -402,18 +402,9 @@
                             </div>
                             <div class="col-lg-4">
 
-                                <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
+                                <a href="publication.php" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
                                         <img src="img/works/2.webp" alt="cover">
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="col-lg-4">
-
-                                <a href="publication.phpteam.php" class="mil-blog-card mil-mb-60">
-                                    <div class="mil-cover-frame mil-up">
-                                        <img src="img/works/3.webp" alt="cover">
                                     </div>
                                 </a>
 
@@ -434,7 +425,7 @@
                             </div>
 
                             <!-- Countdown Timer -->
-                            <div id="countdown" data-target-date="2025-05-10T20:30:00" style="text-align: center; font-size: 2rem; color: white; margin-bottom: 30px;">
+                            <div id="countdown" data-target-date="2025-06-10T09:30:00" style="text-align: center; font-size: 2rem; color: white; margin-bottom: 30px;">
                                 <span id="days">00</span> days 
                                 <span id="hours">00</span> hours 
                                 <span id="minutes">00</span> minutes 
@@ -457,7 +448,7 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
             </section>
 
             <!-- partners -->
