@@ -110,9 +110,6 @@
                                     <p class="mil-up mil-mb-60">Dengan tema "Bangkitkan Gelora Nusantara", acara ini akan menampilkan kolaborasi spektakuler antara seniman tradisional dan modern, menciptakan harmoni yang memukau antara warisan budaya dan inovasi kreatif masa kini.</p>
 
                                     <div class="mil-about-quote">
-                                        <div class="mil-avatar mil-up">
-                                            <img src="img/faces/2.jpg" alt="Art Director">
-                                        </div>
                                         <h6 class="mil-quote mil-up">"Mari bersama <span class="mil-thin">membangkitkan</span> semangat <span class="mil-thin">Nusantara</span>"</h6>
                                     </div>
                                 </div>
@@ -248,11 +245,11 @@
                                             <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;"><span class="mil-accent">*</span> The founders of our agency</p>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/3.png" alt="Team member">
+                                                <img src="img/faces/3.jpg" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">Hasna Nailah S.</a></h5>
-                                                        <p class="mil-link mil-light-soft mil-mb-10">Sekretaris</p>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="home-2.phpteam.php">M. Zidan M</a></h5>
+                                                        <p class="mil-link mil-light-soft mil-mb-10">Pubdok</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
@@ -443,7 +440,7 @@
                                         <h5 class="mil-muted mil-mb-30">GET TICKET NOW</h5>
                                         <h3 class="mil-mb-30 mil-muted" style="text-transform: uppercase;">Join us for unforgottable moment</h3>
                                         </p>
-                                        <a href="booking.php" class="mil-button mil-arrow-place">
+                                        <a href="booking.php" target="_blank" class="mil-button mil-arrow-place">
                                             <span>Beli Sekarang</span>
                                         </a>
                                     </div>

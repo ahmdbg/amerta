@@ -200,7 +200,7 @@
                                 <input type="text" id="name" name="name" placeholder="What's your name" required>
                             </div>
                             <div class="col-lg-12 mil-up">
-                                <textarea id="message" name="message" placeholder="Tell us about our project" required></textarea>
+                                <textarea id="message" name="message" placeholder="Tell us about our event" required></textarea>
                             </div>
                             <div class="col-lg-8">
                                 <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We will respond to you via WhatsApp.</p>
