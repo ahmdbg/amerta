@@ -131,12 +131,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <style>
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec, #bcccdc);
             background-size: 400% 400%;
             animation: aurora 15s ease infinite;
             min-height: 100vh;
             margin: 0;
             font-family: 'Poppins', sans-serif;
+            color: #333;
         }
 
         @keyframes aurora {
@@ -162,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container py-5 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
 
         <!-- form container -->
-        <div class="booking-container d-flex rounded-4 shadow-lg overflow-hidden" style="max-width: 900px; width: 100%; background: #2d3250;">
+        <div class="booking-container d-flex rounded-4 shadow-lg overflow-hidden" style="max-width: 900px; width: 100%; background: #f8f9fa;">
 
             <!-- left form side -->
 
@@ -171,17 +172,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- right image side -->
             <div class="form-left p-5" style="flex: 1 1 50%;">
 
-                <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
+                <h3 class="form-title mb-4 fw-semibold text-dark text-center">Registration form</h3>
 
                 <form id="bookingForm" class="booking-form" method="POST" novalidate>
                     <div class="mb-3">
                         <label for="nama_wali" class="form-label required">Nama Wali</label>
-                        <input type="text" class="form-control form-control-dark" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
+                        <input type="text" class="form-control" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label required">Jenis Kelamin</label>
-                        <select class="form-select form-select-dark" name="jenis_kelamin" id="jenis_kelamin" required>
+                        <select class="form-select" name="jenis_kelamin" id="jenis_kelamin" required>
                             <option value="">Pilih Jenis Kelamin</option>
                             <option value="L">Laki-laki</option>
                             <option value="P">Perempuan</option>
@@ -196,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="mb-3" id="subkelas-container" style="display:none;">
-                        <label class="form-label required d-block">Subkelas</label>
+                        <label class="form-label required d-block"></label>
                         <div id="subkelas-options" class="d-flex flex-wrap gap-3">
                             <!-- Subkelas checkboxes will be dynamically inserted here -->
                         </div>
@@ -206,14 +207,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="mb-3">
                         <label for="nama_murid" class="form-label required">Nama Santri</label>
-                        <select class="form-select form-select-dark" name="nama_murid" id="nama_murid" required disabled>
+                        <select class="form-select" name="nama_murid" id="nama_murid" required disabled>
                             <option value="">Pilih Santri</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label for="status_menginap" class="form-label required">Status Menginap</label>
-                        <select class="form-select form-select-dark" name="status_menginap" id="status_menginap" required>
+                        <select class="form-select" name="status_menginap" id="status_menginap" required>
                             <option value="">Pilih Status Menginap</option>
                             <option value="Menginap">Menginap</option>
                             <option value="Tidak menginap">Tidak Menginap</option>
@@ -222,10 +223,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="mb-4">
                         <label for="no_wa" class="form-label required">Nomor WhatsApp</label>
-                        <input type="tel" class="form-control form-control-dark" id="no_wa" name="no_wa" placeholder="Contoh: 628123456789" required pattern="628[0-9]{9,13}">
+                        <input type="tel" class="form-control" id="no_wa" name="no_wa" placeholder="Contoh: 628123456789" required pattern="628[0-9]{9,13}">
                     </div>
 
-                    <button type="submit" class="btn btn-orange w-100 text-uppercase fw-semibold">
+                    <button type="submit" class="btn btn-primary w-100 text-uppercase fw-semibold">
                         Booking Sekarang
                     </button>
                 </form>
@@ -242,9 +243,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             '7': ['7A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
             '8': ['A', 'B', 'C', 'D', 'E', 'F'],
             '9': ['A', 'B', 'C', 'D', 'E'],
-            '10': ['A', 'B', 'C', 'D'],
-            '11': ['A', 'B', 'C', 'D'],
-            '12': ['A', 'B', 'C', 'D']
+            '10': [' A', ' B', ' C', ' D'],
+            '11': [' A', ' B', ' C', ' D'],
+            '12': [' A', ' B', ' C', ' D']
         };
 
         const kelasUtamaContainer = document.getElementById('kelas-utama-options');
