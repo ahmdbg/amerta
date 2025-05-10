@@ -433,8 +433,17 @@
                                 </div>
                             </div>
 
-                            <div style="display: flex; justify-content: center; align-items: center;">
-                                <div class="col-lg-4" style="text-align: center; width: max-content;">
+                            <!-- Countdown Timer -->
+                            <div id="countdown" data-target-date="2025-05-10T20:30:00" style="text-align: center; font-size: 2rem; color: white; margin-bottom: 30px;">
+                                <span id="days">00</span> days 
+                                <span id="hours">00</span> hours 
+                                <span id="minutes">00</span> minutes 
+                                <span id="seconds">00</span> seconds
+                            </div>
+
+                            <!-- Tickets Content (hidden initially) -->
+                            <div id="tickets-content" style="display: none; justify-content: center; align-items: center;">
+                                <div class="col-lg-4" style="text-align: center; width: max-content; margin: 0 auto;">
                                     <div class="mil-service-card-sm mil-mb-30 mil-up">
                                         <p class="mil-light-soft mil-mb-30">
                                         <h5 class="mil-muted mil-mb-30">GET TICKET NOW</h5>
@@ -612,6 +621,44 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
 
+    <script>
+        // Get the countdown target date from a data attribute or default to 7 days from now
+        var countdownElement = document.getElementById('countdown');
+        var targetDateStr = countdownElement.getAttribute('data-target-date');
+        var countDownDate;
+
+        if (targetDateStr) {
+            countDownDate = new Date(targetDateStr);
+        } else {
+            countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 7);
+        }
+
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate.getTime() - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the elements with id
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            // If the count down is finished, show tickets content and hide countdown
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("tickets-content").style.display = "flex";
+            }
+        }, 1000);
+    </script>
 </body>
 
 

@@ -122,99 +122,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- bootstrap grid css -->
-    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
-    <!-- font awesome css -->
-    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
-    <!-- swiper css -->
-    <link rel="stylesheet" href="css/plugins/swiper.min.css">
-    <!-- fancybox css -->
-    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
-    <!-- ashley scss -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/booking-form.css">
     <!-- page name -->
     <title>Amerta | Booking</title>
 
     <style>
-        /* Updated countdown styles */
-        .mil-countdown {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .mil-countdown .countdown-item {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px 20px;
-            border-radius: 15px;
-            min-width: 150px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .mil-countdown .countdown-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .mil-countdown .countdown-item span {
-            font-size: 56px;
-            font-weight: 700;
-            color: #333;
-            display: block;
-            text-align: center;
-            line-height: 1;
-            margin-bottom: 10px;
-            font-family: 'Arial', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .mil-countdown .countdown-item p {
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background-size: 400% 400%;
+            animation: aurora 15s ease infinite;
+            min-height: 100vh;
             margin: 0;
-            font-size: 18px;
-            color: #666;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .mil-countdown {
-                gap: 15px;
-                flex-wrap: wrap;
+        @keyframes aurora {
+            0% {
+                background-position: 0% 50%;
             }
 
-            .mil-countdown .countdown-item {
-                min-width: 120px;
-                padding: 20px 15px;
+            50% {
+                background-position: 100% 50%;
             }
 
-            .mil-countdown .countdown-item span {
-                font-size: 42px;
-            }
-
-            .mil-countdown .countdown-item p {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .mil-countdown .countdown-item {
-                min-width: 90px;
-                padding: 15px 10px;
-            }
-
-            .mil-countdown .countdown-item span {
-                font-size: 32px;
-            }
-
-            .mil-countdown .countdown-item p {
-                font-size: 14px;
+            100% {
+                background-position: 0% 50%;
             }
         }
     </style>
@@ -224,292 +159,217 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
     <!-- wrapper -->
-    <div class="mil-wrapper" id="top">
+    <div class="container py-5 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
 
-        <!-- cursor -->
-        <div class="mil-ball">
-            <span class="mil-icon-1">
-                <svg viewBox="0 0 128 128">
-                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2-1.2-1.2-3.1,0-4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
-                </svg>
-            </span>
-            <div class="mil-more-text">More</div>
-            <div class="mil-choose-text">Сhoose</div>
-        </div>
-        <!-- cursor end -->
+        <!-- form container -->
+        <div class="booking-container d-flex rounded-4 shadow-lg overflow-hidden" style="max-width: 900px; width: 100%; background: #2d3250;">
 
+            <!-- left form side -->
 
-        <!-- scrollbar progress -->
-        <div class="mil-progress-track">
-            <div class="mil-progress"></div>
-        </div>
-        <!-- scrollbar progress end -->
+            <div class="form-right d-none d-md-block" style="flex: 1 1 50%; background: url('img/works/2.webp') center center/cover no-repeat; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+            </div>
+            <!-- right image side -->
+            <div class="form-left p-5" style="flex: 1 1 50%;">
 
-        <!-- menu -->
-        <?php include 'components/menu.php'; ?>
-        <!-- menu -->
+                <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
 
-        <!-- curtain -->
-        <div class="mil-curtain"></div>
-        <!-- curtain end -->
-
-        <!-- frame -->
-        <?php include "components/frame.php"; ?>
-        <!-- frame end -->
-
-        <!-- content -->
-        <div class="mil-content">
-            <div id="swupMain" class="mil-main-transition">
-
-                <!-- banner -->
-                <div class="mil-inner-banner mil-p-0-120">
-                    <div class="mil-banner-content mil-center mil-up">
-                        <div class="container">
-                            <ul class="mil-breadcrumbs mil-center mil-mb-60">
-                                <li><a href="index.php">Homepage</a></li>
-                                <li><a href="booking.php">Booking</a></li>
-                            </ul>
-                            <h1 class="mil-mb-60">Book Your Tickets</h1>
-                            <a href="#booking" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
-                                <span>Book Now</span>
-                            </a>
-                        </div>
+                <form id="bookingForm" class="booking-form" method="POST" novalidate>
+                    <div class="mb-3">
+                        <label for="nama_wali" class="form-label required">Nama Wali</label>
+                        <input type="text" class="form-control form-control-dark" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
                     </div>
-                </div>
-                <!-- banner end -->
 
-
-                <!-- booking form -->
-                <section id="booking">
-                    <div class="container mil-p-120-90">
-                        <h3 class="mil-center mil-up mil-mb-120">Form Pembelian Tiket</h3>
-                        <form id="bookingForm" class="row align-items-center booking-form" method="POST">
-                            <div class="col-lg-6 mil-up form-group">
-                                <label for="nama_wali">Nama Wali</label>
-                                <input type="text" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
-                            </div>
-
-                            <div class="col-lg-6 mil-up form-group">
-                                <label for="jenis_kelamin">Jenis Kelamin</label>
-                                <select name="jenis_kelamin" id="jenis_kelamin" required>
-                                    <option value="">Pilih Jenis Kelamin</option>
-                                    <option value="L">Laki-laki</option>
-                                    <option value="P">Perempuan</option>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-6 mil-up form-group">
-                                <label for="kelas_murid">Kelas</label>
-                                <select name="kelas_murid" id="kelas_murid" required onchange="loadSantri(this.value)">
-                                    <option value="">Pilih Kelas</option>
-                                    <?php
-                                    $kelas = [
-                                        '7' => ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                                        '8' => ['A', 'B', 'C', 'D', 'E', 'F'],
-                                        '9' => ['A', 'B', 'C', 'D', 'E'],
-                                        '10 ' => ['A', 'B', 'C', 'D'],
-                                        '11 ' => ['A', 'B', 'C', 'D'],
-                                        '12 ' => ['A', 'B', 'C', 'D']
-                                    ];
-                                    foreach ($kelas as $tingkat => $subkelas) {
-                                        foreach ($subkelas as $suffix) {
-                                            $kelas_id = $tingkat . $suffix;
-                                            echo "<option value=\"$kelas_id\">{$kelas_id}</option>";
-                                        }
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-6 mil-up form-group">
-                                <label for="nama_murid">Nama Santri</label>
-                                <select name="nama_murid" id="nama_murid" required disabled>
-                                    <option value="">Pilih Santri</option>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-6 mil-up form-group">
-                                <label for="status_menginap">Status Menginap</label>
-                                <select name="status_menginap" id="status_menginap" required>
-                                    <option value="">Pilih Status Menginap</option>
-                                    <option value="Menginap">Menginap</option>
-                                    <option value="Tidak menginap">Tidak Menginap</option>
-                                </select>
-                            </div>
-
-                            <div class="col-lg-6 mil-up form-group">
-                                <label for="no_wa">Nomor WhatsApp</label>
-                                <input type="tel" id="no_wa" name="no_wa" placeholder="Contoh: 628123456789" required pattern="628[0-9]{9,13}">
-                            </div>
-
-                            <div class="col-lg-8">
-                                <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> Kami akan menghubungi Anda melalui WhatsApp.</p>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="mil-adaptive-right mil-up mil-mb-30">
-                                    <button type="submit" class="mil-button mil-arrow-place">
-                                        <span>Booking Ticket</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="mb-3">
+                        <label for="jenis_kelamin" class="form-label required">Jenis Kelamin</label>
+                        <select class="form-select form-select-dark" name="jenis_kelamin" id="jenis_kelamin" required>
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
                     </div>
-                </section>
-                <!-- booking form end -->
 
-                <!-- hidden elements -->
-                <div class="mil-hidden-elements">
-                    <div class="mil-dodecahedron">
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="mil-pentagon">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                    <div class="mb-3 kelas-utama-group">
+                        <label class="form-label required d-block">Kelas Utama</label>
+                        <div id="kelas-utama-options" class="d-flex flex-wrap gap-3">
+                            <!-- Kelas Utama checkboxes will be dynamically inserted here -->
                         </div>
                     </div>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mil-arrow">
-                        <path d="M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z" />
-                    </svg>
+                    <div class="mb-3" id="subkelas-container" style="display:none;">
+                        <label class="form-label required d-block">Subkelas</label>
+                        <div id="subkelas-options" class="d-flex flex-wrap gap-3">
+                            <!-- Subkelas checkboxes will be dynamically inserted here -->
+                        </div>
+                    </div>
 
-                    <svg width="250" viewBox="0 0 300 1404" fill="none" xmlns="http://www.w3.org/2000/svg" class="mil-lines">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 892L1 941H299V892C299 809.71 232.29 743 150 743C67.7096 743 1 809.71 1 892ZM0 942H300V892C300 809.157 232.843 742 150 742C67.1573 742 0 809.157 0 892L0 942Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 146V97L1 97V146C1 228.29 67.7096 295 150 295C232.29 295 299 228.29 299 146ZM300 96L0 96V146C0 228.843 67.1573 296 150 296C232.843 296 300 228.843 300 146V96Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 1H1V1403H299V1ZM0 0V1404H300V0H0Z" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 -4.37115e-08L150 1404L149 1404L149 0L150 -4.37115e-08Z" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 1324C232.29 1324 299 1257.29 299 1175C299 1092.71 232.29 1026 150 1026C67.7096 1026 1 1092.71 1 1175C1 1257.29 67.7096 1324 150 1324ZM150 1325C232.843 1325 300 1257.84 300 1175C300 1092.16 232.843 1025 150 1025C67.1573 1025 0 1092.16 0 1175C0 1257.84 67.1573 1325 150 1325Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M300 1175H0V1174H300V1175Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M150 678C232.29 678 299 611.29 299 529C299 446.71 232.29 380 150 380C67.7096 380 1 446.71 1 529C1 611.29 67.7096 678 150 678ZM150 679C232.843 679 300 611.843 300 529C300 446.157 232.843 379 150 379C67.1573 379 0 446.157 0 529C0 611.843 67.1573 679 150 679Z" class="mil-move" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M299 380H1V678H299V380ZM0 379V679H300V379H0Z" class="mil-move" />
-                    </svg>
-                </div>
-                <!-- hidden elements end -->
+                    <input type="hidden" name="kelas_murid" id="kelas_murid" required>
+
+                    <div class="mb-3">
+                        <label for="nama_murid" class="form-label required">Nama Santri</label>
+                        <select class="form-select form-select-dark" name="nama_murid" id="nama_murid" required disabled>
+                            <option value="">Pilih Santri</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="status_menginap" class="form-label required">Status Menginap</label>
+                        <select class="form-select form-select-dark" name="status_menginap" id="status_menginap" required>
+                            <option value="">Pilih Status Menginap</option>
+                            <option value="Menginap">Menginap</option>
+                            <option value="Tidak menginap">Tidak Menginap</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="no_wa" class="form-label required">Nomor WhatsApp</label>
+                        <input type="tel" class="form-control form-control-dark" id="no_wa" name="no_wa" placeholder="Contoh: 628123456789" required pattern="628[0-9]{9,13}">
+                    </div>
+
+                    <button type="submit" class="btn btn-orange w-100 text-uppercase fw-semibold">
+                        Booking Sekarang
+                    </button>
+                </form>
 
             </div>
-        </div>
-        <!-- content -->
-    </div>
-    <!-- wrapper end -->
 
-    <!-- jQuery js -->
-    <script src="js/plugins/jquery.min.js"></script>
-    <!-- swup js -->
-    <script src="js/plugins/swup.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/plugins/swiper.min.js"></script>
-    <!-- fancybox js -->
-    <script src="js/plugins/fancybox.min.js"></script>
-    <!-- gsap js -->
-    <script src="js/plugins/gsap.min.js"></script>
-    <!-- scroll smoother -->
-    <script src="js/plugins/smooth-scroll.js"></script>
-    <!-- scroll trigger js -->
-    <script src="js/plugins/ScrollTrigger.min.js"></script>
-    <!-- scroll to js -->
-    <script src="js/plugins/ScrollTo.min.js"></script>
-    <!-- ashley js -->
-    <script src="js/main.js"></script>
+        </div>
+
+    </div>
 
     <script>
+        const kelasUtamaList = ['7', '8', '9', '10', '11', '12'];
+        const subkelasMap = {
+            '7': ['7A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            '8': ['A', 'B', 'C', 'D', 'E', 'F'],
+            '9': ['A', 'B', 'C', 'D', 'E'],
+            '10': ['A', 'B', 'C', 'D'],
+            '11': ['A', 'B', 'C', 'D'],
+            '12': ['A', 'B', 'C', 'D']
+        };
+
+        const kelasUtamaContainer = document.getElementById('kelas-utama-options');
+        const subkelasContainer = document.getElementById('subkelas-options');
+        const subkelasWrapper = document.getElementById('subkelas-container');
+        const hiddenInput = document.getElementById('kelas_murid');
+        const namaMuridSelect = document.getElementById('nama_murid');
+
+        // Initialize kelas utama checkboxes
+        kelasUtamaList.forEach(mainClass => {
+            const checkboxId = `kelas_utama_${mainClass}`;
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = checkboxId;
+            checkbox.name = 'kelas_utama';
+            checkbox.value = mainClass;
+            checkbox.classList.add('form-check-input');
+            checkbox.addEventListener('change', () => {
+                // Only allow one kelas utama checkbox to be selected at a time
+                document.querySelectorAll('input[name="kelas_utama"]').forEach(cb => {
+                    if (cb !== checkbox) cb.checked = false;
+                });
+
+                if (checkbox.checked) {
+                    showSubkelas(mainClass);
+                } else {
+                    subkelasWrapper.style.display = 'none';
+                    subkelasContainer.innerHTML = '';
+                    hiddenInput.value = '';
+                    namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
+                    namaMuridSelect.disabled = true;
+                }
+            });
+
+            const label = document.createElement('label');
+            label.htmlFor = checkboxId;
+            label.classList.add('form-check-label', 'me-3', 'mb-0');
+            label.style.cursor = 'pointer';
+            label.textContent = mainClass;
+
+            const div = document.createElement('div');
+            div.classList.add('form-check');
+            div.appendChild(checkbox);
+            div.appendChild(label);
+
+            kelasUtamaContainer.appendChild(div);
+        });
+
+        function showSubkelas(mainClass) {
+            // Reset subkelas options and hidden input
+            subkelasContainer.innerHTML = '';
+            hiddenInput.value = '';
+            namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
+            namaMuridSelect.disabled = true;
+
+            if (!mainClass || !subkelasMap[mainClass]) {
+                subkelasWrapper.style.display = 'none';
+                hiddenInput.required = false;
+                return;
+            }
+
+            subkelasWrapper.style.display = 'block';
+            hiddenInput.required = true;
+
+            subkelasMap[mainClass].forEach(sub => {
+                const checkboxId = `subkelas_${mainClass}${sub}`;
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = checkboxId;
+                checkbox.name = 'subkelas';
+                checkbox.value = sub;
+                checkbox.classList.add('form-check-input');
+                checkbox.addEventListener('change', () => {
+                    // Only allow one checkbox to be selected at a time
+                    document.querySelectorAll('input[name="subkelas"]').forEach(cb => {
+                        if (cb !== checkbox) cb.checked = false;
+                    });
+
+                    if (checkbox.checked) {
+                        hiddenInput.value = mainClass + sub;
+                        loadSantri(hiddenInput.value);
+                    } else {
+                        hiddenInput.value = '';
+                        namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
+                        namaMuridSelect.disabled = true;
+                    }
+                });
+
+                const label = document.createElement('label');
+                label.htmlFor = checkboxId;
+                label.classList.add('form-check-label', 'me-3', 'mb-0');
+                label.style.cursor = 'pointer';
+                label.textContent = sub;
+
+                const div = document.createElement('div');
+                div.classList.add('form-check');
+                div.appendChild(checkbox);
+                div.appendChild(label);
+
+                subkelasContainer.appendChild(div);
+            });
+        }
+
         function loadSantri(kelas) {
-            const santriSelect = document.getElementById('nama_murid');
-            santriSelect.disabled = true;
-            santriSelect.innerHTML = '<option value="">Loading...</option>';
+            namaMuridSelect.disabled = true;
+            namaMuridSelect.innerHTML = '<option value="">Loading...</option>';
 
             fetch(`get_santri.php?kelas=${kelas}`)
                 .then(response => response.json())
                 .then(data => {
-                    santriSelect.innerHTML = '<option value="">Pilih Santri</option>';
+                    namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
                     data.forEach(santri => {
-                        santriSelect.innerHTML += `<option value="${santri.nama}">${santri.nama}</option>`;
+                        namaMuridSelect.innerHTML += `<option value="${santri.nama}">${santri.nama}</option>`;
                     });
-                    santriSelect.disabled = false;
+                    namaMuridSelect.disabled = false;
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    santriSelect.innerHTML = '<option value="">Error loading santri</option>';
+                    namaMuridSelect.innerHTML = '<option value="">Error loading santri</option>';
                 });
         }
     </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

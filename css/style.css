@@ -1386,7 +1386,7 @@ frame
   .mil-frame .mil-frame-top .mil-menu-btn span,
   .mil-frame .mil-frame-top .mil-menu-btn span:after,
   .mil-frame .mil-frame-top .mil-menu-btn span:before {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255);
   }
 }
 
