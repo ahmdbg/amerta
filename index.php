@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/plugins/fancybox.min.css">
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/countdown.css">
     <!-- page name -->
     <title>Amerta | Home</title>
     <!-- favicon -->
@@ -425,11 +426,23 @@
                             </div>
 
                             <!-- Countdown Timer -->
-                            <div id="countdown" data-target-date="2025-06-10T09:30:00" style="text-align: center; font-size: 2rem; color: white; margin-bottom: 30px;">
-                                <span id="days">00</span> days 
-                                <span id="hours">00</span> hours 
-                                <span id="minutes">00</span> minutes 
-                                <span id="seconds">00</span> seconds
+                            <div id="countdown" class="countdown" data-target-date="2025-05-11T09:30:00">
+                                <div class="countdown-item">
+                                    <span id="days" class="countdown-number">00</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="hours" class="countdown-number">00</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="minutes" class="countdown-number">00</span>
+                                    <span class="countdown-label">Minutes</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="seconds" class="countdown-number">00</span>
+                                    <span class="countdown-label">Seconds</span>
+                                </div>
                             </div>
 
                             <!-- Tickets Content (hidden initially) -->
