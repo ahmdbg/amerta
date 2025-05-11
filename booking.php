@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <select class="form-select" name="status_menginap" id="status_menginap" required>
                             <option value="">Pilih Status Menginap</option>
                             <option value="Menginap">Menginap</option>
-                            <option value="Tidak menginap">Tidak Menginap</option>
+                            <option value="Tidak">Tidak Menginap</option>
                         </select>
                     </div>
 
