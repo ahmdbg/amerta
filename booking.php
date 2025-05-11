@@ -3,7 +3,7 @@ require_once 'vendor/autoload.php';
 include 'config/db.php';
 
 // Check total visitors count
-$visitor_limit = 60;
+$visitor_limit = 95;
 $visitor_count = 0;
 $count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM pengunjung");
 if ($count_result) {
