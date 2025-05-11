@@ -3,7 +3,7 @@ require_once 'vendor/autoload.php';
 include 'config/db.php';
 
 // Check total visitors count
-$visitor_limit = 95;
+$visitor_limit = 90;
 $visitor_count = 0;
 $count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM pengunjung");
 if ($count_result) {
@@ -198,7 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="mb-3 kelas-utama-group">
-                        <label class="form-label required d-block">Kelas Utama</label>
+                        <label class="form-label required d-block">Kelas</label>
                         <div id="kelas-utama-options" class="d-flex flex-wrap gap-3">
                             <!-- Kelas Utama checkboxes will be dynamically inserted here -->
                         </div>
@@ -231,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="mb-4">
                         <label for="no_wa" class="form-label required">Nomor WhatsApp</label>
-                        <input type="tel" class="form-control" id="no_wa" name="no_wa" placeholder="Contoh: 628123456789" required pattern="628[0-9]{9,13}">
+                        <input type="tel" class="form-control" id="no_wa" name="no_wa" placeholder="Contoh: 08123456789" required pattern="628[0-9]{9,13}">
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100 text-uppercase fw-semibold" id="bookingButton">
