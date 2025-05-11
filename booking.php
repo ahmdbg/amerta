@@ -1,9 +1,9 @@
 <?php
 require_once 'vendor/autoload.php';
-include './config/db.php';
+include 'config/db.php';
 
 // Check total visitors count
-$visitor_limit = 8;
+$visitor_limit = 95;
 $visitor_count = 0;
 $count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM pengunjung");
 if ($count_result) {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Determine seat range based on gender
-        $gender_range = ($data['jenis_kelamin'] === 'L') ? [1, 125] : [126, 250];
+        $gender_range = ($data['jenis_kelamin'] === 'L') ? [11, 120] : [121, 211];
 
         // Find available seat using a single query
         $sql_seat = "SELECT MIN(a.seat) as available_seat
@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <style>
         body {
-            background: linear-gradient(135deg, #f0f4f8, #d9e2ec, #bcccdc);
+            background: #343434;
             background-size: 400% 400%;
             animation: aurora 15s ease infinite;
             min-height: 100vh;
@@ -161,19 +161,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #333;
         }
 
-        @keyframes aurora {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
     </style>
 
 </head>
@@ -186,14 +173,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- form container -->
         <div class="booking-container d-flex rounded-4 shadow-lg overflow-hidden" style="max-width: 900px; width: 100%; background: #f8f9fa;">
 
-            <!-- left form side -->
+            <!-- left image side -->
 
             <div class="form-right d-none d-md-block" style="flex: 1 1 50%; background: url('img/works/2.webp') center center/cover no-repeat; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
             </div>
-            <!-- right image side -->
+            <!-- right side -->
             <div class="form-left p-5" style="flex: 1 1 50%;">
 
-                <h3 class="form-title mb-4 fw-semibold text-dark text-center">Registration form</h3>
+                <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
 
                 <form id="bookingForm" class="booking-form" method="POST" novalidate>
                     <div class="mb-3">

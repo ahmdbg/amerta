@@ -143,7 +143,7 @@
                                 </div>
 
                                 <div class="mil-complex-text justify-content-center mil-up mil-mb-15">
-                                    <span class="mil-text-image"><img src="img/photo/2.jpg" alt="event"></span>
+                                    <span class="mil-text-image"><img src="img/photo/2.webp" alt="event"></span>
                                     <h2 class="mil-h1 mil-muted mil-center">Pertunjukan <span class="mil-thin">Spektakuler</span></h2>
 
                                 </div>
@@ -410,6 +410,15 @@
                                 </a>
 
                             </div>
+                            <div class="col-lg-4">
+
+                                <a href="publication.php" class="mil-blog-card mil-mb-60">
+                                    <div class="mil-cover-frame mil-up">
+                                        <img src="img/works/3.webp" alt="cover">
+                                    </div>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -426,7 +435,7 @@
                             </div>
 
                             <!-- Countdown Timer -->
-                            <div id="countdown" class="countdown" data-target-date="2025-05-11T09:30:00">
+                            <div id="countdown" class="countdown" data-target-date="2025-05-11T20:30:00">
                                 <div class="countdown-item">
                                     <span id="days" class="countdown-number">00</span>
                                     <span class="countdown-label">Days</span>
