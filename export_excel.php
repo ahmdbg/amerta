@@ -13,12 +13,12 @@ $sheet = $spreadsheet->getActiveSheet();
 // Set column headers
 $sheet->setCellValue('A1', 'No');
 $sheet->setCellValue('B1', 'Nama');
-$sheet->setCellValue('C1', 'Email');
-$sheet->setCellValue('D1', 'Telepon');
-$sheet->setCellValue('E1', 'Alamat');
-$sheet->setCellValue('F1', 'Tanggal');
-$sheet->setCellValue('G1', 'Keperluan');
-$sheet->setCellValue('G1', 'Keperluan');
+$sheet->setCellValue('C1', 'Jk');
+$sheet->setCellValue('D1', 'Kelas santri');
+$sheet->setCellValue('E1', 'nama murid');
+$sheet->setCellValue('F1', 'status');
+$sheet->setCellValue('G1', 'nomor wa');
+$sheet->setCellValue('H1', 'nomor kursi');
 
 // Style the header row
 $headerStyle = [
@@ -43,9 +43,9 @@ while ($data = mysqli_fetch_assoc($result)) {
     $sheet->setCellValue('C' . $row, $data['jk']);
     $sheet->setCellValue('D' . $row, $data['kelas']);
     $sheet->setCellValue('E' . $row, $data['nama_murid']);
-    $sheet->setCellValue('G' . $row, $data['status']);
+    $sheet->setCellValue('F' . $row, $data['status']);
     $sheet->setCellValue('G' . $row, $data['no_wa']);
-    $sheet->setCellValue('G' . $row, $data['nomor_kursi']);
+    $sheet->setCellValue('H' . $row, $data['nomor_kursi']);
     $row++;
 }
 
