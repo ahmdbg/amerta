@@ -5,14 +5,6 @@
                 <div class="col-md-4 col-lg-4 mil-mb-60">
 
                     <div class="mil-muted mil-logo mil-up mil-mb-30">Amerta - Bangkitkan Gelora Nusantara</div>
-
-                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe to our newsletter:</p>
-
-                    <form class="mil-subscribe-form mil-up">
-                        <input type="text" placeholder="Enter your email">
-                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
-                    </form>
-
                 </div>
                 <div class="col-md-7 col-lg-6">
                     <div class="row justify-content-end">

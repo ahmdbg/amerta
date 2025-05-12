@@ -480,16 +480,37 @@
                     <div class="swiper-container mil-infinite-show mil-up">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg" alt="logo"></a>
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/1.webp" alt="logo" style="height: 100px; object-fit: cover"></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg" alt="logo"></a>
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/2.webp" alt="logo" style="height: 100px; object-fit: cover"></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg" alt="logo"></a>
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/3.webp" alt="logo" style="height: 100px; object-fit: cover"></a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg" alt="logo"></a>
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/4.webp" alt="logo" style="height: 100px; object-fit: cover"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/5.webp" alt="logo" style="height: 100px; object-fit: cover;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/6.webp" alt="logo" style="height: 100px; object-fit: cover;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/7.webp" alt="logo" style="height: 100px; object-fit: cover;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/8.webp" alt="logo" style="height: 100px; object-fit: cover;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/9.webp" alt="logo" style="height: 100px; object-fit: cover;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/10.webp" alt="logo" style="height:100px; object-fit: cover;"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/11.webp" alt="logo" style="height:100px; object-fit: cover;"></a>
                             </div>
                         </div>
                     </div>
