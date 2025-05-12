@@ -463,7 +463,7 @@
                                         <h3 class="mil-mb-30 mil-muted" style="text-transform: uppercase;">Join us for unforgottable moment</h3>
                                         </p>
                                         <a href="booking.php" target="_blank" class="mil-button mil-arrow-place">
-                                            <span>Beli Sekarang</span>
+                                            <span>Pesan Sekarang</span>
                                         </a>
                                     </div>
                                 </div>

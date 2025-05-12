@@ -12,14 +12,16 @@ function sendWhatsAppMessage($data, $seat_number)
         // Prepare WhatsApp message
         $to = $data['no_wa'];
         $body = "Terima kasih telah melakukan pemesanan tiket AMERTA!\n\n"
-            . "Detail Pemesanan:\n"
+            . "Detail Pemesanan Abi/Ummi sebagai berikut\n\n"
             . "Nama Wali: {$data['nama_wali']}\n"
             . "Nama Santri: {$data['nama_murid']}\n"
             . "Kelas: {$data['kelas_murid']}\n"
             . "Status: {$data['status_menginap']}\n"
             . "Nomor Kursi: {$seat_number}\n\n"
-            . "Silakan lakukan pembayaran untuk mengkonfirmasi tiket Anda.\n"
-            . "Untuk informasi lebih lanjut, silakan hubungi admin: 085640054840";
+            . "Agar tidak tertinggal informasi terbaru terkait Amerta Night Show 2025, silakan Abi/Ummi dapat bergabung dalam grup WhatsApp melalui tautan berikut:\n\n"
+            . "https://chat.whatsapp.com/L3AR71DGMYFIB474PZiKuu\n\n"
+            . "Untuk informasi lebih lanjut, silakan hubungi admin:\n"
+            . "+6281229175559 \n\n";
 
         // Send WhatsApp message
         $response = $client->sendChatMessage($to, $body);

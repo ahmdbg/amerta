@@ -4,12 +4,12 @@
             <div class="row justify-content-between">
                 <div class="col-md-4 col-lg-4 mil-mb-60">
 
-                    <div class="mil-muted mil-logo mil-up mil-mb-30">Amerta.</div>
+                    <div class="mil-muted mil-logo mil-up mil-mb-30">Amerta - Bangkitkan Gelora Nusantara</div>
 
-                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
+                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe to our newsletter:</p>
 
                     <form class="mil-subscribe-form mil-up">
-                        <input type="text" placeholder="Enter our email">
+                        <input type="text" placeholder="Enter your email">
                         <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
                     </form>
 
@@ -60,16 +60,9 @@
 
                         <div class="col-md-6 col-lg-5 mil-mb-60">
 
-                            <h6 class="mil-muted mil-up mil-mb-30">Canada</h6>
+                            <h6 class="mil-muted mil-up mil-mb-30">PPTQ Abi-Ummi</h6>
 
-                            <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span class="mil-no-wrap">+51 174 705 812</span></p>
-
-                        </div>
-                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                            <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>
-
-                            <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span class="mil-no-wrap">+31 174 705 811</span></p>
+                            <p class="mil-light-soft mil-up">Yayasan Abi-Ummi, Jl. Tol Semarang - Solo No.35, Keboan, Tanduk, Ampel, Boyolali Regency, Central Java 57352<span class="mil-no-wrap">+51 174 705 812</span></p>
 
                         </div>
                     </div>
@@ -86,7 +79,7 @@
                                 <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
                             </ul>
                         </div>
-                        <p class="mil-light-soft mil-up">© Copyright 2023 - Mil. All Rights Reserved.</p>
+                        <p class="mil-light-soft mil-up">© Copyright 2023 - Amerta. Bangkitkan Gelora Nusantara. All Rights Reserved.</p>
                     </div>
 
                 </div>
