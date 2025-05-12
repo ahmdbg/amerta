@@ -435,7 +435,7 @@
                             </div>
 
                             <!-- Countdown Timer -->
-                            <div id="countdown" class="countdown" data-target-date="2025-05-11T20:00:00">
+                            <div id="countdown" class="countdown" data-target-date="2025-05-17T20:00:00">
                                 <div class="countdown-item">
                                     <span id="days" class="countdown-number">00</span>
                                     <span class="countdown-label">Days</span>
