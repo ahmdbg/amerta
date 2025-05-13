@@ -3121,10 +3121,6 @@ revievs
   background-image: url(../img/faces/customers/6.jpg);
 }
 
-.mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot.mil-slide-7 {
-  background-image: url(../img/faces/customers/7.jpg);
-}
-
 .mil-revi-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   -webkit-box-shadow: inset 0 0 0 4px #f47c3c;
   box-shadow: inset 0 0 0 4px #f47c3c;
@@ -3655,11 +3651,12 @@ portfolio
   transform: none;
 }
 
-.swiper-slide .mil-portfolio-item .mil-descr {
+ .mil-portfolio-item .mil-descr {
   pointer-events: none;
 }
 
-.swiper-slide.swiper-slide-active .mil-portfolio-item .mil-descr {
+
+.mil-portfolio-item .mil-descr {
   pointer-events: all;
 }
 

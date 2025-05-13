@@ -167,6 +167,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
 
+<?php
+// Removed PHP countdown visibility logic to rely solely on JavaScript
+?>
+
     <!-- wrapper -->
     <div class="container py-5 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
 
@@ -182,7 +186,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
 
-                <form id="bookingForm" class="booking-form" method="POST" novalidate>
+                <div id="countdownContainer" class="mb-4 text-center" style="font-size: 1.5rem; font-weight: bold; color: #fff;" data-target-date="2025-05-13T22:35:00">
+                    Waktu pendaftaran akan dibuka dalam: <span id="countdownTimer">--:--</span>
+                </div>
+
+                <form id="bookingForm" class="booking-form" method="POST" novalidate style="display:none;">
                     <div class="mb-3">
                         <label for="nama_wali" class="form-label required">Nama Wali</label>
                         <input type="text" class="form-control" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
@@ -385,7 +393,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         document.getElementById('bookingButton').addEventListener('click', function(event) {
             if (visitorCount >= visitorLimit) {
                 event.preventDefault();
-                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal 100. Pendaftaran ditutup.');
+                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup.');
             }
         });
 
@@ -399,6 +407,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 noWaInput.value = noWaValue;
             }
         });
+
+        // Countdown timer logic
+        (function() {
+            const countdownTimer = document.getElementById('countdownTimer');
+            const countdownContainer = document.getElementById('countdownContainer');
+            const bookingForm = document.getElementById('bookingForm');
+            const targetDateStr = countdownContainer.getAttribute('data-target-date');
+            const countDownDate = new Date(targetDateStr).getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                if (distance <= 0) {
+                    clearInterval(timerInterval);
+                    countdownContainer.style.display = 'none';
+                    bookingForm.style.display = 'block';
+                    return;
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Format as DD HH:MM:SS
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                countdownTimer.textContent = 
+                    `${days.toString().padStart(2, '0')} hari ` +
+                    `${hours.toString().padStart(2, '0')}:` +
+                    `${minutes.toString().padStart(2, '0')}:` +
+                    `${seconds.toString().padStart(2, '0')}`;
+            }
+
+            // Immediately check if countdown has passed and show form if so
+            if (Date.now() >= countDownDate) {
+                countdownContainer.style.display = 'none';
+                bookingForm.style.display = 'block';
+            } else {
+                updateTimer();
+                var timerInterval = setInterval(updateTimer, 1000);
+            }
+        })();
     </script>
 
     <!-- Bootstrap JS Bundle -->

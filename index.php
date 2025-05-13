@@ -360,13 +360,6 @@
                                                 <p class="mil-text-xl mil-up">I had the pleasure of working with this creative agency, and I must say, they truly impressed me. They consistently think outside the box, resulting in impressive and impactful work. I highly recommend this agency for their consistent delivery of exceptional creative solutions.</p>
                                             </div>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Sarah Newman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their exceptional talent and expertise. Their ability to think outside the box and bring unique ideas to life is truly impressive. With meticulous attention to detail, they consistently deliver visually stunning and impactful work.</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -435,27 +428,9 @@
                             </div>
 
                             <!-- Countdown Timer -->
-                            <div id="countdown" class="countdown" data-target-date="2025-05-17T20:00:00">
-                                <div class="countdown-item">
-                                    <span id="days" class="countdown-number">00</span>
-                                    <span class="countdown-label">Days</span>
-                                </div>
-                                <div class="countdown-item">
-                                    <span id="hours" class="countdown-number">00</span>
-                                    <span class="countdown-label">Hours</span>
-                                </div>
-                                <div class="countdown-item">
-                                    <span id="minutes" class="countdown-number">00</span>
-                                    <span class="countdown-label">Minutes</span>
-                                </div>
-                                <div class="countdown-item">
-                                    <span id="seconds" class="countdown-number">00</span>
-                                    <span class="countdown-label">Seconds</span>
-                                </div>
-                            </div>
 
                             <!-- Tickets Content (hidden initially) -->
-                            <div id="tickets-content" style="display: none; justify-content: center; align-items: center;">
+                            <div id="tickets-content" style=" justify-content: center; align-items: center;">
                                 <div class="col-lg-4" style="text-align: center; width: max-content; margin: 0 auto;">
                                     <div class="mil-service-card-sm mil-mb-30 mil-up">
                                         <p class="mil-light-soft mil-mb-30">
@@ -655,44 +630,6 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
 
-    <script>
-        // Get the countdown target date from a data attribute or default to 7 days from now
-        var countdownElement = document.getElementById('countdown');
-        var targetDateStr = countdownElement.getAttribute('data-target-date');
-        var countDownDate;
-
-        if (targetDateStr) {
-            countDownDate = new Date(targetDateStr);
-        } else {
-            countDownDate = new Date();
-            countDownDate.setDate(countDownDate.getDate() + 7);
-        }
-
-        // Update the count down every 1 second
-        var countdownfunction = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate.getTime() - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the elements with id
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-
-            // If the count down is finished, show tickets content and hide countdown
-            if (distance < 0) {
-                clearInterval(countdownfunction);
-                document.getElementById("countdown").style.display = "none";
-                document.getElementById("tickets-content").style.display = "flex";
-            }
-        }, 1000);
-    </script>
 </body>
 
 

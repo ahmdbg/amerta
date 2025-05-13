@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- bootstrap grid css -->
-    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- font awesome css -->
     <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
     <!-- swiper css -->
@@ -23,6 +23,197 @@
     <!-- page name -->
     <title>Amerta | Team</title>
 
+    <style>
+        /* Card style for images inside mil-reviews-slider */
+        .mil-reviews-slider .swiper-slide {
+            /* Remove grid layout from swiper-slide to avoid conflict with Swiper.js */
+            display: block !important;
+            padding: 10px 0;
+        }
+
+        .mil-reviews-slider .mil-review-frame {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 15px;
+        }
+
+        .mil-reviews-slider .team-card {
+            background: #1e1e2f;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 240px;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .mil-reviews-slider .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .mil-reviews-slider .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #f47c3c;
+        }
+
+        .mil-reviews-slider .team-card .name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .mil-reviews-slider .team-card .role {
+            font-size: 0.9rem;
+            color: #f47c3c;
+            margin-bottom: 10px;
+        }
+
+        .mil-reviews-slider .team-card .about {
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 15px;
+            min-height: 50px;
+        }
+
+        .mil-reviews-slider .team-card button {
+            background: #f47c3c;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .mil-reviews-slider .team-card button:hover {
+            background: #d96a2a;
+        }
+
+        @media (max-width: 992px) {
+            .mil-reviews-slider .mil-review-frame {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+                padding: 0 10px;
+            }
+
+            .mil-reviews-slider .team-card {
+                width: 200px;
+                padding: 18px;
+            }
+
+            .mil-reviews-slider .team-card img {
+                width: 90px;
+                height: 90px;
+                margin-bottom: 12px;
+            }
+
+            .mil-reviews-slider .team-card .name {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .mil-reviews-slider .team-card .role {
+                font-size: 0.85rem;
+            }
+
+            .mil-reviews-slider .team-card .about {
+                font-size: 0.8rem;
+                min-height: 45px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mil-reviews-slider .mil-review-frame {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 0 5px;
+            }
+
+            .mil-reviews-slider .team-card {
+                width: 180px;
+                padding: 15px;
+            }
+
+            .mil-reviews-slider .team-card img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+
+            .mil-reviews-slider .team-card .name {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .mil-reviews-slider .team-card .role {
+                font-size: 0.8rem;
+            }
+
+            .mil-reviews-slider .team-card .about {
+                font-size: 0.75rem;
+                min-height: 40px;
+            }
+        }
+</style>
+
+<style>
+    /* Fix swiper navigation arrows position */
+    .mil-slider-arrow {
+        top: 50% !important;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 35px;
+        background: rgba(244, 124, 60, 0.8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease;
+    }
+
+    .mil-slider-arrow:hover {
+        background: rgba(217, 106, 42, 0.9);
+    }
+
+    .mil-prev {
+        left: 10px !important;
+    }
+
+    .mil-revi-next {
+        right: 10px !important;
+    }
+
+    /* Fix menu active link style */
+    .mil-main-menu .mil-active > a {
+        color: #f47c3c !important;
+        font-weight: 700;
+    }
+
+    /* Fix footer menu active link style */
+    footer .mil-footer-menu .mil-active > a {
+        color: #f47c3c !important;
+        font-weight: 700;
+    }
+</style>
 </head>
 
 <body>
@@ -159,184 +350,393 @@
         <div class="mil-content">
             <div id="swupMain" class="mil-main-transition">
 
-                <!-- banner -->
-                <div class="mil-inner-banner">
-                    <div class="mil-banner-content mil-up">
-                        <div class="mil-animation-frame">
-                            <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6" data-value-2="1.4"></div>
+
+                <!-- reviews -->
+                <section class="mil-soft-bg">
+                    <div class="container mil-p-120-120">
+
+
+                        <h2 class="mil-center mil-up mil-mb-60">Our <span class="mil-thin">Team</span></h2>
+
+                        <div class="mil-revi-pagination mil-up mil-mb-60"></div>
+
+                        <div class="row mil-relative justify-content-center">
+                            <div class="col-lg-8">
+
+                                <div class="mil-slider-nav mil-soft mil-reviews-nav mil-up">
+                                    <div class="mil-slider-arrow mil-prev mil-revi-prev mil-arrow-place"></div>
+                                    <div class="mil-slider-arrow mil-revi-next mil-arrow-place"></div>
+                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="mil-quote-icon mil-up">
+                                    <path d="M 13.5 10 A 8.5 8.5 0 0 0 13.5 27 A 8.5 8.5 0 0 0 18.291016 25.519531 C 17.422273 29.222843 15.877848 31.803343 14.357422 33.589844 C 12.068414 36.279429 9.9433594 37.107422 9.9433594 37.107422 A 1.50015 1.50015 0 1 0 11.056641 39.892578 C 11.056641 39.892578 13.931586 38.720571 16.642578 35.535156 C 19.35357 32.349741 22 27.072581 22 19 A 1.50015 1.50015 0 0 0 21.984375 18.78125 A 8.5 8.5 0 0 0 13.5 10 z M 34.5 10 A 8.5 8.5 0 0 0 34.5 27 A 8.5 8.5 0 0 0 39.291016 25.519531 C 38.422273 29.222843 36.877848 31.803343 35.357422 33.589844 C 33.068414 36.279429 30.943359 37.107422 30.943359 37.107422 A 1.50015 1.50015 0 1 0 32.056641 39.892578 C 32.056641 39.892578 34.931586 38.720571 37.642578 35.535156 C 40.35357 32.349741 43 27.072581 43 19 A 1.50015 1.50015 0 0 0 42.984375 18.78125 A 8.5 8.5 0 0 0 34.5 10 z" fill="#000000" />
+                                </svg>
+
+                                <div class="swiper-container mil-reviews-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Naufal Rasyad Ayyasy</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Aqil Dhiya Ulhaq</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Rafi' Ahnaf Dzikri Haq</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Faiz Hibaturrahman</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Fathy Farahat Akbar</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Naufal Fikri Maulana</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Rizqy Ramadhani</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ramadhan Miftahfarid Wiraputra</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Nabil Rayendra</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Shatara Enzi Artriano</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Rafa Adha Yudhayana</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Fardan Alfathon</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Abdullah Fawwaaz</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Hafidz Nashrullah </div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Naufal Arfa Danishwira</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Makin Amin Yusufa</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Yahya Ayyasy</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Afraldo Julian Putra Kristiawan</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Bawazir Arrafat</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Husain Hafidz</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Daffa Maulana Fernanda</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">
+                                                        <div class="name">Farrel Kusuma Putra</div>
+                                                    </div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ahmad Hasan</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Izzudin El Mizwary</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Daud Yusuf Nashrullah</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Fadlil Nurushodiq A</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ahmad Fathin Firdaus</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Haidar Dhiaulhaq</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Asyraf Wiratama S P</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Hauzan Azmil Umur</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Hamas Muhammad Fatahillah</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Faris Alfatih</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Ilham Rafi Alhaqqi</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Haidar Navid Zee Zakri</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Tsany Muhammad Falih</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Nashril Attila Rusly</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Mumtaz Taufiqul</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Fahry Irawan</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ahsana Hafidz Prawiratama</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ubayyu Bachrunniam</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Salman Zufar</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Lintas Adzan Muhammad</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Aqila Ayyasy Zakri</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Akyas Nizarurrohman</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Aulia Jundi Azizi</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Faqih Aziz</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Rosyad Muzaffar</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Alif Amtsal Absali</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Maulana Mahmud Abbas Alhabsyi</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Wazif Istibra</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Moh Fadey Alvaro</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Haidar Jundi</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Rafif Muzhofar</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Yaqut Al-Asadi</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Hudzaifah Al Hakim</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ghozi Ahmad Mubarok</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Thaariq Muhammad Kamil</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Qisiyyuna Hauna Quddama</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Maulida Al Ghifari</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Maftuh Faqih Arifin</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/1.jpg" alt="Team member">
+                                                    <div class="name">Abdul Halim Arrasyid</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">El Hallaj Vaincenna Alfansyah</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Ananda Aditya Ramadhan</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Salman Fatih Al-Farouq</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                                <div class="team-card">
+                                                    <img src="img/faces/2.jpg" alt="Team member">
+                                                    <div class="name">Muhammad Ghozi Almubarok</div>
+                                                    <button><i class="fab fa-instagram"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="container">
-                            <ul class="mil-breadcrumbs mil-mb-60">
-                                <li><a href="./index.php">Homepage</a></li>
-                                <li><a href="team.php">Team</a></li>
-                            </ul>
-                            <h1 class="mil-mb-60">Meet <span class="mil-thin">Our</span><br> Creative <span class="mil-thin">Team</span></h1>
-                            <a href="#team" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
-                                <span>Our team</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- banner end -->
 
-                <!-- team -->
-                <section id="team">
-                    <div class="container mil-p-120-90">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/1.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Anna Oldman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/3.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Oscar Freeman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Frontend Dev</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/2.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Emma Newman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Founder</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/4.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Lisa Trueman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">UI/UX Designer</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/5.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Tom Oldman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/6.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Corey Trueman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/7.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Justin Newman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/8.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.php">Spunkie</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Paw giver</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
                 </section>
-                <!-- team end -->
+                <!-- reviews end -->
 
                 <!-- call to action -->
                 <section class="mil-soft-bg">
