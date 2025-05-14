@@ -209,7 +209,7 @@
                                         <div class="col-sm-6">
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/1.png" alt="Team member">
+                                                <img src="img/faces/acara/11.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">Qoidul Jaisy Alfath</a></h5>
@@ -225,7 +225,7 @@
                                             </div>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/2.png" alt="Team member">
+                                                <img src="img/faces/acara/1.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">M. Akbar Hanif</a></h5>
@@ -246,7 +246,7 @@
                                             <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;"><span class="mil-accent">*</span> The founders of our agency</p>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/3.jpg" alt="Team member">
+                                                <img src="img/faces/pubdok/9.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">M. Zidan M</a></h5>
@@ -262,10 +262,10 @@
                                             </div>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/4.jpg" alt="Team member">
+                                                <img src="img/faces/perkap/3.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
-                                                        <h5 class="mil-muted mil-mb-5"><a href="team.php">Jhil Alesia Kirstyaustin</a></h5>
+                                                        <h5 class="mil-muted mil-mb-5"><a href="team.php">Mirdas Farhan Hanif</a></h5>
                                                         <p class="mil-link mil-light-soft mil-mb-10">Bendahara</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
