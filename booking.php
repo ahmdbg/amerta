@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
 
-                <div id="countdownContainer" class="mb-4 text-center" style="font-size: 1.5rem; font-weight: bold; color: #fff;" data-target-date="2025-05-17T22:35:00">
+                <div id="countdownContainer" class="mb-4 text-center" style="font-size: 1.5rem; font-weight: bold; color: #fff;" data-target-date="2025-05-17T20:00:00">
                     Waktu pendaftaran akan dibuka dalam: <span id="countdownTimer">--:--</span>
                 </div>
 
@@ -393,7 +393,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         document.getElementById('bookingButton').addEventListener('click', function(event) {
             if (visitorCount >= visitorLimit) {
                 event.preventDefault();
-                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup.');
+                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup. Silahkan coba lagi di batch 2');
             }
         });
 

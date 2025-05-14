@@ -73,7 +73,7 @@
             width: 100%;
             border-radius: 15px 15px 0 0;
             object-fit: cover;
-            height: 250px;
+            height: 100%;
             transition: transform 0.4s ease;
         }
 
@@ -170,9 +170,6 @@
 
             <!-- ACARA -->
             <div class="col-4 col-md-3 team-member" data-category="acara">
-                <img src="img/faces/acara/1.webp" alt="acara 1">
-            </div>
-            <div class="col-4 col-md-3 team-member" data-category="acara">
                 <img src="img/faces/acara/2.webp" alt="acara 1">
             </div>
             <div class="col-4 col-md-3 team-member" data-category="acara">
@@ -198,9 +195,6 @@
             </div>
             <div class="col-4 col-md-3 team-member" data-category="acara">
                 <img src="img/faces/acara/10.webp" alt="acara 1">
-            </div>
-            <div class="col-4 col-md-3 team-member" data-category="acara">
-                <img src="img/faces/acara/11.webp" alt="acara 1">
             </div>
             <div class="col-4 col-md-3 team-member" data-category="acara">
                 <img src="img/faces/acara/12.webp" alt="acara 1">

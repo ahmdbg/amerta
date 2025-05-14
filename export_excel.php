@@ -20,19 +20,49 @@ $sheet->setCellValue('F1', 'status');
 $sheet->setCellValue('G1', 'nomor wa');
 $sheet->setCellValue('H1', 'nomor kursi');
 
-// Style the header row
+use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Color;
+
+// Style the header row with green background and white bold font
 $headerStyle = [
-    'font' => ['bold' => true],
-    'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER],
+    'font' => [
+        'bold' => true,
+        'color' => ['rgb' => 'FFFFFF'],
+        'size' => 12,
+    ],
+    'alignment' => [
+        'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+    ],
     'fill' => [
         'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
-        'startColor' => ['rgb' => 'E2E2E2']
-    ]
+        'startColor' => ['rgb' => '2E7D32'] // dark green
+    ],
+    'borders' => [
+        'allBorders' => [
+            'borderStyle' => Border::BORDER_THIN,
+            'color' => ['rgb' => '1B5E20'], // darker green border
+        ],
+    ],
 ];
-$sheet->getStyle('A1:G1')->applyFromArray($headerStyle);
+$sheet->getStyle('A1:H1')->applyFromArray($headerStyle);
 
-// Fetch data from database
-$query = "SELECT * FROM pengunjung";
+// Get gender filter from query parameter
+$jk_param = isset($_GET['jk']) ? $_GET['jk'] : '';
+
+$jk_map = [
+    'laki-laki' => 'L',
+    'perempuan' => 'P'
+];
+
+$jk_filter = isset($jk_map[$jk_param]) ? $jk_map[$jk_param] : '';
+
+if ($jk_filter) {
+    $query = "SELECT * FROM pengunjung WHERE jk = '$jk_filter'";
+} else {
+    $query = "SELECT * FROM pengunjung";
+}
+
 $result = mysqli_query($conn, $query);
 
 $row = 2;
@@ -46,18 +76,34 @@ while ($data = mysqli_fetch_assoc($result)) {
     $sheet->setCellValue('F' . $row, $data['status']);
     $sheet->setCellValue('G' . $row, $data['no_wa']);
     $sheet->setCellValue('H' . $row, $data['nomor_kursi']);
+
+    // Apply alternating row colors with green shades
+    $fillColor = ($row % 2 == 0) ? 'C8E6C9' : 'E8F5E9'; // light green shades
+    $sheet->getStyle("A{$row}:H{$row}")->applyFromArray([
+        'fill' => [
+            'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+            'startColor' => ['rgb' => $fillColor],
+        ],
+        'borders' => [
+            'allBorders' => [
+                'borderStyle' => Border::BORDER_THIN,
+                'color' => ['rgb' => 'A5D6A7'], // medium green border
+            ],
+        ],
+    ]);
     $row++;
 }
 
 // Auto size columns
-foreach(range('A','G') as $col) {
+foreach(range('A','H') as $col) {
     $sheet->getColumnDimension($col)->setAutoSize(true);
 }
 
-// Create writer and output file
 $writer = new Xlsx($spreadsheet);
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment;filename="Data_Pengunjung_' . date('Y-m-d') . '.xlsx"');
+
+$filename = 'Data_Pengunjung_' . ($jk_param ? $jk_param : 'semua') . '_' . date('Y-m-d') . '.xlsx';
+header('Content-Disposition: attachment;filename="' . $filename . '"');
 header('Cache-Control: max-age=0');
 
 $writer->save('php://output');
