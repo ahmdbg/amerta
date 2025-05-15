@@ -1,7 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 
-function sendWhatsAppMessage($data, $seat_number)
+function sendWhatsAppMessageDonatur($data, $bookingId)
 {
     $ultramsg_token = "rmop7b5hmnkcywvp"; // Get your token from ultramsg.com
     $instance_id = "instance118084"; // Get your instance ID from ultramsg.com
@@ -11,15 +11,12 @@ function sendWhatsAppMessage($data, $seat_number)
 
         // Prepare WhatsApp message
         $to = $data['no_wa'];
-        $body = "Terima kasih telah melakukan pemesanan tiket AMERTA!\n\n"
-            . "Detail Pemesanan Abi/Ummi sebagai berikut\n\n"
-            . "Nama Wali: {$data['nama_wali']}\n"
-            . "Nama Santri: {$data['nama_murid']}\n"
-            . "Kelas: {$data['kelas_murid']}\n"
+        $body = "Terima kasih telah melakukan pemesanan tiket Donatur AMERTA!\n\n"
+            . "Detail Pemesanan sebagai berikut\n\n"
+            . "Nama Donatur: {$data['nama_wali']}\n"
             . "Status: {$data['status_menginap']}\n"
-            . "Nomor Kursi: {$seat_number}\n\n"
-            . "Agar tidak tertinggal informasi terbaru terkait Amerta Night Show 2025, silakan Abi/Ummi dapat bergabung dalam grup WhatsApp melalui tautan berikut:\n\n"
-            . "https://chat.whatsapp.com/L3AR71DGMYFIB474PZiKuu\n\n"
+            . "ID Booking: {$bookingId}\n\n"
+            . "Simpan tiket ini sebagai bukti pendaftaran.\n\n"
             . "Untuk informasi lebih lanjut, silakan hubungi admin:\n"
             . "+6281229175559 \n\n";
 
@@ -36,3 +33,4 @@ function sendWhatsAppMessage($data, $seat_number)
         ];
     }
 }
+?>

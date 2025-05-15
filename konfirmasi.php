@@ -69,7 +69,7 @@ $qrDataUri = $result->getDataUri();
             left: 0;
             height: 8px;
             width: 100%;
-            background: linear-gradient(90deg, #ffb347, #ffcc33);
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
         }
 
         .header {
@@ -81,7 +81,7 @@ $qrDataUri = $result->getDataUri();
             margin: 0;
             font-size: 28px;
             /* Reduced from 36px */
-            color: #ff8c00;
+            color: #6a11cb;
             letter-spacing: 4px;
             font-weight: 900;
             text-transform: uppercase;
@@ -114,7 +114,7 @@ $qrDataUri = $result->getDataUri();
 
         .label {
             font-size: 12px;
-            color: #e07b00;
+            color: #6a11cb;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 5px;
@@ -157,7 +157,7 @@ $qrDataUri = $result->getDataUri();
         #btnDownload {
             margin: 0;
             /* Reset margin since we're using flex gap */
-            background: #ff8c00;
+            background: #6a11cb;
             color: white;
             border: none;
             padding: 14px 36px;
@@ -168,7 +168,7 @@ $qrDataUri = $result->getDataUri();
             transition: background 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
         }
 
         #btnDownload:hover {
