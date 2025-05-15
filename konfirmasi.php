@@ -172,7 +172,7 @@ $qrDataUri = $result->getDataUri();
         }
 
         #btnDownload:hover {
-            background: #e07b00;
+            background: #2575fc;
         }
 
         .status-button {
