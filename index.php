@@ -437,7 +437,7 @@
                                         <h5 class="mil-muted mil-mb-30">GET TICKET NOW</h5>
                                         <h3 class="mil-mb-30 mil-muted" style="text-transform: uppercase;">Join us for unforgottable moment</h3>
                                         </p>
-                                        <a href="booking_donatur.php" target="_blank" class="mil-button mil-arrow-place">
+                                        <a href="booking.php" target="_blank" class="mil-button mil-arrow-place">
                                             <span>Pesan Sekarang</span>
                                         </a>
                                     </div>
