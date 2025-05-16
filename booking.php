@@ -171,6 +171,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Removed PHP countdown visibility logic to rely solely on JavaScript
 ?>
 
+    <!-- home icon top right -->
+    <a href="index.php" style="position: fixed; top: 10px; right: 10px; z-index: 1000; text-decoration: none; color: #000;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+            <path d="M8.354 1.146a.5.5 0 0 0-.708 0L1 7.793V14.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V11h2v3.5A1.5 1.5 0 0 0 10.5 16h3a1.5 1.5 0 0 0 1.5-1.5V7.793l-6.646-6.647zM2 14V8.5l6-6 6 6V14a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V11H6v3.5a.5.5 0 0 1-.5.5h-3A.5.5 0 0 1 2 14z"/>
+        </svg>
+    </a>
+
     <!-- wrapper -->
     <div class="container py-5 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
 

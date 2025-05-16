@@ -127,7 +127,7 @@
                     </div>
                 </section>
                 <!-- services -->
-                <section class="mil-dark-bg">
+                <!-- <section class="mil-dark-bg">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
@@ -153,35 +153,35 @@
                                 <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Spirit of <br>Papua</h5>
-                                        <p class="mil-light-soft mil-mb-30">Pertunjukan tarian tradisional dari berbagai daerah di Indonesia yang dipadukan dengan koreografi modern.</p>
+                                        <p class="mil-light-soft mil-mb-30">Pertunjukan energik yang menggambarkan semangat, keberanian, dan kekayaan budaya Papua melalui gerakan dinamis, kostum khas, serta irama musik tradisional yang membangkitkan jiwa.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
                                 </a>
                                 <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Tari <br>Perang</h5>
-                                        <p class="mil-light-soft mil-mb-30">Perpaduan musik tradisional dan kontemporer yang menghadirkan harmoni unik dalam setiap pertunjukan.</p>
+                                        <p class="mil-light-soft mil-mb-30">Tarian tradisional penuh semangat yang menampilkan simulasi peperangan, simbol keberanian, dan kesiapan para pejuang dalam mempertahankan kehormatan serta wilayah suku mereka.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
                                 </a>
                                 <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Medley <br>Tari Tradisional</h5>
-                                        <p class="mil-light-soft mil-mb-30">Peragaan busana yang menampilkan keindahan kain tradisional Indonesia dalam sentuhan desain modern.</p>
+                                        <p class="mil-light-soft mil-mb-30">Perpaduan beberapa tarian daerah Indonesia dalam satu pertunjukan, menampilkan keberagaman budaya, ritme, dan keindahan gerakan khas dari berbagai suku bangsa.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
                                 </a>
                                 <a href="program-detail.php" class="col-md-6 col-lg-3 mil-services-grid-item p-0">
                                     <div class="mil-service-card-sm mil-up">
                                         <h5 class="mil-muted mil-mb-30">Beauty of <br>Java</h5>
-                                        <p class="mil-light-soft mil-mb-30">Sajian hidangan khas Indonesia yang dipresentasikan dengan gaya fine dining internasional.</p>
+                                        <p class="mil-light-soft mil-mb-30">Tari klasik yang menggambarkan keanggunan budaya Jawa melalui gerakan halus, busana tradisional, dan musik gamelan yang mencerminkan kelembutan serta keindahan batin.</p>
                                         <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <!-- services end -->
 
                 <!-- team -->
@@ -445,7 +445,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
             </section>
 
             <!-- partners -->
