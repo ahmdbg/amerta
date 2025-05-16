@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
 
-                <div id="countdownContainer" class="mb-4 text-center" style="font-size: 1.5rem; font-weight: bold; color: #fff;" data-target-date="2025-05-17T20:00:00">
+                <div id="countdownContainer" class="mb-4 text-center" style="font-size: 1.5rem; font-weight: bold; color: #fff;" data-target-date="2025-05-18T09:00:00">
                     Waktu pendaftaran akan dibuka dalam: <span id="countdownTimer">--:--</span>
                 </div>
 
