@@ -1,10 +1,15 @@
 <?php
 require_once 'vendor/autoload.php';
 
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 function sendWhatsAppMessage($data, $seat_number)
 {
-    $ultramsg_token = "rmop7b5hmnkcywvp"; // Get your token from ultramsg.com
-    $instance_id = "instance118084"; // Get your instance ID from ultramsg.com
+    $ultramsg_token = getenv('ULTRAMSG_TOKEN'); // Get your token from .env
+    $instance_id = getenv('INSTANCE_ID'); // Get your instance ID from .env
 
     try {
         $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
