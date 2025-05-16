@@ -79,9 +79,9 @@
                                     <li class="mil-has-children mil-active">
                                         <a href="./contact.php">Contact</a>
                                     </li>
-                                    <li class="mil-has-children">
+                                    <!-- <li class="mil-has-children">
                                         <a href="./store.php">Store</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
 

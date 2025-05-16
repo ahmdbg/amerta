@@ -127,7 +127,7 @@
                     </div>
                 </section>
                 <!-- services -->
-                <section class="mil-dark-bg">
+                <!-- <section class="mil-dark-bg">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <!-- services end -->
 
                 <!-- team -->
@@ -266,7 +266,7 @@
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">Mirdas Farhan Hanif</a></h5>
-                                                        <p class="mil-link mil-light-soft mil-mb-10">Bendahara</p>
+                                                        <p class="mil-link mil-light-soft mil-mb-10">Perkap</p>
                                                         <ul class="mil-social-icons mil-center">
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-behance"></i></a></li>
                                                             <li><a href="#." target="_blank" class="social-icon"> <i class="fab fa-dribbble"></i></a></li>
@@ -289,7 +289,7 @@
                 <!-- team end -->
 
                 <!-- reviews -->
-                <section class="mil-soft-bg">
+                <!-- <section class="mil-soft-bg">
                     <div class="container mil-p-120-120">
 
                         <div class="row">
@@ -367,7 +367,7 @@
                         </div>
 
                     </div>
-                </section>
+                </section> -->
                 <!-- reviews end -->
                 <!-- blog -->
                 <section>
