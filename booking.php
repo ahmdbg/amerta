@@ -3,7 +3,7 @@ require_once 'vendor/autoload.php';
 include 'config/db.php';
 
 // Check total visitors count
-$visitor_limit = 95;
+$visitor_limit = 100;
 $visitor_count = 0;
 $count_result = mysqli_query($conn, "SELECT COUNT(*) as total FROM pengunjung");
 if ($count_result) {
@@ -400,7 +400,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         document.getElementById('bookingButton').addEventListener('click', function(event) {
             if (visitorCount >= visitorLimit) {
                 event.preventDefault();
-                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup. Silahkan coba lagi di batch 2');
+                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup.');
             }
         });
 

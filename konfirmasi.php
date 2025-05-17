@@ -23,8 +23,19 @@ $qrCode = new Endroid\QrCode\QrCode('https://' . $_SERVER['HTTP_HOST'] . '/konfi
 $qrCode->setSize(250);
 $qrCode->setMargin(10);
 $writer = new Endroid\QrCode\Writer\PngWriter();
+
+// Ensure temp directory exists
+$tempDir = __DIR__ . '/temp';
+if (!is_dir($tempDir)) {
+    mkdir($tempDir, 0755, true);
+}
+
+$qrFilePath = $tempDir . '/qr_' . $id . '.png';
 $result = $writer->write($qrCode);
-$qrDataUri = $result->getDataUri();
+$result->saveToFile($qrFilePath);
+
+$qrBase64 = base64_encode(file_get_contents($qrFilePath));
+$qrDataUri = 'data:image/png;base64,' . $qrBase64;
 ?>
 
 <!DOCTYPE html>
@@ -36,171 +47,183 @@ $qrDataUri = $result->getDataUri();
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1b425c;
+            background: linear-gradient(135deg, #0d1b3d 0%, #1a2a6c 100%);
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            /* Changed to column */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             gap: 20px;
-            /* Add gap between ticket and button */
+            color: #cbd5e1;
         }
 
-        #ticket {
-            background: #00171f;
-            width: 300px;
-            /* Reduced from 400px */
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
+        /* New Ticket Design */
+        .ticket-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background: linear-gradient(145deg, #1a2a6c, #0d1b3d);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(10, 25, 70, 0.8);
             position: relative;
-            padding: 20px 30px;
-            /* Reduced padding */
-            color: #333;
+            overflow: hidden;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            gap: 20px;
         }
 
-        #ticket::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 8px;
+        .ticket-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 20px 20px 0 0;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            flex: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
-            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
+        .ticket-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
         }
 
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-            /* Reduced from 36px */
-            color: #6a11cb;
-            letter-spacing: 4px;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-family: 'Arial', Arial, sans-serif;
-        }
-
-        .header p {
-            margin: 5px 0 0 0;
+        .ticket-header div {
             font-size: 16px;
-            color: #666;
-            letter-spacing: 2px;
+            margin-bottom: 6px;
+            color: #cbd5e1;
         }
 
-        .content {
-            display: block;
-            /* Changed from flex */
-            margin-bottom: 30px;
-        }
-
-        .left,
-        .right {
+        .ticket-body {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
             width: 100%;
-            /* Changed from 48% */
-            margin-bottom: 20px;
+            gap: 15px;
+            color: #cbd5e1;
         }
 
-        .field {
-            margin-bottom: 20px;
+        .ticket-section {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-bottom: 1px solid #3b82f6;
+            padding-bottom: 15px;
         }
 
-        .label {
-            font-size: 12px;
-            color: #6a11cb;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 5px;
+        .security-strip {
+            display: none;
+        }
+
+        .ticket-footer {
+            background: transparent;
+            padding: 0;
+            text-align: center;
+            border: none;
+            color: #94a3b8;
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* Enhanced Detail Styling */
+        .detail-label {
+            font-size: 14px;
+            color: #94a3b8;
+            text-transform: none;
+            letter-spacing: normal;
+            margin-bottom: 4px;
             font-weight: 600;
         }
 
-        .value {
-            font-size: 16px;
-            /* Reduced from 18px */
+        .detail-value {
+            font-size: 20px;
             font-weight: 700;
-            color: #eaeaea;
+            color: #e0e7ff;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            border: none;
+            box-shadow: none;
         }
 
         .qr-container {
             text-align: center;
-            margin-top: 10px;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            margin: 10px auto 0 auto;
+            width: 120px;
         }
 
-        .qr-code {
-            width: 140px;
-            /* Reduced from 160px */
-            height: 140px;
-            /* Reduced from 160px */
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            background: white;
-            padding: 10px;
-            display: inline-block;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            letter-spacing: 1px;
-        }
-
-        #btnDownload {
-            margin: 0;
-            /* Reset margin since we're using flex gap */
-            background: #6a11cb;
+        #statusButton {
+            background: #1e40af;
             color: white;
             border: none;
-            padding: 14px 36px;
-            border-radius: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            transition: background 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.6);
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        #statusButton.used {
+            background: #475569;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #statusButton:hover:not(.used) {
+            background: #2563eb;
+        }
+
+        #btnDownload {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.7);
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
         }
 
         #btnDownload:hover {
-            background: #2575fc;
+            background: #1e40af;
         }
 
-        .status-button {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            opacity: 1;
-        }
+        @media print {
+            .ticket-container {
+                box-shadow: none;
+                border: 2px solid #000;
+            }
 
-        .status-button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        .unused {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .used {
-            background-color: #f44336;
-            color: white;
-            pointer-events: none;
+            #statusButton,
+            #btnDownload {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -210,46 +233,56 @@ $qrDataUri = $result->getDataUri();
         <?= $ticket['status_pakai'] == 'sudah_dipakai' ? 'Sudah Dipakai' : 'Belum Dipakai' ?>
     </button>
     <div id="ticket">
-        <div class="header">
-            <h1>AMERTA</h1>
-            <p>The Grand Performance</p>
-        </div>
-        <div class="content">
-            <div class="left">
-                <div class="field">
-                    <div class="label">Nama Wali</div>
-                    <div class="value"><?= htmlspecialchars($ticket['nama']) ?></div>
-                </div>
-                <div class="field">
-                    <div class="label">Nama Santri</div>
-                    <div class="value"><?= htmlspecialchars($ticket['nama_murid']) ?></div>
-                </div>
-                <div class="field">
-                    <div class="label">Kelas</div>
-                    <div class="value"><?= htmlspecialchars($ticket['kelas']) ?></div>
+        <div class="ticket-container">
+            <div class="ticket-header">
+                <h1 style="margin:0 0 5px 0; font-size: 28px">AMERTA 2024</h1>
+                <div style="display: flex; justify-content: space-between; font-size: 14px">
+                    <div>Date: 25 May 2024</div>
+                    <div>Time: 19:00 WIB</div>
+                    <div>Venue: Graha Loka</div>
                 </div>
             </div>
-            <div class="right">
-                <div class="field">
-                    <div class="label">Nomor Kursi</div>
-                    <div class="value">#<?= str_pad($ticket['nomor_kursi'], 3, '0', STR_PAD_LEFT) ?></div>
+
+            <div class="security-strip"></div>
+
+            <div class="ticket-body">
+                <div class="ticket-section">
+                    <div class="highlight-box">
+                        <div class="detail-label">Pemegang Tiket</div>
+                        <div class="detail-value"><?= htmlspecialchars($ticket['nama']) ?></div>
+
+                        <div class="detail-label" style="margin-top:15px">Santri</div>
+                        <div class="detail-value"><?= htmlspecialchars($ticket['nama_murid']) ?></div>
+                        <div class="detail-value">Kelas <?= htmlspecialchars($ticket['kelas']) ?></div>
+                    </div>
                 </div>
-                <div class="field">
-                    <div class="label">Status</div>
-                    <div class="value"><?= htmlspecialchars($ticket['status']) ?></div>
-                </div>
-                <div class="field">
-                    <div class="label">Ticket ID</div>
-                    <div class="value">#<?= str_pad($ticket['id'], 5, '0', STR_PAD_LEFT) ?></div>
+
+                <div class="ticket-section">
+                    <div class="highlight-box">
+                        <div class="detail-label">Nomor Kursi</div>
+                        <div class="detail-value" style="font-size: 24px; color: #6a11cb">
+                            #<?= str_pad($ticket['nomor_kursi'], 3, '0', STR_PAD_LEFT) ?>
+                        </div>
+
+                        <div class="detail-label" style="margin-top:15px">Ticket ID</div>
+                        <div class="detail-value">
+                            AMT-<?= str_pad($ticket['id'], 5, '0', STR_PAD_LEFT) ?>
+                        </div>
+                    </div>
+
+                    <div class="qr-container">
+                        <img src="<?= $qrDataUri ?>" alt="QR Code" class="qr-code" style="width: 120px; height: 120px" />
+                        <div class="detail-label" style="margin-top:10px">Scan untuk verifikasi</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="qr-container">
-            <img src="<?= $qrDataUri ?>" alt="QR Code" class="qr-code" />
-        </div>
-        <div class="footer">
-            <p>Scan QR code untuk verifikasi tiket</p>
-            <p>Valid untuk 1 orang</p>
+
+            <div class="ticket-footer">
+                <div style="font-size: 12px; color: #666; text-align: center;">
+                    * Tiket berlaku untuk 1 orang<br>
+                    * Harap hadir 30 menit sebelum acara
+                </div>
+            </div>
         </div>
     </div>
 
@@ -258,46 +291,46 @@ $qrDataUri = $result->getDataUri();
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const statusButton = document.getElementById('statusButton');
-            
+
             // If already used, disable the button and exit
             if (statusButton.classList.contains('used')) {
                 statusButton.style.cursor = 'not-allowed';
                 return;
             }
-            
+
             let clicks = 0;
             let lastClick = 0;
 
             statusButton.addEventListener('click', function() {
                 const now = Date.now();
-                
+
                 if (now - lastClick > 2000) {
                     clicks = 1;
                 } else {
                     clicks++;
                 }
-                
+
                 lastClick = now;
 
                 if (clicks === 5) {
                     fetch('update_status.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: 'id=<?= $ticket['id'] ?>'
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            statusButton.textContent = 'Sudah Dipakai';
-                            statusButton.classList.remove('unused');
-                            statusButton.classList.add('used');
-                            statusButton.disabled = true;
-                            statusButton.style.cursor = 'not-allowed';
-                        }
-                    });
-                    
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: 'id=<?= $ticket['id'] ?>'
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                statusButton.textContent = 'Sudah Dipakai';
+                                statusButton.classList.remove('unused');
+                                statusButton.classList.add('used');
+                                statusButton.disabled = true;
+                                statusButton.style.cursor = 'not-allowed';
+                            }
+                        });
+
                     clicks = 0;
                 }
             });
@@ -311,26 +344,49 @@ $qrDataUri = $result->getDataUri();
 
         document.getElementById("btnDownload").addEventListener("click", function() {
             const ticketElement = document.getElementById("ticket");
+            const qrImage = ticketElement.querySelector(".qr-code");
 
-            html2canvas(ticketElement, {
-                scale: 2,
-                useCORS: true,
-                logging: false
-            }).then(canvas => {
-                const imgData = canvas.toDataURL("image/png");
-                const pdf = new jsPDF("p", "mm", [210, 500]);
+            function generatePDF() {
+                // Hide QR code image temporarily
+                qrImage.style.display = 'none';
 
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = pdf.internal.pageSize.getHeight();
-                const imgWidth = canvas.width;
-                const imgHeight = canvas.height;
-                const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-                const imgX = (pdfWidth - imgWidth * ratio) / 2;
-                const imgY = 30;
+                html2canvas(ticketElement, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    logging: false
+                }).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
 
-                pdf.addImage(imgData, "PNG", imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-                pdf.save("AMERTA_Ticket_<?= str_pad($ticket['id'], 5, '0', STR_PAD_LEFT) ?>.pdf");
-            });
+                    const pdfWidth = 210; // A4 width in mm
+                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+                    const pdf = new jsPDF("p", "mm", [pdfWidth, pdfHeight]);
+
+                    // Add the ticket content without QR code
+                    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+                    // Add QR code image separately at bottom right corner
+                    const qrWidth = 40; // mm
+                    const qrHeight = 40; // mm
+                    const qrX = pdfWidth - qrWidth - 10; // 10mm margin from right
+                    const qrY = pdfHeight - qrHeight - 10; // 10mm margin from bottom
+
+                    pdf.addImage(qrImage.src, "PNG", qrX, qrY, qrWidth, qrHeight);
+
+                    pdf.save("AMERTA_Ticket_<?= str_pad($ticket['id'], 5, '0', STR_PAD_LEFT) ?>.pdf");
+
+                    // Restore QR code image display
+                    qrImage.style.display = '';
+                });
+            }
+
+            // Ensure QR code image is loaded before generating PDF
+            if (qrImage.complete && qrImage.naturalHeight !== 0) {
+                generatePDF();
+            } else {
+                qrImage.onload = generatePDF;
+            }
         });
     </script>
 </body>

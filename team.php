@@ -170,6 +170,9 @@
 
             <!-- ACARA -->
             <div class="col-4 col-md-3 team-member" data-category="acara">
+                <img src="img/faces/acara/16.webp" alt="acara 1">
+            </div>
+            <div class="col-4 col-md-3 team-member" data-category="acara">
                 <img src="img/faces/acara/2.webp" alt="acara 1">
             </div>
             <div class="col-4 col-md-3 team-member" data-category="acara">
