@@ -161,6 +161,142 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #333;
         }
 
+        /* Countdown styles */
+        .countdown-wrapper {
+            font-family: 'Poppins', sans-serif;
+            color: #cce0ff;
+            text-align: center;
+            user-select: none;
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+
+        .coming-soon-text {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            color: #4a90e2;
+            text-shadow:
+                0 0 10px #4a90e2,
+                0 0 20px #4a90e2,
+                0 0 30px #4a90e2,
+                0 0 40px #4a90e2;
+            margin-bottom: 0.5rem;
+            animation: flicker 3s infinite;
+        }
+
+        .countdown-text {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #cce0ff;
+            text-shadow: 0 0 5px #000;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .time-segment {
+            background: rgba(74, 144, 226, 0.15);
+            border: 2px solid #4a90e2;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            min-width: 70px;
+            width: 100px;
+            box-shadow:
+                0 0 10px #4a90e2,
+                inset 0 0 8px #4a90e2;
+            animation: glowPulse 2s ease-in-out infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 576px) {
+            .time-segment {
+                width: 70px;
+                padding: 0.5rem 1rem;
+                min-width: 70px;
+            }
+
+            .time-number {
+                font-size: 1.8rem;
+            }
+
+            .time-label {
+                font-size: 0.75rem;
+            }
+
+            .coming-soon-text {
+                font-size: 1.8rem;
+                letter-spacing: 0.2em;
+            }
+
+            .countdown-text {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .form-left {
+                padding: 2rem 1rem;
+            }
+        }
+
+        .time-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4a90e2;
+            text-shadow:
+                0 0 5px #4a90e2,
+                0 0 10px #4a90e2;
+        }
+
+        .time-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #a3c1ff;
+            margin-top: 0.25rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Animations */
+        @keyframes pulseGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2;
+            }
+            50% {
+                text-shadow: 0 0 20px #4a90e2, 0 0 40px #4a90e2;
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow:
+                    0 0 10px #4a90e2,
+                    inset 0 0 8px #4a90e2;
+            }
+            50% {
+                box-shadow:
+                    0 0 20px #4a90e2,
+                    inset 0 0 16px #4a90e2;
+            }
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 22%, 24%, 55% {
+                opacity: 0.4;
+            }
+        }
     </style>
 
 </head>
@@ -193,8 +329,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
 
-                <div id="countdownContainer" class="mb-4 text-center" style="font-size: 1.5rem; font-weight: bold; color: #fff;" data-target-date="2025-05-18T09:00:00">
-                    Waktu pendaftaran akan dibuka dalam: <span id="countdownTimer">--:--</span>
+                <div id="countdownContainer" class="mb-4 text-center countdown-wrapper" data-target-date="2025-05-18T09:00:00">
+                    <div class="coming-soon-text">Coming Soon</div>
+                    <div class="countdown-text">Waktu pendaftaran akan dibuka dalam:</div>
+                    <div id="countdownTimer" class="countdown-timer">
+                        <div class="time-segment">
+                            <span id="days" class="time-number">--</span>
+                            <span class="time-label">Hari</span>
+                        </div>
+                        <div class="time-segment">
+                            <span id="hours" class="time-number">--</span>
+                            <span class="time-label">Jam</span>
+                        </div>
+                        <div class="time-segment">
+                            <span id="minutes" class="time-number">--</span>
+                            <span class="time-label">Menit</span>
+                        </div>
+                        <div class="time-segment">
+                            <span id="seconds" class="time-number">--</span>
+                            <span class="time-label">Detik</span>
+                        </div>
+                    </div>
                 </div>
 
                 <form id="bookingForm" class="booking-form" method="POST" novalidate style="display:none;">
@@ -434,28 +589,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     return;
                 }
 
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Format as DD HH:MM:SS
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                countdownTimer.textContent = 
-                    `${days.toString().padStart(2, '0')} hari ` +
-                    `${hours.toString().padStart(2, '0')}:` +
-                    `${minutes.toString().padStart(2, '0')}:` +
-                    `${seconds.toString().padStart(2, '0')}`;
-            }
+            // Format as DD HH:MM:SS
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-            // Immediately check if countdown has passed and show form if so
-            if (Date.now() >= countDownDate) {
-                countdownContainer.style.display = 'none';
-                bookingForm.style.display = 'block';
-            } else {
-                updateTimer();
-                var timerInterval = setInterval(updateTimer, 1000);
-            }
-        })();
+            // Update each segment separately
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Immediately check if countdown has passed and show form if so
+        if (Date.now() >= countDownDate) {
+            countdownContainer.style.display = 'none';
+            bookingForm.style.display = 'block';
+        } else {
+            updateTimer();
+            var timerInterval = setInterval(updateTimer, 1000);
+        }
+    })();
     </script>
 
     <!-- Bootstrap JS Bundle -->
