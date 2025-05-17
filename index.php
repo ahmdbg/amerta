@@ -209,7 +209,7 @@
                                         <div class="col-sm-6">
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/acara/11.webp" alt="Team member">
+                                                <img src="img/faces/main/11.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">Qoidul Jaisy Alfath</a></h5>
@@ -225,7 +225,7 @@
                                             </div>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/acara/1.webp" alt="Team member">
+                                                <img src="img/faces/main/1.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">M. Akbar Hanif</a></h5>
@@ -246,7 +246,7 @@
                                             <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;"><span class="mil-accent">*</span> The founders of our agency</p>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/pubdok/9.webp" alt="Team member">
+                                                <img src="img/faces/main/6.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">M. Zidan M</a></h5>
@@ -262,7 +262,7 @@
                                             </div>
 
                                             <div class="mil-team-card mil-up mil-mb-30">
-                                                <img src="img/faces/perkap/3.webp" alt="Team member">
+                                                <img src="img/faces/main/3.webp" alt="Team member">
                                                 <div class="mil-description">
                                                     <div class="mil-secrc-text">
                                                         <h5 class="mil-muted mil-mb-5"><a href="team.php">Mirdas Farhan Hanif</a></h5>
@@ -289,7 +289,7 @@
                 <!-- team end -->
 
                 <!-- reviews -->
-                <!-- <section class="mil-soft-bg">
+                <section class="mil-soft-bg">
                     <div class="container mil-p-120-120">
 
                         <div class="row">
@@ -320,44 +320,33 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Sarah Newman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their exceptional talent and expertise. Their ability to think outside the box and bring unique ideas to life is truly impressive. With meticulous attention to detail, they consistently deliver visually stunning and impactful work.</p>
+                                                <p class="mil-text-xl mil-up">"Amerta Night Show benar-benar memukau! Penampilan para santri luar biasa dan penuh kreativitas."</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Emma Trueman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">I had the pleasure of working with this creative agency, and I must say, they truly impressed me. They consistently think outside the box, resulting in impressive and impactful work. I highly recommend this agency for their consistent delivery of exceptional creative solutions.</p>
+                                                <p class="mil-text-xl mil-up">"Sungguh malam yang tak terlupakan! Acaranya keren, penuh warna, dan sangat menghibur!"</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Sarah Newman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their exceptional talent and expertise. Their ability to think outside the box and bring unique ideas to life is truly impressive. With meticulous attention to detail, they consistently deliver visually stunning and impactful work.</p>
+                                                <h5 class="mil-up mil-mb-10"></h5>
+                                                <p class="mil-text-xl mil-up">"Bangga melihat bakat santri tampil di panggung sebesar ini. Atmosfernya seru dan energik!"</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Emma Trueman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">I had the pleasure of working with this creative agency, and I must say, they truly impressed me. They consistently think outside the box, resulting in impressive and impactful work. I highly recommend this agency for their consistent delivery of exceptional creative solutions.</p>
+                                                <p class="mil-text-xl mil-up">"Amerta Night Show jadi ajang pembuktian bahwa santri juga bisa tampil luar biasa di atas panggung!"</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Sarah Newman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their exceptional talent and expertise. Their ability to think outside the box and bring unique ideas to life is truly impressive. With meticulous attention to detail, they consistently deliver visually stunning and impactful work.</p>
+                                                <p class="mil-text-xl mil-up">"Dari awal sampai akhir, acaranya bikin merinding. Kreativitas dan semangatnya terasa banget!"</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200" data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Emma Trueman</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Envato market</p>
-                                                <p class="mil-text-xl mil-up">I had the pleasure of working with this creative agency, and I must say, they truly impressed me. They consistently think outside the box, resulting in impressive and impactful work. I highly recommend this agency for their consistent delivery of exceptional creative solutions.</p>
+                                                <p class="mil-text-xl mil-up">"Penampilan, tata cahaya, dan suasana malam itu sangat magis. Amerta Night Show luar biasa!"</p>
                                             </div>
                                         </div>
                                     </div>
@@ -367,7 +356,7 @@
                         </div>
 
                     </div>
-                </section> -->
+                </section>
                 <!-- reviews end -->
                 <!-- blog -->
                 <section>
@@ -420,23 +409,21 @@
                 <!-- tickets -->
                 <section id="tickets" class="mil-dark-bg">
                     <div class="mi-invert-fix">
-                        <div class="container mil-p-120-90">
-                            <div style="display: flex; justify-content: center; align-items: center;">
-                                <div style="display: flex; justify-content: center; align-items: center;">
-                                    <h2 class="mil-muted mil-mb-60 ">Tiket <span class="mil-thin">Amerta</span></h2>
+                        <div class="container mil-p-120-90" style="text-align: center;">
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <h2 class="mil-muted mil-mb-60">Tiket <span class="mil-thin">Amerta</span></h2>
                                 </div>
                             </div>
 
                             <!-- Countdown Timer -->
 
                             <!-- Tickets Content (hidden initially) -->
-                            <div id="tickets-content" style=" justify-content: center; align-items: center;">
-                                <div class="col-lg-4" style="text-align: center; width: max-content; margin: 0 auto;">
+                            <div id="tickets-content" class="d-flex justify-content-center align-items-center">
+                                <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-center">
                                     <div class="mil-service-card-sm mil-mb-30 mil-up">
-                                        <p class="mil-light-soft mil-mb-30">
-                                        <h5 class="mil-muted mil-mb-30">GET TICKET NOW</h5>
-                                        <h3 class="mil-mb-30 mil-muted" style="text-transform: uppercase;">Join us for unforgottable moment</h3>
-                                        </p>
+                                        <h5 class="mil-muted mil-mb-30" style="text-align: center;">GET TICKET NOW</h5>
+                                        <h3 class="mil-mb-30 mil-muted text-uppercase" style="text-align: center;">Join us for unforgettable moment</h3>
                                         <a href="booking.php" target="_blank" class="mil-button mil-arrow-place">
                                             <span>Pesan Sekarang</span>
                                         </a>
@@ -445,8 +432,7 @@
                             </div>
                         </div>
                     </div>
-            </div>
-            </section>
+                </section>
 
             <!-- partners -->
             <div class="mil-soft-bg" style="padding-top: 100px;">
