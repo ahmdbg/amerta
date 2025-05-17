@@ -169,7 +169,7 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
             border: none;
             box-shadow: none;
             margin: 10px auto 0 auto;
-            width: 120px;
+            width: 200px;
         }
 
         #statusButton {
@@ -278,8 +278,7 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
 
             <div class="ticket-footer">
                 <div style="font-size: 12px; color: #666; text-align: center;">
-                    * Tiket berlaku untuk 1 orang<br>
-                    * Harap hadir 30 menit sebelum acara
+                    * Tiket berlaku untuk 1 orang
                 </div>
             </div>
         </div>

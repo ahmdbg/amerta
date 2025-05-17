@@ -487,6 +487,9 @@
                             <div class="swiper-slide">
                                 <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/11.webp" alt="logo" style="height:100px; object-fit: cover;"></a>
                             </div>
+                            <div class="swiper-slide">
+                                <a href="#." class="mil-partner-frame" style="width: 150px;"><img src="img/partners/12.webp" alt="logo" style="height:100px; object-fit: cover;"></a>
+                            </div>
                         </div>
                     </div>
 
