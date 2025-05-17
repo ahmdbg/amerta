@@ -235,11 +235,10 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
     <div id="ticket">
         <div class="ticket-container">
             <div class="ticket-header">
-                <h1 style="margin:0 0 5px 0; font-size: 28px">AMERTA 2024</h1>
+                <h1 style="margin:0 0 5px 0; font-size: 28px">AMERTA 2025</h1>
                 <div style="display: flex; justify-content: space-between; font-size: 14px">
-                    <div>Date: 25 May 2024</div>
+                    <div>Date: 31 May 2025</div>
                     <div>Time: 19:00 WIB</div>
-                    <div>Venue: Graha Loka</div>
                 </div>
             </div>
 
