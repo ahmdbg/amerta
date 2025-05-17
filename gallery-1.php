@@ -7,12 +7,49 @@
     <title>Amerta | Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            letter-spacing: 2px;
+            color: #fff !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #e9ecef !important;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #fff !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 0.375rem;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-toggler-icon {
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.7));
         }
 
         .gallery-title {
@@ -86,7 +123,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.php">Amerta</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -99,7 +136,10 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="gallery-1.php">Gallery</a>
+                        <a class="nav-link active" href="gallery-1.php">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="program-detail.php">Show</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="team.php">Team</a>
@@ -173,9 +213,17 @@
         </div>
     </div>
 
-    <div class="footer">
-        © Copyright 2023 - Amerta. Bangkitkan Gelora Nusantara. All Rights Reserved.
-    </div>
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2024 Amerta. All rights reserved.</p>
+            <div>
+                <a href="#" class="text-light me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-light me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-light me-3" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-light" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         let imageCount = 10;

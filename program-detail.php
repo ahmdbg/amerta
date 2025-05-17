@@ -2,357 +2,285 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- bootstrap grid css -->
-    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
-    <!-- font awesome css -->
-    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
-    <!-- swiper css -->
-    <link rel="stylesheet" href="css/plugins/swiper.min.css">
-    <!-- fancybox css -->
-    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
-    <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Amerta | Performance</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <style>
+        /* Custom styles for spacing and text */
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #212529;
+        }
+
+        .performance-title {
+            font-weight: 300;
+        }
+
+        .performance-subtitle {
+            font-weight: 700;
+            color: #0d6efd;
+        }
+
+        .performance-description {
+            text-align: justify;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #495057;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+        }
+
+        .btn-buy-ticket {
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .section-cta {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 15px rgba(13, 110, 253, 0.2);
+        }
+
+        /* Navbar improvements */
+        .navbar {
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            letter-spacing: 2px;
+            color: #fff !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: #e9ecef !important;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #fff !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 0.375rem;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-toggler-icon {
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.7));
+        }
+
+        /* Performance card style */
+        .performance-card {
+            background: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .performance-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .performance-image {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="mil-wrapper" id="top">
-
-        <!-- cursor -->
-        <div class="mil-ball">
-            <span class="mil-icon-1">
-                <svg viewBox="0 0 128 128">
-                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
-                </svg>
-            </span>
-            <div class="mil-more-text">More</div>
-            <div class="mil-choose-text">Сhoose</div>
-        </div>
-        <!-- cursor end -->
-
-        <!-- scrollbar progress -->
-        <div class="mil-progress-track">
-            <div class="mil-progress"></div>
-        </div>
-        <!-- scrollbar progress end -->
-
-
-        <?php include 'components/menu.php'; ?>
-        <!-- curtain -->
-        <div class="mil-curtain"></div>
-        <!-- curtain end -->
-
-        <!-- content -->
-        <div class="mil-content">
-            <div id="swupMain" class="mil-main-transition">
-                <!-- banner -->
-                <div class="mil-inner-banner">
-                    <div class="mil-banner-content mil-up">
-                        <div class="mil-animation-frame">
-                            <div class="mil-animation mil-position-4 mil-dark mil-scale" data-value-1="6" data-value-2="1.4"></div>
-                        </div>
-                        <div class="container">
-                            <ul class="mil-breadcrumbs mil-mb-60">
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="#.">performance Acara</a></li>
-                            </ul>
-                            <h1 class="mil-mb-60">performance <span class="mil-thin">Acara</span></h1>
-                        </div>
-                    </div>
-                </div>
-                <!-- banner end -->
-
-                <!-- project -->
-                <section class="mil-p-120-90">
-                    <div class="container">
-                        <div class="row justify-content-between">
-                            <!-- Parade Nusantara Opening Show -->
-                            <div class="col-lg-12 mil-mb-120">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 1</span>
-                                <h2 class="mil-up mil-mb-60">Medley <span class="mil-thin">Tari Tradisional</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-1.webp" alt="Medley Tari Tradisional">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Medley Tari Tradisional</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">19:00 - 19:45 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">100+ Penari dari berbagai daerah</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Simfoni Persatuan -->
-                            <div class="col-lg-12 mil-mb-120">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 2</span>
-                                <h2 class="mil-up mil-mb-60">Pantomim</h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-2.webp" alt="Pantomim">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Pantomim</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">19:45 - 20:30 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Orchestra Nusantara & Modern Ensemble</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tarian Nusantara -->
-                            <div class="col-lg-12 mil-mb-120">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 3</span>
-                                <h2 class="mil-up mil-mb-60">Drama dan <span class="mil-thin">Teater</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-3.webp" alt="Drama dan Teater">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Drama dan Teater</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">20:30 - 21:15 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Namarina Dance Company</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 4</span>
-                                <h2 class="mil-up mil-mb-60">Tari <span class="mil-thin">Perang</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-4.webp" alt="Tari Perang">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Tari Perang</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 5</span>
-                                <h2 class="mil-up mil-mb-60">Vairasi <span class="mil-thin">PBB</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-5.webp" alt="Vairasi PBB">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Vairasi PBB</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 6</span>
-                                <h2 class="mil-up mil-mb-60">Syarhil</h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-6.webp" alt="Syarhil">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Syarhil</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 7</span>
-                                <h2 class="mil-up mil-mb-60">Tari <span class="mil-thin">Randai</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-7.webp" alt="Tari Randai">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Tari Randai</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 8</span>
-                                <h2 class="mil-up mil-mb-60">Tari <span class="mil-thin">Pabat Pibui</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-8.webp" alt="Tari Pabat Pibui">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Tari Pabat Pibui</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 9</span>
-                                <h2 class="mil-up mil-mb-60">Beauty <span class="mil-thin">of Java</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-9.webp" alt="Beauty of Java">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Beauty of Java</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 10</span>
-                                <h2 class="mil-up mil-mb-60">Tari <span class="mil-thin">Pakarena.Organza</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-10.webp" alt="Tari Pakarena.Organza">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Tari Pakarena.Organza</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 11</span>
-                                <h2 class="mil-up mil-mb-60">Spirit <span class="mil-thin">of Papua</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-11.webp" alt="Spirit of Papua">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Spirit of Papua</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Grand Finale -->
-                            <div class="col-lg-12 mil-mb-90">
-                                <span class="mil-suptitle mil-suptitle-dark mil-up">performance 12</span>
-                                <h2 class="mil-up mil-mb-60">Drama <span class="mil-thin">Musikal</span></h2>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mil-image-frame mil-horizontal mil-up mil-mb-30">
-                                            <img src="img/performance/image-12.webp" alt="Drama Musikal">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <p class="mil-up mil-mb-30">Drama Musikal</p>
-                                        <div class="mil-info mil-up">
-                                            <div>Waktu: <span class="mil-dark">21:15 - 22:00 WIB</span></div>
-                                            <div>Durasi: <span class="mil-dark">45 menit</span></div>
-                                            <div>Pengisi Acara: <span class="mil-dark">Seluruh Performer</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </section>
-                <!-- project end -->
-
-                <!-- call to action -->
-                <section class="mil-soft-bg">
-                    <div class="container mil-p-120-90">
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <span class="mil-suptitle mil-suptitle-right mil-suptitle-dark mil-up">Jangan lewatkan malam spektakuler ini</span>
-                            </div>
-                        </div>
-                        <div class="mil-center">
-                            <h2 class="mil-up mil-mb-60">Siap menyaksikan <span class="mil-thin">keajaiban</span> <br>budaya <span class="mil-thin">Nusantara?</span></h2>
-                            <div class="mil-up">
-                                <a href="booking.php" class="mil-button mil-arrow-place">
-                                    <span>Beli Tiket Sekarang</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- call to action end -->
-
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.php">Amerta</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery-1.php">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="program-detail.php">Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.php">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- jQuery js -->
-    <script src="js/plugins/jquery.min.js"></script>
-    <!-- swup js -->
-    <script src="js/plugins/swup.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/plugins/swiper.min.js"></script>
-    <!-- fancybox js -->
-    <script src="js/plugins/fancybox.min.js"></script>
-    <!-- main js -->
-    <script src="js/main.js"></script>
+    <main class="container my-5">
+        <!-- Page Title -->
+        <header class="mb-5 text-center">
+            <h1 class="display-4">Performance <span class="fw-light">Acara</span></h1>
+        </header>
 
+        <!-- Performances List -->
+        <section>
+            <?php
+            $performances = [
+                [
+                    "title" => "Medley Tari Tradisional",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-1.webp",
+                    "alt" => "Medley Tari Tradisional",
+                    "description" => "Medley Tari Tradisional menampilkan berbagai tarian khas dari berbagai daerah di Indonesia, memperlihatkan keindahan dan keberagaman budaya Nusantara."
+                ],
+                [
+                    "title" => "Pantomim",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-2.webp",
+                    "alt" => "Pantomim",
+                    "description" => "Seni pertunjukan tanpa kata yang mengandalkan ekspresi wajah dan gerak tubuh untuk menyampaikan cerita, pesan, atau emosi secara kuat dan imajinatif."
+                ],
+                [
+                    "title" => "Drama dan Teater",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-3.webp",
+                    "alt" => "Drama dan Teater",
+                    "description" => "Seni pertunjukan yang menampilkan konflik, karakter, dan alur cerita melalui akting ekspresif, tata panggung, serta dialog hidup yang mengajak penonton meresapi pesan moralnya."
+                ],
+                [
+                    "title" => "Tari Perang",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-4.webp",
+                    "alt" => "Tari Perang",
+                    "description" => "Tarian tradisional penuh semangat yang menampilkan simulasi peperangan, simbol keberanian, dan kesiapan para pejuang dalam mempertahankan kehormatan serta wilayah suku mereka."
+                ],
+                [
+                    "title" => "Vairasi PBB",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-5.webp",
+                    "alt" => "Vairasi PBB",
+                    "description" => "Kreasi baris-berbaris inovatif yang memadukan disiplin, kekompakan, serta gerakan dinamis untuk menunjukkan semangat juang dan kebersamaan dalam formasi yang menarik."
+                ],
+                [
+                    "title" => "Syarhil",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-6.webp",
+                    "alt" => "Syarhil",
+                    "description" => "Pertunjukan dakwah berbentuk tim yang memadukan tilawah, sari tilawah, dan ceramah untuk menyampaikan pesan moral dan keislaman secara menarik dan menyentuh."
+                ],
+                [
+                    "title" => "Tari Randai",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-7.webp",
+                    "alt" => "Tari Randai",
+                    "description" => "Pertunjukan tradisional Minangkabau yang menggabungkan tarian, drama, dan silat, menampilkan cerita rakyat dengan iringan musik dan dialog khas dalam lingkaran gerak yang dinamis."
+                ],
+                [
+                    "title" => "Tari Pabat Pibui",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-8.webp",
+                    "alt" => "Tari Pabat Pibui",
+                    "description" => "Tari khas yang mencerminkan nilai-nilai adat dan kehidupan masyarakat melalui gerakan ritmis, busana unik, serta simbol-simbol budaya daerah yang sarat makna dan pesan sosial."
+                ],
+                [
+                    "title" => "Beauty of Java",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-9.webp",
+                    "alt" => "Beauty of Java",
+                    "description" => "Tari klasik yang menggambarkan keanggunan budaya Jawa melalui gerakan halus, busana tradisional, dan musik gamelan yang mencerminkan kelembutan serta keindahan batin."
+                ],
+                [
+                    "title" => "Tari Pakarena.Organza",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-10.webp",
+                    "alt" => "Tari Pakarena.Organza",
+                    "description" => "Tarian klasik khas Sulawesi Selatan yang memadukan kelembutan gerak Tari Pakarena dengan sentuhan modern melalui kostum organza, menciptakan nuansa anggun, elegan, dan memikat."
+                ],
+                [
+                    "title" => "Spirit of Papua",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-11.webp",
+                    "alt" => "Spirit of Papua",
+                    "description" => "Pertunjukan energik yang menggambarkan semangat, keberanian, dan kekayaan budaya Papua melalui gerakan dinamis, kostum khas, serta irama musik tradisional yang membangkitkan jiwa."
+                ],
+                [
+                    "title" => "Drama Musikal",
+                    "subtitle" => "",
+                    "image" => "img/performance/image-12.webp",
+                    "alt" => "Drama Musikal",
+                    "description" => "Pertunjukan panggung yang memadukan akting, lagu, dan musik secara harmonis untuk menyampaikan cerita penuh emosi, menjadikan setiap adegan hidup dan menggugah perasaan penonton."
+                ],
+            ];
+            $performanceNumber = 1;
+            foreach ($performances as $performance) {
+                echo '<div class="row mb-5 align-items-center performance-card p-3">';
+                echo '<div class="col-lg-6">';
+                echo '<img src="' . $performance["image"] . '" alt="' . $performance["alt"] . '" class="img-fluid performance-image mb-3" />';
+                echo '</div>';
+                echo '<div class="col-lg-6">';
+                echo '<h5 class="text-muted">Performance ' . $performanceNumber . '</h5>';
+                echo '<h2 class="performance-subtitle">' . $performance["title"] . '</h2>';
+                if (!empty($performance["subtitle"])) {
+                    echo '<h4 class="performance-title">' . $performance["subtitle"] . '</h4>';
+                }
+                echo '<p class="performance-description">' . $performance["description"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+                $performanceNumber++;
+            }
+            ?>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section-cta mt-5">
+            <span class="text-uppercase text-secondary fw-semibold mb-3 d-block">Jangan lewatkan malam spektakuler ini</span>
+            <h2 class="mb-4">Siap menyaksikan <span class="fw-light">keajaiban</span> <br />budaya <span class="fw-light">Nusantara?</span></h2>
+            <a href="booking.php" class="btn btn-primary btn-buy-ticket">
+                Beli Tiket Sekarang <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2024 Amerta. All rights reserved.</p>
+            <div>
+                <a href="#" class="text-light me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-light me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-light me-3" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-light" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS CDN (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

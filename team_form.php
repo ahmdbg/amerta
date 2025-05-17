@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate division
-    $valid_divisions = ['pubdok', 'acara', 'perkap', 'dekor', 'fundraising', 'konsumsi'];
+    $valid_divisions = ['pubdok', 'acara', 'perkap', 'dekor', 'fundraising', 'konsumsi', 'bph'];
     if (empty($_POST["division"]) || !in_array($_POST["division"], $valid_divisions)) {
         $division_err = "Please select a valid division.";
     } else {
@@ -142,6 +142,7 @@ $conn->close();
                     <option value="dekor" <?php if ($division == 'dekor') echo 'selected'; ?>>Dekor</option>
                     <option value="fundraising" <?php if ($division == 'fundraising') echo 'selected'; ?>>Fundraising</option>
                     <option value="konsumsi" <?php if ($division == 'konsumsi') echo 'selected'; ?>>Konsumsi</option>
+                    <option value="bph" <?php if ($division == 'bph') echo 'selected'; ?>>BPH</option>
                 </select>
                 <div class="error"><?php echo $division_err; ?></div>
             </div>

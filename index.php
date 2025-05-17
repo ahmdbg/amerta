@@ -127,7 +127,7 @@
                     </div>
                 </section>
                 <!-- services -->
-                <!-- <section class="mil-dark-bg">
+                <section class="mil-dark-bg">
                     <div class="mi-invert-fix">
                         <div class="mil-animation-frame">
                             <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4" style="top: 300px; right: -100px"></div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                     </div>
-                </section> -->
+                </section>
                 <!-- services end -->
 
                 <!-- team -->
