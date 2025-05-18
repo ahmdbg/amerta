@@ -297,14 +297,20 @@
                         container.appendChild(member);
                     });
                 } else {
+                    // Filter members by category and shuffle them
+                    let filteredMembers = Array.from(members).filter(member => member.getAttribute('data-category') === category);
+                    for (let i = filteredMembers.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [filteredMembers[i], filteredMembers[j]] = [filteredMembers[j], filteredMembers[i]];
+                    }
+                    // Hide all members first
                     members.forEach(member => {
-                        const cat = member.getAttribute('data-category');
-                        if (cat === category) {
-                            member.style.display = 'block';
-                        } else {
-                            member.style.display = 'none';
-                        }
-                        // Append members back to container in original order for non-all filters
+                        member.style.display = 'none';
+                    });
+                    // Clear container and append shuffled filtered members
+                    container.innerHTML = '';
+                    filteredMembers.forEach(member => {
+                        member.style.display = 'block';
                         container.appendChild(member);
                     });
                 }
@@ -328,15 +334,6 @@
 
         <!-- AOS JS -->
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
-        </script>
-
 </body>
 
 </html>

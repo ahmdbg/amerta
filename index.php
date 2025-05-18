@@ -292,7 +292,7 @@
                 <section class="mil-soft-bg">
                     <div class="container mil-p-120-120">
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-10">
 
                                 <span class="mil-suptitle mil-suptitle-right mil-suptitle-dark mil-up">Customer reviews are a valuable source <br>of information for both businesses and consumers.</span>
@@ -300,7 +300,7 @@
                             </div>
                         </div>
 
-                        <h2 class="mil-center mil-up mil-mb-60">Customer <span class="mil-thin">Voices:</span> <br>Hear What <span class="mil-thin">They Say!</span></h2>
+                        <h2 class="mil-center mil-up mil-mb-60">Customer <span class="mil-thin">Voices:</span> <br>Hear What <span class="mil-thin">They Say!</span></h2> -->
 
                         <div class="mil-revi-pagination mil-up mil-mb-60"></div>
 
