@@ -53,6 +53,7 @@
                                 <th class="px-6 py-4 text-left font-semibold">Status</th>
                                 <th class="px-6 py-4 text-left font-semibold">no_WA</th>
                                 <th class="px-6 py-4 text-left font-semibold">Nomor Kursi</th>
+                                <th class="px-6 py-4 text-left font-semibold">Akses Konfirmasi</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-700"></tbody>
@@ -122,7 +123,7 @@
                         var newRowIndexes = [];
                         table.clear();
                         var no = 1;
-                        data.forEach(function (row, idx) {
+                            data.forEach(function (row, idx) {
                             table.row.add([
                                 no++,
                                 row.nama,
@@ -131,7 +132,8 @@
                                 row.nama_murid,
                                 row.status,
                                 row.no_wa,
-                                row.nomor_kursi
+                                row.nomor_kursi,
+                                '<a href="konfirmasi.php?id=' + row.id + '" class="inline-block px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" target="_blank">Lihat Konfirmasi</a>'
                             ]);
                             if (idx >= previousDataLength) {
                                 newRowIndexes.push(idx);

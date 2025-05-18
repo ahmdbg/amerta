@@ -345,9 +345,6 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
             const qrImage = ticketElement.querySelector(".qr-code");
 
             function generatePDF() {
-                // Hide QR code image temporarily
-                qrImage.style.display = 'none';
-
                 html2canvas(ticketElement, {
                     scale: 2,
                     useCORS: true,
@@ -361,21 +358,10 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
 
                     const pdf = new jsPDF("p", "mm", [pdfWidth, pdfHeight]);
 
-                    // Add the ticket content without QR code
+                    // Add the entire ticket content including QR code
                     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
 
-                    // Add QR code image separately at bottom right corner
-                    const qrWidth = 40; // mm
-                    const qrHeight = 40; // mm
-                    const qrX = pdfWidth - qrWidth - 10; // 10mm margin from right
-                    const qrY = pdfHeight - qrHeight - 10; // 10mm margin from bottom
-
-                    pdf.addImage(qrImage.src, "PNG", qrX, qrY, qrWidth, qrHeight);
-
                     pdf.save("AMERTA_Ticket_<?= str_pad($ticket['id'], 5, '0', STR_PAD_LEFT) ?>.pdf");
-
-                    // Restore QR code image display
-                    qrImage.style.display = '';
                 });
             }
 
