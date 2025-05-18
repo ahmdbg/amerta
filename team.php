@@ -248,22 +248,42 @@
             }
 
             // Render members grouped by division with image filename derived from member id
+            $all_members = [];
             foreach ($members_by_division as $division => $members) {
                 foreach ($members as $member) {
-                    $img_path = "img/faces/" . $division . "/" . $member['id'] . ".webp";
-                    $instagram_url = "https://www.instagram.com/" . htmlspecialchars($member['instagram']);
-                    echo '<div class="col-4 col-md-3 team-member" data-category="' . htmlspecialchars($division) . '">';
-                    echo '<a href="' . $instagram_url . '" target="_blank" class="team-link">';
-                    echo '<img src="' . htmlspecialchars($img_path) . '" alt="' . htmlspecialchars($member['name']) . '">';
-                    echo '<div class="overlay">' . htmlspecialchars($member['name']) . '</div>';
-                    echo '</a></div>';
+                    $member['division'] = $division; // add division to member array
+                    $all_members[] = $member;
                 }
+            }
+
+            // Sort all members by division and name (already sorted by SQL, but just in case)
+            usort($all_members, function($a, $b) {
+                if ($a['division'] === $b['division']) {
+                    return strcmp($a['name'], $b['name']);
+                }
+                return strcmp($a['division'], $b['division']);
+            });
+
+            // Render all members but add a class to hide initially for load more
+            $initial_display_count = 12;
+            $index = 0;
+            foreach ($all_members as $member) {
+                $img_path = "img/faces/" . $member['division'] . "/" . $member['id'] . ".webp";
+                $instagram_url = "https://www.instagram.com/" . htmlspecialchars($member['instagram']);
+                $extra_class = ($index < $initial_display_count) ? '' : 'hidden-member';
+                echo '<div class="col-4 col-md-3 team-member ' . $extra_class . '" data-category="' . htmlspecialchars($member['division']) . '">';
+                echo '<a href="' . $instagram_url . '" target="_blank" class="team-link">';
+                echo '<img src="' . htmlspecialchars($img_path) . '" alt="' . htmlspecialchars($member['name']) . '">';
+                echo '<div class="overlay">' . htmlspecialchars($member['name']) . '</div>';
+                echo '</a></div>';
+                $index++;
             }
 
             $conn->close();
             ?>
-
-
+        </div>
+        <div class="text-center">
+            <button id="loadMoreBtn" class="btn btn-outline-primary mt-3">Load More</button>
         </div>
 
         <footer class="bg-dark text-light py-4 mt-5">
@@ -273,56 +293,81 @@
         </footer>
         <script>
             const filterButtons = document.querySelectorAll('.filter-menu button');
-            const members = document.querySelectorAll('.team-member');
+            const members = Array.from(document.querySelectorAll('.team-member'));
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const batchSize = 12;
+            let currentVisibleCount = batchSize;
+            let currentFilter = 'all';
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
 
             function showFiltered(category) {
+                currentFilter = category;
                 const container = document.getElementById('team-container');
+                container.innerHTML = '';
+
                 if (category === 'all') {
-                    // Shuffle the members array
-                    let membersArray = Array.from(members);
-                    for (let i = membersArray.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [membersArray[i], membersArray[j]] = [membersArray[j], membersArray[i]];
-                    }
-                    // Clear container and append shuffled members
-                    container.innerHTML = '';
-                    membersArray.forEach(member => {
+                    // Shuffle all members
+                    let allMembers = [...members];
+                    shuffleArray(allMembers);
+
+                    // Show only up to currentVisibleCount members
+                    let toShow = allMembers.slice(0, currentVisibleCount);
+                    toShow.forEach(member => {
                         member.style.display = 'block';
                         container.appendChild(member);
                     });
-                } else {
-                    // Filter members by category and shuffle them
-                    let filteredMembers = Array.from(members).filter(member => member.getAttribute('data-category') === category);
-                    for (let i = filteredMembers.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [filteredMembers[i], filteredMembers[j]] = [filteredMembers[j], filteredMembers[i]];
+
+                    // Show or hide Load More button
+                    if (currentVisibleCount >= allMembers.length) {
+                        loadMoreBtn.style.display = 'none';
+                    } else {
+                        loadMoreBtn.style.display = 'inline-block';
                     }
-                    // Hide all members first
-                    members.forEach(member => {
-                        member.style.display = 'none';
-                    });
-                    // Clear container and append shuffled filtered members
-                    container.innerHTML = '';
+                } else {
+                    // Filter members by category
+                    let filteredMembers = members.filter(member => member.getAttribute('data-category') === category);
+                    shuffleArray(filteredMembers);
+
+                    // Show all filtered members
                     filteredMembers.forEach(member => {
                         member.style.display = 'block';
                         container.appendChild(member);
                     });
+
+                    // Hide Load More button for filtered categories
+                    loadMoreBtn.style.display = 'none';
                 }
             }
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Hapus kelas active dari semua tombol
+                    // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Tambahkan kelas active ke tombol yang diklik
+                    // Add active class to clicked button
                     button.classList.add('active');
-                    // Tampilkan gambar yang sesuai
+                    // Reset visible count when filter changes
+                    currentVisibleCount = batchSize;
+                    // Show filtered members
                     const filter = button.getAttribute('data-filter');
                     showFiltered(filter);
                 });
             });
 
-            // Tampilkan semua di awal
+            loadMoreBtn.addEventListener('click', () => {
+                currentVisibleCount += batchSize;
+                showFiltered(currentFilter);
+                // Prevent page from scrolling to top after clicking Load More
+                // Scroll to the Load More button position to keep it in view
+                loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
+            // Show all initially with limited members
             showFiltered('all');
         </script>
 
