@@ -312,12 +312,15 @@
                 container.innerHTML = '';
 
                 if (category === 'all') {
-                    // Shuffle all members
+                    // Show members in the original order without reshuffling already shown members
                     let allMembers = [...members];
-                    shuffleArray(allMembers);
+                    // Only shuffle the members that are not yet shown
+                    let notShownMembers = allMembers.slice(currentVisibleCount);
+                    shuffleArray(notShownMembers);
+                    // Combine already shown members with newly shuffled not shown members
+                    let toShow = allMembers.slice(0, currentVisibleCount).concat(notShownMembers);
+                    toShow = toShow.slice(0, currentVisibleCount); // Ensure only currentVisibleCount members are shown
 
-                    // Show only up to currentVisibleCount members
-                    let toShow = allMembers.slice(0, currentVisibleCount);
                     toShow.forEach(member => {
                         member.style.display = 'block';
                         container.appendChild(member);
