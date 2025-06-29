@@ -197,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="max-w-2xl w-full mx-auto px-4 flex flex-col items-center justify-center">
         <div class="w-full bg-slate-900/80 rounded-2xl shadow-2xl shadow-blue-900/30 p-8 lg:p-12 mb-12" data-aos="zoom-in" data-aos-delay="200">
             <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-blue-300 tracking-wide text-center" data-aos="fade-up" data-aos-delay="300">Formulir Pendaftaran</h2>
-            <div id="countdownContainer" class="mb-8 text-center countdown-wrapper" data-target-date="2025-05-18T09:00:00">
+            <div id="countdownContainer" class="mb-8 text-center countdown-wrapper" data-target-date="2025-06-10:05:00">
                 <div class="coming-soon-text text-2xl md:text-3xl font-extrabold text-blue-400 mb-2 animate-pulse">Coming Soon</div>
                 <div class="countdown-text text-base md:text-lg text-slate-300 mb-2">Waktu pendaftaran akan dibuka dalam:</div>
                 <div id="countdownTimer" class="flex justify-center gap-3 md:gap-6">
