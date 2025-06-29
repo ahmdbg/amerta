@@ -133,379 +133,177 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/booking-form.css">
-    <!-- page name -->
     <title>Amerta | Booking</title>
+    <link rel="icon" type="image/png" href="./img/icon/icon.png">
+    <meta name="description"
+        content="Amerta Night Show adalah ajang ekspresi dan kreativitas bagi para santri untuk menampilkan karya terbaik mereka di atas panggung.">
 
-    <style>
-        body {
-            background: #343434;
-            background-size: 400% 400%;
-            animation: aurora 15s ease infinite;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-        }
-
-        /* Countdown styles */
-        .countdown-wrapper {
-            font-family: 'Poppins', sans-serif;
-            color: #cce0ff;
-            text-align: center;
-            user-select: none;
-            animation: pulseGlow 2.5s ease-in-out infinite;
-        }
-
-        .coming-soon-text {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 0.3em;
-            color: #4a90e2;
-            text-shadow:
-                0 0 10px #4a90e2,
-                0 0 20px #4a90e2,
-                0 0 30px #4a90e2,
-                0 0 40px #4a90e2;
-            margin-bottom: 0.5rem;
-            animation: flicker 3s infinite;
-        }
-
-        .countdown-text {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #cce0ff;
-            text-shadow: 0 0 5px #000;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .time-segment {
-            background: rgba(74, 144, 226, 0.15);
-            border: 2px solid #4a90e2;
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            min-width: 70px;
-            width: 100px;
-            box-shadow:
-                0 0 10px #4a90e2,
-                inset 0 0 8px #4a90e2;
-            animation: glowPulse 2s ease-in-out infinite;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @media (max-width: 576px) {
-            .time-segment {
-                width: 70px;
-                padding: 0.5rem 1rem;
-                min-width: 70px;
-            }
-
-            .time-number {
-                font-size: 1.8rem;
-            }
-
-            .time-label {
-                font-size: 0.75rem;
-            }
-
-            .coming-soon-text {
-                font-size: 1.8rem;
-                letter-spacing: 0.2em;
-            }
-
-            .countdown-text {
-                font-size: 1rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .form-left {
-                padding: 2rem 1rem;
-            }
-        }
-
-        .time-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #4a90e2;
-            text-shadow:
-                0 0 5px #4a90e2,
-                0 0 10px #4a90e2;
-        }
-
-        .time-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: #a3c1ff;
-            margin-top: 0.25rem;
-            letter-spacing: 0.1em;
-        }
-
-        /* Animations */
-        @keyframes pulseGlow {
-            0%, 100% {
-                text-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2;
-            }
-            50% {
-                text-shadow: 0 0 20px #4a90e2, 0 0 40px #4a90e2;
-            }
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                box-shadow:
-                    0 0 10px #4a90e2,
-                    inset 0 0 8px #4a90e2;
-            }
-            50% {
-                box-shadow:
-                    0 0 20px #4a90e2,
-                    inset 0 0 16px #4a90e2;
-            }
-        }
-
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                opacity: 1;
-            }
-            20%, 22%, 24%, 55% {
-                opacity: 0.4;
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --font-mulish: "Mulish", sans-serif;
         }
     </style>
-
+    <style>
+        body {
+            font-family: 'Mulish', sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-
-<?php
-// Removed PHP countdown visibility logic to rely solely on JavaScript
-?>
-
-    <!-- home icon top right -->
-    <a href="index.php" style="position: fixed; top: 10px; right: 10px; z-index: 1000; text-decoration: none; color: #000;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
-            <path d="M8.354 1.146a.5.5 0 0 0-.708 0L1 7.793V14.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V11h2v3.5A1.5 1.5 0 0 0 10.5 16h3a1.5 1.5 0 0 0 1.5-1.5V7.793l-6.646-6.647zM2 14V8.5l6-6 6 6V14a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V11H6v3.5a.5.5 0 0 1-.5.5h-3A.5.5 0 0 1 2 14z"/>
-        </svg>
-    </a>
-
-    <!-- wrapper -->
-    <div class="container py-5 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-
-        <!-- form container -->
-        <div class="booking-container d-flex rounded-4 shadow-lg overflow-hidden" style="max-width: 900px; width: 100%; background: #f8f9fa;">
-
-            <!-- left image side -->
-
-            <div class="form-right d-none d-md-block" style="flex: 1 1 50%; background: url('img/works/2.webp') center center/cover no-repeat; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+<body class="bg-slate-950 font-mulish min-h-screen">
+    <!-- Navbar -->
+    <nav class="mb-16 xl:mb-24 sticky top-0 z-50 bg-secondary/70 backdrop-blur-md shadow-lg shadow-primary/20 border-b border-primary/30 transition-all duration-300"
+        data-aos="fade-down" data-aos-delay="500">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center gap-3 group">
+                    <img class="h-10 w-auto transition-transform duration-200 group-hover:scale-110"
+                        src="./img/icon/icon.png"
+                        alt="Logo Amerta" />
+                    <span
+                        class="text-white text-lg font-bold leading-5 tracking-wide group-hover:text-primary transition-colors duration-200">
+                        AMERTA<br><span
+                            class="text-xs font-semibold tracking-widest text-primary">NIGHT SHOW</span>
+                    </span>
+                </a>
+                <!-- Menu (future use, hidden for now) -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <!-- Tambahkan menu di sini jika perlu -->
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="./contact.html"
+                        class="bg-gradient-to-r from-secondary via-primary to-secondary text-white font-bold px-5 py-2 rounded-lg shadow-md transition duration-200 hover:shadow-lg hover:from-primary hover:to-primary focus:outline-none focus:ring-2 focus:ring-primary">
+                        CONTACT US
+                    </a>
+                </div>
             </div>
-            <!-- right side -->
-            <div class="form-left p-5" style="flex: 1 1 50%;">
-
-                <h3 class="form-title mb-4 fw-semibold text-white text-center">Registration form</h3>
-
-                <div id="countdownContainer" class="mb-4 text-center countdown-wrapper" data-target-date="2025-05-18T09:00:00">
-                    <div class="coming-soon-text">Coming Soon</div>
-                    <div class="countdown-text">Waktu pendaftaran akan dibuka dalam:</div>
-                    <div id="countdownTimer" class="countdown-timer">
-                        <div class="time-segment">
-                            <span id="days" class="time-number">--</span>
-                            <span class="time-label">Hari</span>
-                        </div>
-                        <div class="time-segment">
-                            <span id="hours" class="time-number">--</span>
-                            <span class="time-label">Jam</span>
-                        </div>
-                        <div class="time-segment">
-                            <span id="minutes" class="time-number">--</span>
-                            <span class="time-label">Menit</span>
-                        </div>
-                        <div class="time-segment">
-                            <span id="seconds" class="time-number">--</span>
-                            <span class="time-label">Detik</span>
-                        </div>
+        </div>
+    </nav>
+    <main class="max-w-2xl w-full mx-auto px-4 flex flex-col items-center justify-center">
+        <div class="w-full bg-slate-900/80 rounded-2xl shadow-2xl shadow-blue-900/30 p-8 lg:p-12 mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-blue-300 tracking-wide text-center">Formulir Pendaftaran</h2>
+            <div id="countdownContainer" class="mb-8 text-center countdown-wrapper" data-target-date="2025-05-18T09:00:00">
+                <div class="coming-soon-text text-2xl md:text-3xl font-extrabold text-blue-400 mb-2 animate-pulse">Coming Soon</div>
+                <div class="countdown-text text-base md:text-lg text-slate-300 mb-2">Waktu pendaftaran akan dibuka dalam:</div>
+                <div id="countdownTimer" class="flex justify-center gap-3 md:gap-6">
+                    <div class="time-segment bg-blue-900/30 border-2 border-blue-500 rounded-xl px-4 py-3 flex flex-col items-center min-w-[60px]">
+                        <span id="days" class="text-2xl md:text-3xl font-bold text-blue-300">--</span>
+                        <span class="text-xs md:text-sm text-blue-200 mt-1">Hari</span>
+                    </div>
+                    <div class="time-segment bg-blue-900/30 border-2 border-blue-500 rounded-xl px-4 py-3 flex flex-col items-center min-w-[60px]">
+                        <span id="hours" class="text-2xl md:text-3xl font-bold text-blue-300">--</span>
+                        <span class="text-xs md:text-sm text-blue-200 mt-1">Jam</span>
+                    </div>
+                    <div class="time-segment bg-blue-900/30 border-2 border-blue-500 rounded-xl px-4 py-3 flex flex-col items-center min-w-[60px]">
+                        <span id="minutes" class="text-2xl md:text-3xl font-bold text-blue-300">--</span>
+                        <span class="text-xs md:text-sm text-blue-200 mt-1">Menit</span>
+                    </div>
+                    <div class="time-segment bg-blue-900/30 border-2 border-blue-500 rounded-xl px-4 py-3 flex flex-col items-center min-w-[60px]">
+                        <span id="seconds" class="text-2xl md:text-3xl font-bold text-blue-300">--</span>
+                        <span class="text-xs md:text-sm text-blue-200 mt-1">Detik</span>
                     </div>
                 </div>
-
-                <form id="bookingForm" class="booking-form" method="POST" novalidate style="display:none;">
-                    <div class="mb-3">
-                        <label for="nama_wali" class="form-label required">Nama Wali</label>
-                        <input type="text" class="form-control" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="jenis_kelamin" class="form-label required">Jenis Kelamin</label>
-                        <select class="form-select" name="jenis_kelamin" id="jenis_kelamin" required>
-                            <option value="">Pilih Jenis Kelamin</option>
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3 kelas-utama-group">
-                        <label class="form-label required d-block">Kelas</label>
-                        <div id="kelas-utama-options" class="d-flex flex-wrap gap-3">
-                            <!-- Kelas Utama checkboxes will be dynamically inserted here -->
-                        </div>
-                    </div>
-
-                    <div class="mb-3" id="subkelas-container" style="display:none;">
-                        <label class="form-label required d-block"></label>
-                        <div id="subkelas-options" class="d-flex flex-wrap gap-3">
-                            <!-- Subkelas checkboxes will be dynamically inserted here -->
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="kelas_murid" id="kelas_murid" required>
-
-                    <div class="mb-3">
-                        <label for="nama_murid" class="form-label required">Nama Santri</label>
-                        <select class="form-select" name="nama_murid" id="nama_murid" required disabled>
-                            <option value="">Pilih Santri</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="status_menginap" class="form-label required">Status Menginap</label>
-                        <select class="form-select" name="status_menginap" id="status_menginap" required>
-                            <option value="">Pilih Status Menginap</option>
-                            <option value="Menginap">Menginap</option>
-                            <option value="Tidak menginap">Tidak Menginap</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="no_wa" class="form-label required">Nomor WhatsApp</label>
-                        <input type="tel" class="form-control" id="no_wa" name="no_wa" placeholder="Contoh: 08123456789" required pattern="628[0-9]{9,13}">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100 text-uppercase fw-semibold" id="bookingButton">
-                        Booking Sekarang
-                    </button>
-                </form>
-
             </div>
-
+            <form id="bookingForm" class="space-y-5" method="POST" novalidate style="display:none;">
+                <div>
+                    <label for="nama_wali" class="block text-blue-200 font-semibold mb-1">Nama Wali</label>
+                    <input type="text" class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" id="nama_wali" name="nama_wali" placeholder="Masukkan nama wali" required>
+                </div>
+                <div>
+                    <label for="jenis_kelamin" class="block text-blue-200 font-semibold mb-1">Jenis Kelamin</label>
+                    <select class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2" name="jenis_kelamin" id="jenis_kelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-blue-200 font-semibold mb-1">Kelas</label>
+                    <div id="kelas-utama-options" class="flex flex-wrap gap-2 text-slate-100"></div>
+                </div>
+                <div id="subkelas-container" style="display:none;">
+                    <label class="block text-blue-200 font-semibold mb-1"></label>
+                    <div id="subkelas-options" class="flex flex-wrap gap-2 text-slate-100"></div>
+                </div>
+                <input type="hidden" name="kelas_murid" id="kelas_murid" required>
+                <div>
+                    <label for="nama_murid" class="block text-blue-200 font-semibold mb-1">Nama Santri</label>
+                    <select class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2" name="nama_murid" id="nama_murid" required disabled>
+                        <option value="">Pilih Santri</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="status_menginap" class="block text-blue-200 font-semibold mb-1">Status Menginap</label>
+                    <select class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2" name="status_menginap" id="status_menginap" required>
+                        <option value="">Pilih Status Menginap</option>
+                        <option value="Menginap">Menginap</option>
+                        <option value="Tidak menginap">Tidak Menginap</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="no_wa" class="block text-blue-200 font-semibold mb-1">Nomor WhatsApp</label>
+                    <input type="tel" class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2" id="no_wa" name="no_wa" placeholder="Contoh: 08123456789" required pattern="628[0-9]{9,13}">
+                </div>
+                <button type="submit" id="bookingButton" class="w-full bg-gradient-to-r from-blue-700 via-blue-500 to-sky-700 text-lg font-bold py-3 rounded-xl text-white shadow-lg transition duration-300 hover:shadow-xl hover:from-blue-800 hover:to-sky-800">Booking Sekarang</button>
+            </form>
         </div>
-
-    </div>
-
+    </main>
+    <footer class="bg-slate-900 text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
+            ©2025 amertans.au All Rights Reserved. | <a href="#" class="text-blue-400 hover:underline">Terms & Privacy Policy</a>
+        </div>
+    </footer>
     <script>
-        const kelasUtamaList = ['7', '8', '9', '10', '11', '12'];
-        const subkelasMap = {
-            '7': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-            '8': ['A', 'B', 'C', 'D', 'E', 'F'],
-            '9': ['A', 'B', 'C', 'D', 'E'],
-            '10': [' A', ' B', ' C', ' D'],
-            '11': [' A', ' B', ' C', ' D'],
-            '12': [' A', ' B', ' C', ' D']
-        };
+        document.addEventListener('DOMContentLoaded', function() {
+            const kelasUtamaList = ['7', '8', '9', '10', '11', '12'];
+            const subkelasMap = {
+                '7': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+                '8': ['A', 'B', 'C', 'D', 'E', 'F'],
+                '9': ['A', 'B', 'C', 'D', 'E'],
+                '10': [' A', ' B', ' C', ' D'],
+                '11': [' A', ' B', ' C', ' D'],
+                '12': [' A', ' B', ' C', ' D']
+            };
 
-        const kelasUtamaContainer = document.getElementById('kelas-utama-options');
-        const subkelasContainer = document.getElementById('subkelas-options');
-        const subkelasWrapper = document.getElementById('subkelas-container');
-        const hiddenInput = document.getElementById('kelas_murid');
-        const namaMuridSelect = document.getElementById('nama_murid');
+            const kelasUtamaContainer = document.getElementById('kelas-utama-options');
+            const subkelasContainer = document.getElementById('subkelas-options');
+            const subkelasWrapper = document.getElementById('subkelas-container');
+            const hiddenInput = document.getElementById('kelas_murid');
+            const namaMuridSelect = document.getElementById('nama_murid');
 
-        // Initialize kelas utama checkboxes
-        kelasUtamaList.forEach(mainClass => {
-            const checkboxId = `kelas_utama_${mainClass}`;
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = checkboxId;
-            checkbox.name = 'kelas_utama';
-            checkbox.value = mainClass;
-            checkbox.classList.add('form-check-input');
-            checkbox.addEventListener('change', () => {
-                // Only allow one kelas utama checkbox to be selected at a time
-                document.querySelectorAll('input[name="kelas_utama"]').forEach(cb => {
-                    if (cb !== checkbox) cb.checked = false;
-                });
-
-                if (checkbox.checked) {
-                    showSubkelas(mainClass);
-                } else {
-                    subkelasWrapper.style.display = 'none';
-                    subkelasContainer.innerHTML = '';
-                    hiddenInput.value = '';
-                    namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
-                    namaMuridSelect.disabled = true;
-                }
-            });
-
-            const label = document.createElement('label');
-            label.htmlFor = checkboxId;
-            label.classList.add('form-check-label', 'me-3', 'mb-0');
-            label.style.cursor = 'pointer';
-            label.textContent = mainClass;
-
-            const div = document.createElement('div');
-            div.classList.add('form-check');
-            div.appendChild(checkbox);
-            div.appendChild(label);
-
-            kelasUtamaContainer.appendChild(div);
-        });
-
-        function showSubkelas(mainClass) {
-            // Reset subkelas options and hidden input
-            subkelasContainer.innerHTML = '';
-            hiddenInput.value = '';
-            namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
-            namaMuridSelect.disabled = true;
-
-            if (!mainClass || !subkelasMap[mainClass]) {
-                subkelasWrapper.style.display = 'none';
-                hiddenInput.required = false;
-                return;
-            }
-
-            subkelasWrapper.style.display = 'block';
-            hiddenInput.required = true;
-
-            subkelasMap[mainClass].forEach(sub => {
-                const checkboxId = `subkelas_${mainClass}${sub}`;
+            // Initialize kelas utama checkboxes
+            kelasUtamaList.forEach(mainClass => {
+                const checkboxId = `kelas_utama_${mainClass}`;
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = checkboxId;
-                checkbox.name = 'subkelas';
-                checkbox.value = sub;
+                checkbox.name = 'kelas_utama';
+                checkbox.value = mainClass;
                 checkbox.classList.add('form-check-input');
                 checkbox.addEventListener('change', () => {
-                    // Only allow one checkbox to be selected at a time
-                    document.querySelectorAll('input[name="subkelas"]').forEach(cb => {
+                    // Only allow one kelas utama checkbox to be selected at a time
+                    document.querySelectorAll('input[name="kelas_utama"]').forEach(cb => {
                         if (cb !== checkbox) cb.checked = false;
                     });
 
                     if (checkbox.checked) {
-                        hiddenInput.value = mainClass + sub;
-                        loadSantri(hiddenInput.value);
+                        showSubkelas(mainClass);
                     } else {
+                        subkelasWrapper.style.display = 'none';
+                        subkelasContainer.innerHTML = '';
                         hiddenInput.value = '';
                         namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
                         namaMuridSelect.disabled = true;
@@ -516,106 +314,150 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 label.htmlFor = checkboxId;
                 label.classList.add('form-check-label', 'me-3', 'mb-0');
                 label.style.cursor = 'pointer';
-                label.textContent = sub;
+                label.textContent = mainClass;
 
                 const div = document.createElement('div');
                 div.classList.add('form-check');
                 div.appendChild(checkbox);
                 div.appendChild(label);
 
-                subkelasContainer.appendChild(div);
+                kelasUtamaContainer.appendChild(div);
             });
-        }
 
-        function loadSantri(kelas) {
-            namaMuridSelect.disabled = true;
-            namaMuridSelect.innerHTML = '<option value="">Loading...</option>';
+            function showSubkelas(mainClass) {
+                // Reset subkelas options and hidden input
+                subkelasContainer.innerHTML = '';
+                hiddenInput.value = '';
+                namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
+                namaMuridSelect.disabled = true;
 
-            fetch(`get_santri.php?kelas=${kelas}`)
-                .then(response => response.json())
-                .then(data => {
-                    namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
-                    data.forEach(santri => {
-                        namaMuridSelect.innerHTML += `<option value="${santri.nama}">${santri.nama}</option>`;
+                if (!mainClass || !subkelasMap[mainClass]) {
+                    subkelasWrapper.style.display = 'none';
+                    hiddenInput.required = false;
+                    return;
+                }
+
+                subkelasWrapper.style.display = 'block';
+                hiddenInput.required = true;
+
+                subkelasMap[mainClass].forEach(sub => {
+                    const checkboxId = `subkelas_${mainClass}${sub}`;
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = checkboxId;
+                    checkbox.name = 'subkelas';
+                    checkbox.value = sub;
+                    checkbox.classList.add('form-check-input');
+                    checkbox.addEventListener('change', () => {
+                        // Only allow one checkbox to be selected at a time
+                        document.querySelectorAll('input[name="subkelas"]').forEach(cb => {
+                            if (cb !== checkbox) cb.checked = false;
+                        });
+
+                        if (checkbox.checked) {
+                            hiddenInput.value = mainClass + sub;
+                            loadSantri(hiddenInput.value);
+                        } else {
+                            hiddenInput.value = '';
+                            namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
+                            namaMuridSelect.disabled = true;
+                        }
                     });
-                    namaMuridSelect.disabled = false;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    namaMuridSelect.innerHTML = '<option value="">Error loading santri</option>';
+
+                    const label = document.createElement('label');
+                    label.htmlFor = checkboxId;
+                    label.classList.add('form-check-label', 'me-3', 'mb-0');
+                    label.style.cursor = 'pointer';
+                    label.textContent = sub;
+
+                    const div = document.createElement('div');
+                    div.classList.add('form-check');
+                    div.appendChild(checkbox);
+                    div.appendChild(label);
+
+                    subkelasContainer.appendChild(div);
                 });
-        }
-    </script>
-
-    <script>
-        // Pass PHP visitor count and limit to JS
-        const visitorCount = <?php echo $visitor_count; ?>;
-        const visitorLimit = <?php echo $visitor_limit; ?>;
-
-        document.getElementById('bookingButton').addEventListener('click', function(event) {
-            if (visitorCount >= visitorLimit) {
-                event.preventDefault();
-                alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup.');
             }
-        });
 
-        // Convert no_wa input from 0... to 62... on form submit
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            const noWaInput = document.getElementById('no_wa');
-            let noWaValue = noWaInput.value.trim();
+            function loadSantri(kelas) {
+                namaMuridSelect.disabled = true;
+                namaMuridSelect.innerHTML = '<option value="">Loading...</option>';
 
-            if (noWaValue.startsWith('0')) {
-                noWaValue = '62' + noWaValue.substring(1);
-                noWaInput.value = noWaValue;
+                fetch(`get_santri.php?kelas=${kelas}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        namaMuridSelect.innerHTML = '<option value="">Pilih Santri</option>';
+                        data.forEach(santri => {
+                            namaMuridSelect.innerHTML += `<option value="${santri.nama}">${santri.nama}</option>`;
+                        });
+                        namaMuridSelect.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        namaMuridSelect.innerHTML = '<option value="">Error loading santri</option>';
+                    });
             }
-        });
 
-        // Countdown timer logic
-        (function() {
+            // Pass PHP visitor count and limit to JS
+            const visitorCount = <?php echo $visitor_count; ?>;
+            const visitorLimit = <?php echo $visitor_limit; ?>;
+
+            document.getElementById('bookingButton').addEventListener('click', function(event) {
+                if (visitorCount >= visitorLimit) {
+                    event.preventDefault();
+                    alert('Maaf, kuota pengunjung sudah mencapai batas maksimal. Pendaftaran ditutup.');
+                }
+            });
+
+            // Convert no_wa input from 0... to 62... on form submit
+            document.getElementById('bookingForm').addEventListener('submit', function(event) {
+                const noWaInput = document.getElementById('no_wa');
+                let noWaValue = noWaInput.value.trim();
+
+                if (noWaValue.startsWith('0')) {
+                    noWaValue = '62' + noWaValue.substring(1);
+                    noWaInput.value = noWaValue;
+                }
+            });
+
+            // Countdown timer logic
             const countdownTimer = document.getElementById('countdownTimer');
             const countdownContainer = document.getElementById('countdownContainer');
             const bookingForm = document.getElementById('bookingForm');
-            const targetDateStr = countdownContainer.getAttribute('data-target-date');
-            const countDownDate = new Date(targetDateStr).getTime();
+            let targetDateStr = countdownContainer ? countdownContainer.getAttribute('data-target-date') : null;
+            let countDownDate = targetDateStr ? new Date(targetDateStr.replace(/-/g, '/')).getTime() : null;
 
             function updateTimer() {
                 const now = new Date().getTime();
                 const distance = countDownDate - now;
-
                 if (distance <= 0) {
+                    if (countdownContainer) countdownContainer.style.display = 'none';
+                    if (bookingForm) bookingForm.style.display = 'block';
                     clearInterval(timerInterval);
-                    countdownContainer.style.display = 'none';
-                    bookingForm.style.display = 'block';
                     return;
                 }
-
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Format as DD HH:MM:SS
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-            // Update each segment separately
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        // Immediately check if countdown has passed and show form if so
-        if (Date.now() >= countDownDate) {
-            countdownContainer.style.display = 'none';
-            bookingForm.style.display = 'block';
-        } else {
-            updateTimer();
-            var timerInterval = setInterval(updateTimer, 1000);
-        }
-    })();
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                if (document.getElementById('days')) document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                if (document.getElementById('hours')) document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                if (document.getElementById('minutes')) document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                if (document.getElementById('seconds')) document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            if (countDownDate && Date.now() >= countDownDate) {
+                if (countdownContainer) countdownContainer.style.display = 'none';
+                if (bookingForm) bookingForm.style.display = 'block';
+            } else if (countDownDate) {
+                updateTimer();
+                var timerInterval = setInterval(updateTimer, 1000);
+            } else {
+                // Fallback: always show form if no countdown
+                if (countdownContainer) countdownContainer.style.display = 'none';
+                if (bookingForm) bookingForm.style.display = 'block';
+            }
+        });
     </script>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

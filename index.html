@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Amerta Night Show</title>
+    <link rel="icon" type="image/png" href="./img/icon/icon.png">
+    <meta name="description"
+        content="Amerta Night Show adalah ajang ekspresi dan kreativitas bagi para santri untuk menampilkan karya terbaik mereka di atas panggung.">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @theme {
+            --font-mulish: "Mulish", sans-serif;
+        }
+    </style>
+    <style>
+        /* jika pakai react pindahkan di tailwind.config.js/.ts */
+
+        /* export default {
+        theme: {
+            extend: {
+            // ...
+            keyframes: {
+                'slide-left': {
+                from: { transform: 'translateX(0)' },
+                to: { transform: 'translateX(-100%)' },
+                },
+            },
+            animation: {
+                'slide-left': 'slide-left 8s linear infinite',
+            },
+            },
+        },
+        plugins: [],
+        } */
+
+
+        @keyframes slide-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-slide-left-infinite {
+            animation: slide-left 30s reverse linear infinite;
+        }
+
+        /* .group:hover .animate-slide-left-infinite {
+        animation-play-state: paused;
+        } */
+
+        .animate-slide-right-infinite {
+            animation: slide-left 30s linear infinite;
+        }
+
+        /* .group:hover .animate-slide-right-infinite {
+        animation-play-state: paused;
+        } */
+
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden !important;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 font-mulish overflow-x-hidden" data-aos="fade-up" data-aos-delay="300>
+
+    <div
+        class="absolute -top-50 left-1/2 -translate-x-1/2 w-[100vw] lg:w-[800px] h-[400px] rounded-full bg-[#025f82] opacity-20 blur-[150px]">
+    </div>
+
+    <nav class="mb-16 xl:mb-24 sticky top-0 z-50 bg-slate-950 backdrop-blur-md shadow-lg shadow-[#025f82]/20 border-b border-[#025f82]/30 transition-all duration-300"
+        data-aos="fade-down" data-aos-delay="500">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center gap-3 group">
+                    <img class="h-10 w-auto transition-transform duration-200 group-hover:scale-110"
+                        src="./img/icon/icon.png"
+                        alt="Logo Amerta" />
+                    <span
+                        class="text-white text-lg font-bold leading-5 tracking-wide group-hover:text-[#025f82] transition-colors duration-200">
+                        AMERTA<br><span
+                            class="text-xs font-semibold tracking-widest text-[#025f82]">NIGHT SHOW</span>
+                    </span>
+                </a>
+                <!-- Menu (future use, hidden for now) -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <!-- Tambahkan menu di sini jika perlu -->
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="./contact.html"
+                        class="bg-gradient-to-r from-[#1b425c] via-[#025f82] to-[#1b425c] text-white font-bold px-5 py-2 rounded-lg shadow-md transition duration-200 hover:shadow-lg hover:from-[#025f82] hover:to-[#025f82] focus:outline-none focus:ring-2 focus:ring-[#025f82]">
+                        CONTACT US
+                    </a>
+                    <a href="#ticket-section"
+                        class="bg-gradient-to-r from-[#025f82] via-[#1b425c] to-[#025f82] text-white font-bold px-5 py-2 rounded-lg shadow-md transition duration-200 hover:shadow-lg hover:from-[#1b425c] hover:to-[#1b425c] focus:outline-none focus:ring-2 focus:ring-[#025f82]">
+                        GET TICKET
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+
+    </div>
+    <h1
+        class="mx-auto text-2xl max-w-[90vw] lg:max-w-4xl xl:max-w-5xl text-center md:text-4xl lg:text-5xl xl:text-6xl font-bold xl:leading-18 text-white" data-aos="fade-up" data-aos-delay="200">
+        Amerta Night Show: <span
+            class="bg-gradient-to-r from-[#025f82] text-transparent via-[#025f82] bg-clip-text to-[#1b425c]">Mengekspresikan
+            Diri Lewat Karya</span>
+    </h1>
+    <h3
+        class="max-w-[70vw] lg:max-w-xl xl:max-w-4xl mx-auto text-center text-white text-sm md:text-base lg:text-xl mt-5 " data-aos="fade-in" data-aos-delay="300">
+        Meningkatkan minat dan bakat santri dengan berekspresi di panggung</h3>
+    <div class="max-w-[90vw] lg:max-w-4xl xl:max-w-5xl mx-auto mt-5 lg:mt-16 cyan-500 shadow-2xl shadow-blue-900/50" data-aos="fade-up" data-aos-delay="400">
+        <iframe width="100%" class="h-[300px] md:h-[400px] lg:h-[450px] xl:h-[600px]"
+            src="https://www.youtube.com/embed/qepcXL5qrhA?si=vv38mfiVlDYVDkRt" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="relative bg-gradient-to-r from-slate-900 via-[#025f82] to-slate-900 h-[2px] my-12 lg:my-24">
+        <div
+            class="absolute -top-60 lg:-top-120 -left-50  w-[100vw] lg:w-[400px] h-[400px] rounded-full bg-[#025f82] opacity-20 blur-[150px]">
+        </div>
+    </div>
+
+    <!-- ABOUT AMERTA SECTION START -->
+    <section class="max-w-4xl mx-auto my-20 px-4 lg:px-0" data-aos="fade-left" data-aos-delay="500">
+        <div
+            class="bg-slate-900 rounded-2xl shadow-xl shadow-blue-900/30 p-8 lg:p-12 flex flex-col items-center text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-blue-300 tracking-wide">Tentang Amerta Night Show</h2>
+            <p class="text-slate-300 text-lg lg:text-xl mb-6 max-w-2xl">
+                <span class="font-semibold text-blue-400">Amerta Night Show</span> adalah sebuah ajang ekspresi dan
+                kreativitas bagi para santri untuk menampilkan karya terbaik mereka di atas panggung. Acara ini
+                bertujuan untuk meningkatkan kepercayaan diri, mempererat kebersamaan, dan memberikan inspirasi kepada
+                seluruh peserta dan penonton. Setiap penampilan di Amerta Night Show adalah hasil dedikasi, latihan, dan
+                semangat berkarya dari para santri.
+            </p>
+            <img src="./img/gallery/1.webp"
+                alt="Amerta Night Show" class="rounded-xl shadow-lg w-full max-w-md mb-2">
+        </div>
+    </section>
+    <!-- ABOUT AMERTA SECTION END -->
+
+
+
+    <div class="flex items-center justify-center w-full my-12 mt-24" data-aos="fade-right" data-aos-delay="600">
+        <!-- Garis kiri -->
+        <div class="flex-grow h-px bg-slate-700"></div>
+
+        <!-- Teks gradasi -->
+        <h2
+            class="px-6 text-sm lg:text-lg font-bold bg-gradient-to-r from-[#025f82] tracking-[3px] lg:tracking-[8px] to-[#1b425c] text-transparent bg-clip-text whitespace-nowrap">
+            TESTIMONIAL PENONTON
+        </h2>
+
+        <!-- Garis kanan -->
+        <div class="flex-grow h-px bg-slate-700"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3  max-w-[90%] mx-auto lg:gap-10 lg:mt-24" data-aos="fade-in" data-aos-delay="700">
+        <div class="p-[2px] min-w-[300px]  bg-radial-[at_50%_80%] from-[#025f82]/50 via-[#1b425c]/50 to-slate-950 to-85%">
+            <div class="bg-slate-950 h-full flex flex-col justify-between text-white p-6 lg:p-10 ">
+                <p class="text-base lg:text-lg leading-relaxed mb-6">
+                    "Amerta benar-benar pengalaman luar biasa! Saya bangga melihat santri bisa tampil seapik dan
+                    sekreatif ini."
+                </p>
+                <div class="text-sm font-semibold">
+                    <p class="text-gray-400 font-normal">Wali santri</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-[2px] min-w-[300px]  bg-radial-[at_50%_80%] from-[#025f82]/50 via-[#1b425c]/50 to-slate-950 to-85%">
+            <div class="bg-slate-950 h-full flex flex-col justify-between text-white p-6 lg:p-10 ">
+                <p class="text-base lg:text-lg leading-relaxed mb-6">
+                    "Karya-karya santri di Amerta luar biasa. Setiap penampilan penuh makna dan sangat menginspirasi."
+                </p>
+                <div class="text-sm font-semibold">
+                    <p class="text-gray-400 font-normal">Wali santri</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-[2px] min-w-[300px]  bg-radial-[at_50%_80%] from-[#025f82]/50 via-[#1b425c]/50 to-slate-950 to-85%">
+            <div class="bg-slate-950 h-full flex flex-col justify-between text-white p-6 lg:p-10 ">
+                <p class="text-base lg:text-lg leading-relaxed mb-6">
+                    "Atmosfernya magis dan penuh semangat. Amerta memberi ruang bagi santri untuk bersinar dengan
+                    caranya sendiri."
+                </p>
+                <div class="text-sm font-semibold">
+                    <p class="text-gray-400 font-normal">Wali santri</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative bg-gradient-to-r from-slate-900 via-[#025f82] to-slate-900 h-[2px] my-12 lg:my-24">
+        <div
+            class="absolute -top-60 lg:-top-120 -left-50  w-[100vw] lg:w-[400px] h-[400px] rounded-full bg-[#025f82] opacity-20 blur-[150px]">
+        </div>
+    </div>
+
+
+
+    <h3
+        class="lg:max-w-3xl mx-auto max-w-[90vw] text-xl lg:text-2xl mb-24 text-white font-semibold text-center tracking-[3px] lg:tracking-[7px]" data-aos="fade-up" data-aos-delay="800">
+        GALERI AMERTA</h3>
+
+    <div class="mb-12 lg:mb-24" data-aos="fade-left" data-aos-delay="900">
+        <div
+            class="logos group relative overflow-hidden whitespace-nowrap  [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+            <div class="animate-slide-left-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-gallery"></div>
+            <div class="animate-slide-left-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-gallery-duplicate"></div>
+        </div>
+        <div
+            class="logos group relative overflow-hidden whitespace-nowrap  [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+            <div class="animate-slide-right-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-gallery-reverse"></div>
+            <div class="animate-slide-right-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-gallery-reverse-duplicate"></div>
+        </div>
+        <div
+            class="logos group relative overflow-hidden whitespace-nowrap  [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+            <div class="animate-slide-left-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-gallery-3"></div>
+            <div class="animate-slide-left-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-gallery-3-duplicate"></div>
+        </div>
+        <div class="text-center pt-4">
+            <a href="./gallery.html"
+                class="bg-gradient-to-r from-[#025f82] via-[#1b425c] to-[#025f82] text-lg font-bold px-8 lg:px-16 py-4 rounded-xl inline-block mx-auto text-white shadow-lg transition duration-300 hover:shadow-xl shadow-[#025f82]/50">Lihat
+                Galeri</a>
+        </div>
+    </div>
+
+
+
+    <div class="relative bg-gradient-to-r from-slate-900 via-[#025f82] to-slate-900 h-[2px] my-12 lg:my-24">
+        <div
+            class="absolute -top-60 lg:-top-120 -left-50  w-[100vw] lg:w-[500px] h-[500px] rounded-full bg-[#025f82] opacity-20 blur-[150px]">
+        </div>
+    </div>
+
+    <!-- E TIKET -->
+
+    <div class="max-w-[98vw] xl:max-w-[90vw] mx-auto" id="ticket-section">
+        <h2
+            class="px-6 text-lg lg:text-2xl text-center mb-4 font-bold bg-gradient-to-r from-[#025f82] tracking-[5px] lg:tracking-[12px] to-[#1b425c] text-transparent bg-clip-text whitespace-nowrap" data-aos="fade-right" data-aos-delay="1100">
+            TICKET
+        </h2>
+        <h2 class="text-4xl lg:text-6xl xl:text-7xl mb-10 text-white font-extrabold text-center tracking-wide" data-aos="fade-in" data-aos-delay="1200">Daftar & Join Sekarang</h2>
+        <div
+            class="max-w-2xl mx-auto bg-gradient-to-tr from-slate-900/90 via-[#025f82]/80 to-slate-900/90 rounded-3xl border-4 border-[#025f82] py-16 px-12 text-white font-sans shadow-2xl shadow-[#025f82]/50 flex flex-col items-center gap-10" data-aos="fade-up" data-aos-delay="1300">
+            <div class="flex flex-col items-center space-y-6">
+                <div class="flex items-center space-x-5">
+                    <img class="h-16 w-auto" src="./img/icon/icon.png" alt="Amerta Logo" />
+                    <span class="text-slate-100 text-2xl font-extrabold leading-7 tracking-wide text-center">AMERTA NIGHT SHOW</span>
+                </div>
+                <p class="text-slate-300 text-center text-xl leading-relaxed max-w-lg">
+                    Jangan lewatkan malam penuh inspirasi dan kreativitas. Pesan tiketmu sekarang dan jadilah bagian dari pengalaman tak terlupakan!
+                </p>
+            </div>
+            <div class="w-full">
+                <a href="./booking.php"
+                    class="block w-full bg-gradient-to-br from-[#025f82] via-[#1b425c] to-[#025f82] rounded-3xl py-6 text-center text-white font-extrabold text-2xl uppercase tracking-wider shadow-lg hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-[#025f82]/50">
+                    DAPATKAN TIKET SEKARANG JUGA!!
+                </a>
+            </div>
+            <div class="w-full flex justify-center space-x-8 text-[#025f82]">
+                <div class="w-16 h-2 rounded-full bg-[#025f82] opacity-50 animate-pulse"></div>
+                <div class="w-16 h-2 rounded-full bg-[#025f82] opacity-50 animate-pulse delay-150"></div>
+                <div class="w-16 h-2 rounded-full bg-[#025f82] opacity-50 animate-pulse delay-300"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- partners SECTION START -->
+    <div class="relative bg-gradient-to-r from-slate-900 via-[#025f82] to-slate-900 h-[2px] my-12 lg:my-24"></div>
+    <h3
+        class="lg:max-w-3xl mx-auto max-w-[90vw] text-xl lg:text-2xl mb-12 text-white font-semibold text-center tracking-[3px] lg:tracking-[7px]" data-aos="fade-up" data-aos-delay="800">
+        partners</h3>
+    <div class="mb-12 lg:mb-24" data-aos="fade-left" data-aos-delay="900">
+        <div
+            class="logos group relative overflow-hidden whitespace-nowrap  [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+            <div class="animate-slide-left-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-partners"></div>
+            <div class="animate-slide-left-infinite group-hover:animation-pause inline-block w-max py-4" id="slider-partners-duplicate"></div>
+        </div>
+    </div>
+    <!-- partners SECTION END -->
+
+    <div class="max-w-screen-3xl mx-auto px-5 min-h-sceen text-white mt-24 mb-10" data-aos="fade-in" data-aos-delay="200">
+        <div class="text-center">
+            <div class="inline-flex mb-8">
+                <img class="h-12 w-auto mr-2"
+                    src="./img/icon/icon.png"> <span
+                    class="text-white text-xl font-semibold leading-6">AMERTA<br>NIGHT SHOW</span>
+            </div>
+            <p class="mb-5"><a href="" class="text-[#025f82]">+62 812-2917-5559</a><br>
+                amertans.au@gmail.com©2025 amertans.au All Rights Reserved.<br><a href=""
+                    class="text-[#025f82]">Terms & Privacy Policy</a> | <a href="" class="text-[#025f82]">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Smooth scroll for GET TICKET button
+      document.querySelectorAll('a[href="#ticket-section"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById('ticket-section');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      AOS.init({
+        duration: 2400, // durasi animasi lebih lama
+        easing: 'ease-in-out', // transisi lebih smooth
+        offset: 40, // animasi mulai lebih awal
+        once: true // animasi hanya sekali
+      });
+      // Generate slider gallery images from img/gallery/18.jpg to 25.jpg
+      function createGalleryImages(start, end, reverse = false) {
+        const images = [];
+        const range = [];
+        if (reverse) {
+          for (let i = end; i >= start; i--) range.push(i);
+        } else {
+          for (let i = start; i <= end; i++) range.push(i);
+        }
+        for (const i of range) {
+          const img = document.createElement('img');
+          img.src = `img/gallery/${i}.webp`;
+          img.alt = `Galeri ${i}`;
+          img.className = "mx-2 lg:mx-3 inline h-[150px] lg:h-[250px] rounded-2xl shadow-xl shadow-slate-500/20";
+          images.push(img);
+        }
+        return images;
+      }
+      // Slider kiri ke kanan
+      const sliderGallery = document.getElementById('slider-gallery');
+      const sliderGalleryDuplicate = document.getElementById('slider-gallery-duplicate');
+      createGalleryImages(1, 6).forEach(img => sliderGallery.appendChild(img.cloneNode()));
+      createGalleryImages(1, 6).forEach(img => sliderGalleryDuplicate.appendChild(img.cloneNode()));
+      // Slider kanan ke kiri
+      const sliderGalleryReverse = document.getElementById('slider-gallery-reverse');
+      const sliderGalleryReverseDuplicate = document.getElementById('slider-gallery-reverse-duplicate');
+      createGalleryImages(10, 17, true).forEach(img => sliderGalleryReverse.appendChild(img.cloneNode()));
+      createGalleryImages(10, 17, true).forEach(img => sliderGalleryReverseDuplicate.appendChild(img.cloneNode()));
+      // Baris ketiga galeri (kiri ke kanan)
+      const sliderGallery3 = document.getElementById('slider-gallery-3');
+      const sliderGallery3Duplicate = document.getElementById('slider-gallery-3-duplicate');
+      createGalleryImages(18, 25).forEach(img => sliderGallery3.appendChild(img.cloneNode()));
+      createGalleryImages(18, 25).forEach(img => sliderGallery3Duplicate.appendChild(img.cloneNode()));
+      // partners slider
+      function createpartnersImages(start, end, reverse = false) {
+        const images = [];
+        const range = [];
+        if (reverse) {
+          for (let i = end; i >= start; i--) range.push(i);
+        } else {
+          for (let i = start; i <= end; i++) range.push(i);
+        }
+        for (const i of range) {
+          const img = document.createElement('img');
+          img.src = `img/partners/${i}.webp`;
+          img.alt = `partners ${i}`;
+          img.className = "mx-4 lg:mx-6 inline h-[60px] lg:h-[90px] rounded-xl shadow-lg bg-white/80 p-2 object-contain";
+          images.push(img);
+        }
+        return images;
+      }
+      // Slider partners kiri ke kanan
+      const sliderpartners = document.getElementById('slider-partners');
+      const sliderpartnersDuplicate = document.getElementById('slider-partners-duplicate');
+      createpartnersImages(1, 6).forEach(img => sliderpartners.appendChild(img.cloneNode()));
+      createpartnersImages(1, 6).forEach(img => sliderpartnersDuplicate.appendChild(img.cloneNode()));
+    </script>
+</body>
+
+</html>

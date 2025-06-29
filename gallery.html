@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Amerta Night Show</title>
+    <link rel="icon" type="image/png" href="./img/icon/icon.png">
+    <meta name="description"
+        content="Amerta Night Show adalah ajang ekspresi dan kreativitas bagi para santri untuk menampilkan karya terbaik mereka di atas panggung.">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @theme {
+            --font-mulish: "Mulish", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 font-mulish min-h-screen">
+    <nav class="mb-16 xl:mb-24 sticky top-0 z-50 bg-slate-900/70 backdrop-blur-md shadow-lg shadow-blue-900/20 border-b border-blue-800/30 transition-all duration-300"
+        data-aos="fade-down" data-aos-delay="500">
+        <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center gap-3 group">
+                    <img class="h-10 w-auto transition-transform duration-200 group-hover:scale-110"
+                        src="./img/icon/icon.png" alt="Logo Amerta" />
+                    <span
+                        class="text-slate-100 text-lg font-bold leading-5 tracking-wide group-hover:text-blue-400 transition-colors duration-200">
+                        AMERTA<br><span class="text-xs font-semibold tracking-widest text-blue-300">NIGHT SHOW</span>
+                    </span>
+                </a>
+                <!-- Menu (future use, hidden for now) -->
+                <div class="hidden md:flex gap-8 items-center">
+                    <!-- Tambahkan menu di sini jika perlu -->
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="./contact.html"
+                        class="bg-gradient-to-r from-slate-700 via-slate-500 to-gray-700 text-white font-bold px-5 py-2 rounded-lg shadow-md transition duration-200 hover:shadow-lg hover:from-slate-800 hover:to-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl lg:text-5xl font-bold text-center text-blue-300 mb-8" data-aos="fade-up"
+            data-aos-delay="200">Galeri Amerta Night Show</h1>
+        <p class="text-slate-300 text-center mb-12 text-lg max-w-2xl mx-auto" data-aos="fade-in" data-aos-delay="300">
+            Kumpulan momen terbaik dan karya santri di Amerta Night Show. Setiap foto adalah cerita inspirasi,
+            kreativitas, dan kebersamaan.</p>
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12" data-aos="fade-left" data-aos-delay="400">
+        </div>
+    </main>
+    <footer class="bg-slate-900 text-white py-8 mt-16" data-aos="fade-in" data-aos-delay="600">
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
+            ©2025 amertans.au All Rights Reserved. | <a href="#" class="text-blue-400 hover:underline">Terms & Privacy
+                Policy</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 2000, // durasi animasi lebih lama
+            easing: 'ease', // transisi lebih smooth
+            offset: 60, // animasi mulai lebih awal
+            once: true // animasi hanya sekali
+        });
+        // Generate gallery images from img/gallery/1.jpg to 25.jpg
+        const galleryGrid = document.getElementById('gallery-grid');
+        for (let i = 1; i <= 25; i++) {
+            const img = document.createElement('img');
+            img.src = `img/gallery/${i}.webp`;
+            img.alt = `Galeri ${i}`;
+            img.className = "rounded-xl shadow-lg w-full h-64 object-cover hover:shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer";
+            galleryGrid.appendChild(img);
+        }
+    </script>
+</body>
+
+</html>

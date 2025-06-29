@@ -44,6 +44,11 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
 <head>
     <meta charset="UTF-8" />
     <title>AMERTA Ticket</title>
+    <link rel="icon" type="image/png" href="./img/icon/icon.png">
+    <meta name="description"
+        content="Amerta Night Show adalah ajang ekspresi dan kreativitas bagi para santri untuk menampilkan karya terbaik mereka di atas panggung.">
+
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -83,7 +88,7 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
             border-radius: 20px 20px 0 0;
             font-weight: 700;
             letter-spacing: 1.2px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
             flex: none;
             display: flex;
             flex-direction: column;
@@ -94,7 +99,7 @@ $qrDataUri = 'data:image/png;base64,' . $qrBase64;
         .ticket-header h1 {
             margin: 0 0 10px 0;
             font-size: 32px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         .ticket-header div {
