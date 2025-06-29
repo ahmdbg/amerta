@@ -64,29 +64,63 @@
                 data-aos-delay="300">Hubungi Kami</h2>
             <p class="text-slate-300 text-center mb-8" data-aos="fade-in" data-aos-delay="400">Ada pertanyaan, kritik,
                 atau saran? Silakan isi form di bawah ini atau hubungi kami melalui kontak yang tersedia.</p>
-            <form class="space-y-5" data-aos="fade-left" data-aos-delay="500" method="POST" action="#"
-                onsubmit="event.preventDefault(); alert('Pesan Anda telah dikirim!'); this.reset();">
+            <form class="space-y-5" data-aos="fade-left" data-aos-delay="500" method="POST" action="#" onsubmit="event.preventDefault(); 
+                const nama = document.getElementById('nama').value;
+                const nowa = document.getElementById('nowa').value;
+                const pesan = document.getElementById('pesan').value;
+                // Layout pesan WhatsApp dengan emoji dan efek bold/garis
+                const waText =
+`*📩 Pesan Baru dari Website Amerta Night Show!*
+
+*👤 Nama:* ${nama}
+*📱 No. WhatsApp:* ${nowa}
+
+*💬 Pesan:*
+${pesan}
+
+━━━━━━━━━━━━━━━\n🕒 Terkirim via Form Kontak Amerta`;
+                const url = `https://wa.me/6285640054840?text=${encodeURIComponent(waText)}`;
+                window.open(url, '_blank'); 
+                this.reset();">
                 <div>
                     <label for="nama" class="block text-blue-200 font-semibold mb-1">Nama</label>
                     <input type="text"
-                        class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        class="w-full rounded-lg border-2 border-blue-700 bg-slate-800 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md"
                         id="nama" name="nama" placeholder="Nama Anda" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-blue-200 font-semibold mb-1">Email</label>
-                    <input type="email"
-                        class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        id="email" name="email" placeholder="email@domain.com" required>
+                    <label for="nowa" class="block text-blue-200 font-semibold mb-1">Nomor WhatsApp</label>
+                    <input type="tel"
+                        class="w-full rounded-lg border-2 border-green-600 bg-slate-800 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 shadow-md"
+                        id="nowa" name="nowa" placeholder="08xxxxxxxxxx" required pattern="08[0-9]{8,13}">
                 </div>
                 <div>
-                    <label for="pesan" class="block text-blue-200 font-semibold mb-1">Pesan</label>
-                    <textarea
-                        class="w-full rounded-lg border border-blue-700 bg-slate-800 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    <label for="pesan" class="block text-blue-200 font-bold mb-2 flex items-center gap-2">
+                        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-blue-400' fill='none'
+                            viewBox='0 0 24 24' stroke='currentColor'>
+                            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
+                                d='M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8z' />
+                        </svg>
+                        Pesan Anda
+                    </label>
+                    <div class="relative">
+                        <textarea
+                            class="w-full rounded-3xl border-4 border-blue-500 bg-slate-900 text-white px-5 py-4 focus:outline-none focus:ring-4 focus:ring-blue-400 shadow-2xl text-lg placeholder-slate-400 transition-all duration-200 hover:border-blue-400 resize-none min-h-[120px]"
+                            id="pesan" name="pesan" rows="6" placeholder="Tulis pesan Anda di sini..."
+                            required></textarea>
+                        <span class="absolute bottom-3 right-5 text-xs text-slate-400 italic select-none">Maksimal 500
+                            karakter</span>
+                    </div>
                 </div>
                 <button type="submit"
-                    class="w-full bg-gradient-to-r from-blue-700 via-blue-500 to-sky-700 text-lg font-bold py-3 rounded-xl text-white shadow-lg transition duration-300 hover:shadow-xl hover:from-blue-800 hover:to-sky-800">Kirim
-                    Pesan</button>
+                    class="w-full bg-gradient-to-r from-green-600 via-blue-500 to-sky-700 text-lg font-bold py-3 rounded-xl text-white shadow-xl transition duration-300 hover:shadow-2xl hover:from-green-700 hover:to-sky-800 flex items-center justify-center gap-2">
+                    <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-white' fill='none' viewBox='0 0 24 24'
+                        stroke='currentColor'>
+                        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
+                            d='M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8z' />
+                    </svg>
+                    Kirim via WhatsApp
+                </button>
             </form>
             <div class="mt-10 border-t border-blue-800 pt-6 text-slate-300" data-aos="fade-right" data-aos-delay="600">
                 <h3 class="text-xl font-bold text-blue-200 mb-2">Kontak Lainnya</h3>
